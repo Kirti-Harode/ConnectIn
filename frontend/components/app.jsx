@@ -7,7 +7,10 @@ const App = () => {
     return (
         <div>
             <header>
-                <h1>ConnectIn</h1>
+                <div className="logo">
+                    <h1 className="logo-first">Connect</h1>
+                    <h1 className="logo-second">In</h1>
+                </div>
                 <WelcomeContainer />               
             </header>
 
