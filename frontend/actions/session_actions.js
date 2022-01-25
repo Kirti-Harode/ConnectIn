@@ -22,28 +22,34 @@ const receiveErrors = (errors) =>({
     errors
 });
 
-const clearErrors = () =>({
-    type: CLEAR_SESSION_ERRORS
-});
+// const clearErrors = () =>({
+//     type: CLEAR_SESSION_ERRORS
+// });
 
 export const signup = user => dispatch => {
     // debugger
     return (
         APIUtil.postUser(user)
         .then(user => dispatch(receiveCurrentUser(user)), 
-        (errors) => (dispatch(receiveErrors(errors.responseJSON)))));
+        (errors) => (dispatch(receiveErrors(errors.responseJSON)))
+        )
+    );
         
 }
 
 export const logout = () => dispatch => {
     return (
         APIUtil.deleteSession()
-        .then(() => dispatch(logoutCurrentUser())));
+        .then(() => dispatch(logoutCurrentUser())
+        )
+    );
 }
 
 export const login = user => dispatch => {
     return (
         APIUtil.postSession(user)
         .then(user => dispatch(receiveCurrentUser(user)), 
-        (errors) => (dispatch(receiveErrors(errors.responseJSON)))));
+        (errors) => (dispatch(receiveErrors(errors.responseJSON)))
+        )
+    );
 }

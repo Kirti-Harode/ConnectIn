@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-import LoginFormContainer from '../session/login_form_container';
+import LoginFormContainer from '../session/signin_form_container';
 class Welcome extends React.Component {
     constructor(props) {
         super(props)
@@ -10,7 +10,7 @@ class Welcome extends React.Component {
         // debugger
         // const display = this.props.currentUser ? (
         //     <div>
-        //         <p>Welcome, {this.props.currentUser.username}</p>
+        //         <p>Welcome, {this.props.currentUser.email}</p>
         //         <button onClick={this.props.logout}>Logout</button>
         //     </div>
         // ) : (
