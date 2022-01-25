@@ -14,7 +14,7 @@
  *= require_self
  */
 
- @import './base/reset.scss';
+ /* @import './base/reset.scss';
  @import './component/front_page.scss';
  @import './component/signin.scss';
- @import './component/signup.scss';
+ @import './component/signup.scss'; */
