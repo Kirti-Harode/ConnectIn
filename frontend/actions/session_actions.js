@@ -22,9 +22,9 @@ const receiveErrors = (errors) =>({
     errors
 });
 
-// const clearErrors = () =>({
-//     type: CLEAR_SESSION_ERRORS
-// });
+export const clearErrors = () =>({
+    type: CLEAR_SESSION_ERRORS
+});
 
 export const signup = user => dispatch => {
     // debugger
