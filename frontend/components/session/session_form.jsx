@@ -6,13 +6,12 @@ class SessionForm extends React.Component {
         super(props);
         this.state = {
             email: '',
-            password: '',
-            fname: '',
-            lname: ''
+            password: ''
+           
         };
         this.handleSubmit = this.handleSubmit.bind(this);
         this.renderErrors = this.renderErrors.bind(this);
-
+        this.handleDemoSignin = this.handleDemoSignin(this);
     }
 
     handleSubmit(e) {
@@ -47,13 +46,21 @@ class SessionForm extends React.Component {
             return null;
         }
     }
+
+    handleDemoSignin(e){
+        // e.preventDefault();
+        this.props.processForm({
+            email: 'test@gmail.com',
+            password: 'password'
+        })
+    }
  
     render() {
         // debugger
         return (
             <div>
-                <h3>{this.props.formType}</h3>
-                <Link to={this.linkTo()}>Instead</Link>
+                {/* <h3>{this.props.formType}</h3> */}
+                {/* <Link to={this.linkTo()}>Instead</Link> */}
                 
                 <ul>
                     {this.renderErrors()}
@@ -61,8 +68,8 @@ class SessionForm extends React.Component {
                 </ul>
 
                 <form onSubmit={this.handleSubmit}>
-                    <label>Email: 
-                        <input type="text" value={this.state.email} onChange={this.update('email')}></input>
+                    <label>
+                        <input type="text" value={this.state.email} onChange={this.update('email')} placeholder='Email'></input>
                     </label>
                     <br/>
                     {/* <label>First Name: 
@@ -73,11 +80,12 @@ class SessionForm extends React.Component {
                         <input type="text" value={this.state.lname} onChange={this.update('lname')}></input>
                     </label>
                     <br/> */}
-                    <label>Password:
-                        <input type="password" value={this.state.password} onChange={this.update('password')}></input>
+                    <label>
+                        <input type="password" value={this.state.password} onChange={this.update('password')} placeholder='Password'></input>
                     </label>
                     <br/>
                     <button value={this.props.formType}>{this.props.formType}</button>
+                    <button className="demo-signin" onClick={this.handleDemoSignin}> Demo Sign in </button>
                 </form>
             </div>
 

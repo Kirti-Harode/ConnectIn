@@ -1,14 +1,62 @@
-.logo {
-    
+body{
+    font-family: 'Roboto', sans-serif;
+    margin-left: 20px;
+    margin-top: 10px;
 }
+
 .logo-first {
     color: rgb(36,102,194);
+    font-size: 30px;
+    font-weight: 400;
+}
+
+.welcome-msg {
+    color: rgb(146,93,79);
+    font-size: 3.3rem;
+    font-weight: 200;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+.join-msg1 {
+    font-size: 40px;
+    font-weight: 200;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+}
+
+.join-msg2 {
+    font-size: 40px;
+    font-weight: 200;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+}
+.join-sec {
+    background-image: url(https://static-exp3.licdn.com/sc/h/2vt8plqbv2l2pi6kxm89bqs59);
+    position: absolute;
+    // left: 50px;
+    margin-top: 10vh;
+    // font-size: 3rem;
+    // font-weight: 300;
+}
+
+.signup-button {
+
+    margin-left: 50px;
+}
+
+.welcome-img {
+    position: relative;
+    z-index: -1;
+    margin-left: 250px;
+    width: 650px;
     
 }
 
-.logo-second {
-    width: 35px;
-    height: 35px;
-    background-color: #0a66c2;
-    color: white;
-}
+// .welcome-sec {
+//     background-image: url('https://static-exp1.licdn.com/sc/h/dxf91zhqd2z6b0bwg85ktm5s4');
+//     // position: absolute;
+//     margin-left: 20px;
+// }
