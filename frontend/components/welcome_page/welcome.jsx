@@ -50,7 +50,7 @@ class Welcome extends React.Component {
                     <h1 className='welcome-msg'>Welcome to your 
                     <br/> professional community</h1>
                     {/* <LoginFormContainer /> */}
-                    {/* <img className='welcome-img' src='https://static-exp1.licdn.com/sc/h/dxf91zhqd2z6b0bwg85ktm5s4'/> */}
+                    <img className='welcome-img' src='https://static-exp1.licdn.com/sc/h/dxf91zhqd2z6b0bwg85ktm5s4'/>
                 </section>
                 <section className='join-sec'>
                     <h2 className='join-msg1'> Find the right job or internship for you </h2>
