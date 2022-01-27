@@ -86,10 +86,10 @@ class LoggedIn extends React.Component {
                             <ul className={this.state.hidden ? 'hidden-dropdown' : 'reveal-dropdown'} onClick={e => e.stopPropagation()} >
                                 <div className='dropdown-top'>
                                     <div className='user-profile-div'>
-                                        <p>User Profile pic goes here</p>
+                                        <p>User Profile pic</p>
                                         <div className='user-details'>
-                                            <h2>{this.props.currentUser.fname} {this.props.currentUser.lname}</h2>
-                                            <h3>User bio</h3>
+                                            <h2 className='fname-lname'>{this.props.currentUser.fname} {this.props.currentUser.lname}</h2>
+                                            <h3 className='user-bio'>User bio</h3>
                                         </div>
                                     </div>
                                     <div className='view-profile-button' >
@@ -107,10 +107,6 @@ class LoggedIn extends React.Component {
                             </ul>
                         </button>
                     </div>
-
-                
-                    <button onClick={this.props.logout}>Logout</button>
-                
                 </nav>
             </div>
         )

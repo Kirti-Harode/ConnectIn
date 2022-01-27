@@ -94,11 +94,11 @@
     color: dimgray;
     font-size: 25px;
 }
-.me-heading{
-    padding-top: 2px;
-    padding-right: 10px;
-    font-size: 13px;
-}
+// .me-heading{
+//     padding-top: 2px;
+//     padding-right: 10px;
+//     font-size: 13px;
+// }
 .search-icon {
     color: dimgray;
     
@@ -128,4 +128,81 @@
     // border: 1px solid #eeeeee;
     // border-radius: 3px;
     
+}
+
+
+.dropdown-button {
+    display: flex;
+    background-color: white;
+    flex-direction: column;
+    align-items: center;
+    border: none;
+}
+
+.user-profile-div{
+    color: red
+}
+
+.hidden-dropdown {
+    display: none;
+}
+
+.reveal-dropdown{
+    position: absolute;
+    background-color: rgb(236, 232, 232);
+    padding-top: 10px;
+    margin-top: 50px;
+    // margin-right: 0px;
+    display: block;
+    border: 1px solid lightgray;
+    border-radius: 10px;
+}
+
+// .dropdown-top {
+//     padding-top: 10px;
+// }
+
+.user-profile-div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    .user-details {
+        display: flex;
+        flex-direction: column;
+    }
+
+}
+
+.fname-lname {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.user-bio {
+    font-size: 0.9rem;
+    font-weight: 300;
+}
+
+.view-profile-button {
+    cursor: pointer;
+
+}
+
+.view-profile {
+    font-size: 0.9rem;
+    font-weight: bold;
+    border: 1px solid #0a66c2;
+    border-radius: 20px;
+    color: #0a66c2;
+    margin-bottom: 4px;
+}
+
+.logout-button {
+    cursor: pointer;
+    color: gray;
+    font-size: 1.0rem;
+    border-top: 1px solid lightgray;
+    padding-top: 2px;
+    margin-bottom: 7px;
 }
