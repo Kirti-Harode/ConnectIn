@@ -75,6 +75,7 @@ class SignupForm extends React.Component {
         return (
             <div className='signup-container'>
                 {/* <h1 className='heading'>ConnectIn</h1> */}
+                <div>
                 <form onSubmit={this.handleSubmit} className='signup-form-box'>
                     <div className='signup-greetings'>
                         <h1 className='signup-heading'>Join now</h1>
@@ -114,11 +115,13 @@ class SignupForm extends React.Component {
                     </input>
 
                     <br/>
-                    <button className='signup-button' value={this.props.formType}>{this.props.formType}</button>
-                    
+                    <div className='button-div'>
+                     <button className='signup-button' value={this.props.formType}>{this.props.formType}</button>
+                    </div>
                     <button className="demo-signin-signupForm" onClick={this.handleDemoSignin}> Demo Sign In </button>
                     <div className='already-account'> Already on ConnectIn?  <Link className='signin-link' to='/login'> Log in </Link></div>
                 </form>
+                </div>
             </div>
 
         )
