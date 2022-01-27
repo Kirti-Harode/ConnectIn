@@ -24,52 +24,51 @@ class LoggedIn extends React.Component {
                     </Link>
                     <div className='search-container'>
                         <FaSearch className='search-icon'/>
-                        <div className='search-bar'>
-                        <input  type="text" placeholder='Search' ></input>
-                        </div>
+                        <input id='search-bar' type="text" placeholder='Search' ></input>
+            
                     </div>
                 </nav>   
 
                 <nav className='right-nav'>
                     <Link to='/feed'>
-                        <div className='Home-icon'>
-                            <FaHome />
-                            <h2>Home</h2>
+                        <div className='home'>
+                            <FaHome className='Home-icon'/>
+                            <h1 className='home-heading'>Home</h1>
                         </div>
                     </Link>
                     
                     <Link to='/mynetwork'>
-                        <div className='network-icon'>
-                            <FaUserFriends />
-                            <p>My Network</p>
+                        <div className='network'>
+                            <FaUserFriends className='network-icon' />
+                            <p className='network-heading'>My Network</p>
                         </div>
                     </Link>
 
                     <Link to='/jobs'>
-                        <div className='jobs-icon'>
-                            <IoIosBriefcase />
-                            <p>Jobs</p>
+                        <div className='jobs'>
+                            <IoIosBriefcase className='jobs-icon'/>
+                            <h2 className='jobs-heading'>Jobs</h2>
                         </div>
                     </Link>
 
                     <Link to='/message'>
-                        <div className='message-icon'>
-                            <IoChatboxEllipses />
-                            <p>Messages</p>
+                        <div className='message'>
+                            <IoChatboxEllipses className='message-icon'/>
+                            <h2 className='message-heading'>Messaging</h2>
                         </div>
                     </Link>
 
                     <Link to='/notification'>
-                        <div className='notification-icon'>
-                            <FaBell />
-                            <p>Notification</p>
+                        <div className='notification'>
+                            <FaBell className='notification-icon'/>
+                            <h2 className='notification-heading'>Notifications</h2>
                         </div>
                     </Link>
 
                     <Link to='/profile'>
-                        <div className='profile-icon'>
-                            <FaUserGraduate />
-                            <h2>Me</h2>
+                        <div >
+                            <FaUserGraduate className='profile-icon'/>
+                            <h2 className='me-heading'>Me</h2>
                         </div>
                     </Link>
                 
