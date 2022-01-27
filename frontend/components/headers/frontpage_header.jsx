@@ -5,11 +5,11 @@ import { connect } from 'react-redux';
 const FrontPage = () => {
     return (
         <div>
-            <nav>
+            <nav className='header-container'>
                 <Link to='/'><img className='logo' src={logo} /></Link>
                 <div className='session-nav'>
                     <Link className='joinnow' to="/signup">Join now</Link>
-                    <Link className='login' to="/login">Log In</Link>
+                    <Link className='login' to="/login">Sign in</Link>
                 </div>
             </nav>
         </div>

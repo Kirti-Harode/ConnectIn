@@ -65,12 +65,11 @@ class LoggedIn extends React.Component {
                         </div>
                     </Link>
 
-                    <Link to='/profile'>
-                        <div >
-                            <FaUserGraduate className='profile-icon'/>
-                            <h2 className='me-heading'>Me</h2>
-                        </div>
-                    </Link>
+                    <div className='me-dropdown'>
+                        <FaUserGraduate className='profile-icon'/>
+                        <h2 className='me-heading'>Me</h2>
+                    </div>
+
                 
                     <button onClick={this.props.logout}>Logout</button>
                 
