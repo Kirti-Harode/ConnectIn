@@ -10,10 +10,49 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_24_045920) do
+ActiveRecord::Schema.define(version: 2022_01_27_204655) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "abouts", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.text "body", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_abouts_on_user_id"
+  end
+
+  create_table "educations", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.string "school", null: false
+    t.string "degree"
+    t.string "field_of_study"
+    t.text "description"
+    t.text "activities"
+    t.string "start_date", null: false
+    t.string "end_date", null: false
+    t.string "grade"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_educations_on_user_id"
+  end
+
+  create_table "experiences", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.string "title", null: false
+    t.string "company", null: false
+    t.string "employment_type"
+    t.string "location"
+    t.string "start_date", null: false
+    t.string "end_date"
+    t.string "headline"
+    t.string "industry"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_experiences_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", null: false
@@ -23,6 +62,9 @@ ActiveRecord::Schema.define(version: 2022_01_24_045920) do
     t.string "lname", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "bio"
+    t.string "pronouns"
+    t.string "location"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["fname"], name: "index_users_on_fname"
     t.index ["lname"], name: "index_users_on_lname"

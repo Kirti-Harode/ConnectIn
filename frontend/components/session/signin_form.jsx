@@ -57,7 +57,7 @@ class SigninForm extends React.Component{
 
 
     handleDemoSignin(e){
-        
+        e.preventDefault()
         this.props.processForm({
             email: 'test@gmail.com',
             password: 'password',

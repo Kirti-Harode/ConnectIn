@@ -1,18 +1,20 @@
 # == Schema Information
 #
-# Table name: users
+# Table name: experiences
 #
 #  id              :bigint           not null, primary key
-#  email           :string           not null
-#  password_digest :string           not null
-#  session_token   :string           not null
-#  fname           :string           not null
-#  lname           :string           not null
+#  user_id         :integer          not null
+#  title           :string           not null
+#  company         :string           not null
+#  employment_type :string
+#  location        :string
+#  start_date      :string           not null
+#  end_date        :string
+#  headline        :string
+#  industry        :string
+#  description     :text
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
-#  bio             :string
-#  pronouns        :string
-#  location        :string
 #
 
 # This model initially had no columns defined. If you add columns to the

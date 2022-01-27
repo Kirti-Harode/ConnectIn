@@ -7,6 +7,7 @@ import FeedContainer from './feed/feed_container'
 import Welcome from "./welcome_page/welcome";
 import { AuthRoute, ProtectedRoute } from "../util/route_util";
 import NotFound from "./not_found_error/not_found";
+import ProfileContainer from "./profile/profile_container";
 const App = () => {
     return (
         <div>
@@ -18,6 +19,7 @@ const App = () => {
                 <AuthRoute exact path='/' component={Welcome} />
                 <AuthRoute path="/login" component={SigninFormContainer} />
                 <AuthRoute path="/signup" component={SignupFormContainer} />
+                <Route exact path='/users/:userId' component={ProfileContainer} />
                 <Route component={NotFound} />
             </Switch>
         </div>

@@ -10,6 +10,9 @@
 #  lname           :string           not null
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
+#  bio             :string
+#  pronouns        :string
+#  location        :string
 #
 require 'test_helper'
 

@@ -10,6 +10,9 @@
 #  lname           :string           not null
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
+#  bio             :string
+#  pronouns        :string
+#  location        :string
 #
 class User < ApplicationRecord
     validates :email,:fname, :lname, :password_digest, :session_token, presence: true 
@@ -19,6 +22,10 @@ class User < ApplicationRecord
     attr_reader :password 
     after_initialize :ensure_session_token 
 
+    has_one :about
+    has_many :educations
+    has_many :experiences
+    
     def valid_email(params)
         errors = {
             email: nil

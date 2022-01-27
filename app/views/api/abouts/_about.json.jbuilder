@@ -1,0 +1,1 @@
+json.extract! about, :id, :user_id, :body 
