@@ -10,14 +10,15 @@ class SigninForm extends React.Component{
         };
         this.handleSubmit = this.handleSubmit.bind(this);
         this.renderErrors = this.renderErrors.bind(this);
-        // this.handleDemoSignin = this.handleDemoSignin(this);
+        this.handleDemoSignin = this.handleDemoSignin.bind(this);
+        this.demo = false;
     }
 
-    // componentWillUnmount(){
-    //     // if(this.props.errors.length > 0){
-    //         this.props.clearErrors()
-    //     // }
-    // }
+    componentWillUnmount(){
+        if(this.props.errors.length > 0){
+            this.props.clearErrors()
+        }
+    }
 
     handleSubmit(e) {
         // debugger
@@ -37,38 +38,58 @@ class SigninForm extends React.Component{
 
     renderErrors (){
         if(this.state.errors.length){
-           return this.state.errors.map((error,index) => {
-               return ( <ul key={index}>{error}</ul> )
-            })
+           return (this.state.errors.map((error,index) => (
+                ( <ul key={index}>{error}</ul> )
+           )))
         }
+        else{
+            return null;
+        }
+        
+            // return (
+            //     <ul>
+            //     {this.state.errors.map((error, i) => (
+            //         <li key={`error-${i}`}>{error}</li>
+            //     ))}
+            //     </ul>
+            // );
     }
 
-    // handleDemoSignin(e){
-    //     // e.preventDefault();
-    //     const demo = {
-    //         email: 'test@gmail.com',
-    //         password: 'password',
-    //         fname: 'Kitty',
-    //         lname: 'Cat',
-    //         erorrs: []
-    //     }
-    //     // this.state = (demo)
-    //     this.props.processForm(demo)
-    // }
+
+    handleDemoSignin(e){
+        
+        this.props.processForm({
+            email: 'test@gmail.com',
+            password: 'password',
+            // fname: 'Kitty',
+            // lname: 'Cat',
+            erorrs: []
+        })
+        this.demo = true;
+    }
 
     render() {
         // debugger
+        
+        let error; 
+        if(!this.demo){
+            error = this.renderErrors()
+        }
+        else{
+            error = null
+        }
+
         return (
            
             <div className='signin-container'>
-                 <h1 className='heading'>ConnectIn</h1>
+                 {/* <h1 className='heading'>ConnectIn</h1> */}
                 <form onSubmit={this.handleSubmit} className='signin-form-box'>
                 <div>
                     <div className='signin-greetings'>
                         <h1 className='signin-heading'>Sign in</h1>
                         <p className='signin-msg'>Stay updated on your professional world</p>
                     </div>
-                    <ul className='signin-errors'>{this.renderErrors()}</ul>
+                    <ul className='signin-errors'>{error}</ul>
                     <input 
                         className='signin-email'
                         type="text" 
@@ -86,7 +107,7 @@ class SigninForm extends React.Component{
                     </input>
                     <br/>
                     <button className='signin-button' value={this.props.formType}>{this.props.formType}</button>
-                    <button className="demo-signin-button" > Demo Sign In </button>
+                    <button  className="demo-signin-button" onClick={this.handleDemoSignin} >Demo Sign In</button>
                     <div className='new-here'> New to ConnectIn?  <Link className='signup-link' to='/signup'> Sign up</Link></div>
                 </div>
                 </form>
@@ -95,5 +116,4 @@ class SigninForm extends React.Component{
         )
     }
 }
-
 export default SigninForm;

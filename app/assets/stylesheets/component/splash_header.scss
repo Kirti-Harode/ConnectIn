@@ -1,0 +1,60 @@
+.splash-header {
+    background-color:white;
+    display: flex;
+    width: 100vw;
+    justify-content: center;
+    // position: fixed;
+    // z-index: 999;
+    // top: 0;
+}
+.left-bar {
+    display: flex;
+    // align-items: center;
+    width: 50vw;
+}
+.small-logo-img {
+    width: 40px;
+    height: 40px;
+    padding: 0px 50px 20px 0px
+}
+.Home-icon {
+    padding-left: 30px;
+    color: dimgray;
+    font-size: 40px;
+}
+.network-icon {
+    padding-left: 30px;
+
+    color: dimgray;
+    font-size: 40px;
+}
+.profile-icon {
+    padding-left: 30px;
+    // display: fixed;
+
+    color: dimgray;
+    font-size: 30px;
+}
+
+.search-icon {
+    color: dimgray;
+    
+}
+.search-container {
+    padding-top: 5px;
+    padding-left: 5px;
+    margin-left: -40px;
+    margin-top: 13px;
+    border: 1px solid #eeeeee;
+    width: 300px;
+    height: 26px;
+    box-sizing: border-box;
+    // font-size: 10px;
+    background-color: #f1f7ff;
+    border-radius: 3px;
+}
+
+.serach-bar {
+    background-color: #3b5270;
+    padding-bottom: 5px;
+}
