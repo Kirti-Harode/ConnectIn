@@ -2,20 +2,23 @@ import React from "react";
 import { Route, Switch } from "react-router-dom";
 import SigninFormContainer from "./session/signin_form_container";
 import SignupFormContainer from "./session/signup_form_container";
-// import WelcomeContainer from "./welcome_page/welcome_container";
+import HeaderContainer from "./headers/header";
+import FeedContainer from './feed/feed_container'
 import Welcome from "./welcome_page/welcome";
+import { AuthRoute, ProtectedRoute } from "../util/route_util";
+import NotFound from "./not_found_error/not_found";
 const App = () => {
     return (
         <div>
             <header>
-                
-                {/* <WelcomeContainer />                */}
+                <HeaderContainer/>
             </header>
-
             <Switch>
-                <Route path="/login" component={SigninFormContainer} />
-                <Route path="/signup" component={SignupFormContainer} />
-                <Route exact path='/' component={Welcome} />
+                <ProtectedRoute exact path='/feed' component={FeedContainer} />
+                <AuthRoute exact path='/' component={Welcome} />
+                <AuthRoute path="/login" component={SigninFormContainer} />
+                <AuthRoute path="/signup" component={SignupFormContainer} />
+                <Route component={NotFound} />
             </Switch>
         </div>
     )

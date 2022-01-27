@@ -20,8 +20,16 @@ module.exports = {
                         presets: ['@babel/env', '@babel/react']
                     }
                 }
+               
+            },
+            {
+                test: /.(png|jpg|svg|gif|mp3)$/,
+                type: 'asset/resource'
             }
+            
         ]
+        
+       
     },
     devtool: 'source-map'
 }

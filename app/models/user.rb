@@ -19,6 +19,19 @@ class User < ApplicationRecord
     attr_reader :password 
     after_initialize :ensure_session_token 
 
+    def valid_email(params)
+        errors = {
+            email: nil
+        }
+
+        unless email.empty?
+            parts = email.split('@')
+            unless parts.length != 2 && parts[1] && parts[1].split('.').length == 2
+                errors[:email] = 'Enter a valid email'
+            end
+        end
+    end
+
     def self.find_by_credentials(email, password)
         user = User.find_by(email: email)
         return nil if user.nil?
@@ -43,4 +56,5 @@ class User < ApplicationRecord
     def ensure_session_token
         self.session_token ||= SecureRandom::urlsafe_base64 
     end
+
 end

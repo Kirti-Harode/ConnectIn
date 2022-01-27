@@ -11,16 +11,17 @@ class SignupForm extends React.Component {
             lname: '',
             errors: []
         };
+        this.demo = false;
         this.handleSubmit = this.handleSubmit.bind(this);
         this.renderErrors = this.renderErrors.bind(this);
-        // this.handleDemoSignin = this.handleDemoSignin(this);
+        this.handleDemoSignin = this.handleDemoSignin.bind(this);
     }
 
-    // componentDidMount(){
-    //     if(this.props.errors.length > 0){
-    //         this.props.clearErrors()
-    //     }
-    // }
+    componentDidMount(){
+        if(this.props.errors.length > 0){
+            this.props.clearErrors()
+        }
+    }
 
     handleSubmit(e) {
         // debugger
@@ -49,27 +50,37 @@ class SignupForm extends React.Component {
         }
     }
 
-    // handleDemoSignin(e){
-    //     // e.preventDefault();
-    //     this.props.login({
-    //         email: 'test@gmail.com',
-    //         password: 'password',
-    //         fname: 'Kitty',
-    //         lname: 'Cat'
-    //     })
-    // }
+    handleDemoSignin(e){
+        // e.preventDefault();
+        this.props.login({
+            email: 'test@gmail.com',
+            password: 'password',
+            fname: 'Kitty',
+            lname: 'Cat'
+        })
+        this.demo = true;
+    }
  
     render() {
         // debugger
+
+        let error; 
+        if(!this.demo){
+            error = this.renderErrors()
+        }
+        else{
+            error = null
+        }
+
         return (
             <div className='signup-container'>
-                <h1 className='heading'>ConnectIn</h1>
+                {/* <h1 className='heading'>ConnectIn</h1> */}
                 <form onSubmit={this.handleSubmit} className='signup-form-box'>
                     <div className='signup-greetings'>
                         <h1 className='signup-heading'>Join now</h1>
                         <p className='signup-msg'>Make the most of your professional life</p>
                     </div>
-                    <ul className='signup-errors'>{this.renderErrors()}</ul>
+                    <ul className='signup-errors'>{error}</ul>
                     <input 
                         className='signup-input'
                         type="text" 
@@ -105,7 +116,7 @@ class SignupForm extends React.Component {
                     <br/>
                     <button className='signup-button' value={this.props.formType}>{this.props.formType}</button>
                     
-                    <button className="demo-signin-signupForm" > Demo Sign In </button>
+                    <button className="demo-signin-signupForm" onClick={this.handleDemoSignin}> Demo Sign In </button>
                     <div className='already-account'> Already on ConnectIn?  <Link className='signin-link' to='/login'> Log in </Link></div>
                 </form>
             </div>
