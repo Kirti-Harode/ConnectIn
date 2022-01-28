@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import Feed from './feed';
-import {fetchUser} from '../../actions/session_actions'
+import {fetchUser} from '../../actions/user_actions'
 
 const mapStateToProps = state => ({
     currentUser: state.entities.users[state.session.id]

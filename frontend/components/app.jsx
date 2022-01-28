@@ -7,7 +7,7 @@ import FeedContainer from './feed/feed_container'
 import Welcome from "./welcome_page/welcome";
 import { AuthRoute, ProtectedRoute } from "../util/route_util";
 import NotFound from "./not_found_error/not_found";
-import ProfileContainer from "./profile/profile_container";
+import ProfileContainer from "./users_profile/profile_container";
 const App = () => {
     return (
         <div>

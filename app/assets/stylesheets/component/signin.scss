@@ -8,10 +8,9 @@
     background-color: #eeeeee;
     color: rgb(17, 14, 14);
     // box-shadow: 0 4px 6px 0 hsl(0,0%,40%);
-    // border: black;
     // border-radius: 20px;
-
-        // width: 352px;
+    
+    // width: 352px;
     
     // box-shadow: 0 4px 12px rgb(0 0 0 15%);
     // padding: 24px;
@@ -19,17 +18,17 @@
     // margin: 0 auto;
     // background: #fff;
 }
-    
-    
+
+
 .signin-errors {
     color: red;
     font-size: 15px;
 }
-    
+
 .signin-form-box{
     // display: flex;
-    box-shadow: 0,4px, 6px, 0, rgba(12, 12, 12, 0.568);
-    display: block;
+    border: 1px solid black;
+    // display: block;
     padding-top: 20px;
     // margin-top: 150px;
     // margin-right: 300px;

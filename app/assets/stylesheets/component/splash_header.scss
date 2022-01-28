@@ -3,10 +3,11 @@
     display: flex;
     width: 100vw;
     justify-content: center;
-    // position: fixed;
+    position: fixed;
     // z-index: 999;
-    // top: 0;
-    padding-top: 10px;
+    top: 0;
+    left: 0;
+    // padding-top: 10px;
 }
 .left-bar {
     display: flex;
@@ -55,6 +56,7 @@
     padding-right: 5px;
     font-size: 13px;
 }
+
 
 .jobs{
     flex-direction: column;
