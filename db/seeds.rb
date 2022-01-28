@@ -7,13 +7,47 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.delete_all
+About.delete_all
+Experience.delete_all
+Education.delete_all
 
-Harry = User.create!(email: 'harry@gmail.com', fname: 'Harry', lname: 'potter', password: 'password' );
+user1 = User.create!(email: 'harry@gmail.com', fname: 'Harry', lname: 'potter', password: 'password', bio: "I love to code", pronouns: 'He/His/Him', location: "SF");
 
 demo_user = User.create!(
     email: 'test@gmail.com',
     password: 'password',
     fname: 'Kitty',
-    lname: 'Cat'
+    lname: 'Cat',
+    bio: "I am Demo User",
+    pronouns: 'He/His/Him',
+    location: "Sunnyvale"
    
+)
+
+about1 = About.create!(user_id: user1.id, body: "About Harry ");
+about2 = About.create!(user_id: demo_user.id, body: "This is About Demo user ")
+
+experience1 = Experience.create!(
+    user_id: user1.id,
+    title: "Sowftware Engineer",
+    employment_type: "Full-time",
+    company: "Google",
+    location: " Montainview, California, United States",
+    start_date: "April 2017",
+    end_date: "August 2024",
+    headline: "Good company",
+    industry: "Computer",
+    description: "some description"
+)
+
+education1 = Education.create!(
+    user_id: user1.id,
+    school: "University of California",
+    degree: "Bachelor's",
+    field_of_study: "Computer Engineering",
+    activities: "Many Activities",
+    description: "Good Time",
+    grade: "9.9",
+    start_date: "August 2012",
+    end_date: "December 2017",
 )
