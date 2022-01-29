@@ -22,6 +22,8 @@ class User < ApplicationRecord
     attr_reader :password 
     after_initialize :ensure_session_token 
 
+    has_one_attached :profile_photo #, dependent: :destroy
+
     has_one :about
     has_many :educations
     has_many :experiences

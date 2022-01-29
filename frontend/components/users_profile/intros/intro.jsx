@@ -4,7 +4,7 @@ import { withRouter } from "react-router-dom";
 import { fetchUsers, fetchUser } from "../../../actions/user_actions";
 import backgroundImage from '../../../../app/assets/images/homeOffice.png'
 import profile from '../../../../app/assets/images/profile.png'
-
+import { MdCreate } from "react-icons/md";
 class Intro extends React.Component {
     constructor(props){
         super(props)
@@ -28,12 +28,14 @@ class Intro extends React.Component {
                 <img className="profile-img" src={profile}/>
                 </div>
                 <div className="user-details">
-                    <header>
-                        <div className="user-name">
-                            <h1>{this.props.profileUser.fname} {this.props.profileUser.lname}</h1>
-                            <h3>{this.props.profileUser.pronouns}</h3>
+                    <header className="user-info-header">
+                        <div className="user-name-div">
+                            <h1 className="user-name">{this.props.profileUser.fname} {this.props.profileUser.lname}</h1>
+                            <h3 className="user-pronouns">({this.props.profileUser.pronouns})</h3>
                         </div>
-                        <p>edit user intro button</p>
+                        <div className="edit-button-div">
+                            <MdCreate className="edit-user-info"/>
+                        </div>
                     </header>
                     <div className="user-bio">
                         <h2>{this.props.profileUser.bio}</h2>

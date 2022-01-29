@@ -24,8 +24,9 @@ demo_user = User.create!(
    
 )
 
-about1 = About.create!(user_id: user1.id, body: "About Harry ");
-about2 = About.create!(user_id: demo_user.id, body: "This is About Demo user ")
+about1 = About.create!(user_id: user1.id, body: "Software Engineer, ability to create video Games.");
+about2 = About.create!(user_id: demo_user.id, body: "Hi I am demo user Currently working under Kirti to help her develop ConnectIn ")
+about3 = About.create!(user_id: demo_user.id, body: "I am a Programmer, coding is my life.");
 
 experience1 = Experience.create!(
     user_id: user1.id,
@@ -39,11 +40,46 @@ experience1 = Experience.create!(
     industry: "Computer",
     description: "some description"
 )
-
+experience2 = Experience.create!(
+    user_id: demo_user.id,
+    title: "Sowftware Engineer",
+    employment_type: "Full-time",
+    company: "ConnectIn",
+    location: " Sunnyvale, California, United States",
+    start_date: "Dec 2021",
+    end_date: "At present",
+    headline: "Connect people professionally",
+    industry: "Web",
+    description: "some description"
+)
+experience3 = Experience.create!(
+    user_id: demo_user.id,
+    title: "testing-user",
+    employment_type: "Full-time",
+    company: "ConnectIn",
+    location: " Sunnyvale, California, United States",
+    start_date: "Dec 2021",
+    end_date: "jan-2022",
+    headline: "Connect people professionally",
+    industry: "Web",
+    description: "some description"
+)
 education1 = Education.create!(
     user_id: user1.id,
     school: "University of California",
     degree: "Bachelor's",
+    field_of_study: "Computer Engineering",
+    activities: "Many Activities",
+    description: "Good Time",
+    grade: "9.9",
+    start_date: "August 2012",
+    end_date: "December 2017",
+)
+
+education2 = Education.create!(
+    user_id: demo_user.id,
+    school: "University of California",
+    degree: "Bachelor's in Science",
     field_of_study: "Computer Engineering",
     activities: "Many Activities",
     description: "Good Time",
