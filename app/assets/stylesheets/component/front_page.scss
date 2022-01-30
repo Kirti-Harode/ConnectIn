@@ -1,53 +1,98 @@
 body{
-    font-family: 'Roboto', sans-serif;
-    margin-left: 20px;
+    font-family: 'Roboto', sans-serif; 
     margin-top: 10px;
-}
 
+}
+.welcome-sec {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 80px;
+}
+.welcome-left-side {
+    // margin-top: -150px;
+}
 .welcome-msg {
     color: rgb(146,93,79);
-    font-size: 3.3rem;
+    font-size: 3.0rem;
     font-weight: 200;
-    margin-top: 50px;
-    margin-bottom: 20px;
+    // margin-top: 50px;
+    margin-bottom: 80px;
+    padding-top: -100px;
+
+}
+
+.highlight1, .highlight2, .highlight3{
+    // display: block;
+    width: 400px;
+    height: 30px;
+    border: 0.5px solid lightgray;
+    margin-top: 10px;
+    margin-bottom: 2px;
+    padding-top: 20px;
+    padding-left: 5px;
+    font-size: 20px;
+    color: rgb(70, 70, 70);
+    border-radius: 5px;
+}
+
+.welcome-img {
+    // position: relative;
+    // z-index: -1;
+    margin-left: 150px;
+    width: 650px;
+    padding-top: 150px;
+    
 }
 
 .join-msg1 {
-    font-size: 40px;
-    font-weight: 200;
-    margin-top: 10px;
-    margin-bottom: 20px;
-    padding-bottom: 10px;
-}
-
-.join-msg2 {
+    margin-left: 80px;
     font-size: 40px;
     font-weight: 200;
     margin-top: 20px;
     margin-bottom: 20px;
     padding-bottom: 10px;
 }
+.footer {
+    margin-top: 100px;
+}
+.footer-img{
+    display: flex;
+}
 .join-sec {
-    background-image: url(https://static-exp3.licdn.com/sc/h/2vt8plqbv2l2pi6kxm89bqs59);
-    position: absolute;
-    // left: 50px;
-    margin-top: 10vh;
-    // font-size: 3rem;
-    // font-weight: 300;
+    // background-image: url(https://static-exp3.licdn.com/sc/h/2vt8plqbv2l2pi6kxm89bqs59);
+    position: absolute; 
+    margin-top: 5vh;
 }
 
 .signup-button {
-
     padding-left: 500px;
 }
-
-.welcome-img {
+.getstarted {
+    cursor: pointer;
+    display: inline-block;
+    font-size: 1.2rem;
+    height: 40px;
+    line-height: 32px;
+    padding: 1px 16px;
+    padding-top: 6px;
     // position: relative;
-    
-    z-index: -1;
-    margin-left: 250px;
-    width: 650px;
+    // text-align: center;
+    text-decoration: none;
+    // vertical-align: middle;
+    background-color: #0a66c2;
+    color: #fff;
+    border-radius: 24px;
     
 }
+.getstarted-div {
+    margin-top: 50px;
+}
 
+.getstarted:hover{
+    // box-shadow: inset 0 0 0 1px #041d36;
+    // background-color: #0a66c2;
+    text-decoration: underline;
+    border: 1px solid #0a66c2;
+}
 

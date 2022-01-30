@@ -1,7 +1,6 @@
 .signup-container {
     display: flex;
     height: 100vh;
-    // width: 50vh;
     justify-content: center;
     flex-direction: column;
     align-items: center;
@@ -15,32 +14,38 @@
     font-size: 15px;
 }
     
-.signup-form-box{
-    // box-shadow: 0,4px, 6px, 0, rgba(12, 12, 12, 0.568);
-   
-    display: block;
+.signup-form-box{   
+    display: flex;
     padding-top: 20px;
+    // width: 380px;
+    width: 352px;
+    height: 500px; 
+    background-color: white;
+    font-size: 3.2rem;
+    padding-left: 15px;
+
+    // border: 1px solid black;
+    // display: block;
     // margin-top: 150px;
     // margin-right: 300px;
     // margin-left:  -200px;
-    // height: 65vh;
-    width: 380px;
-    height: 500px;
     // justify-content: center;
     // flex-direction: column;
     // align-items: center;
-    background-color: white;
     // padding-top: 100px;
     // border: none;
-    font-size: 3.2rem;
-    padding-left: 15px;
+    
+    // box-shadow: 0 4px 12px rgb(0 0 0 / 15%);
+    padding: 24px;
+    border-radius: 4px;
+    margin: 0 auto;
+    // background: #fff;
+    box-shadow: 0.5px 2px 4px #272727;
 }   
 
 .signup-heading {
-    // margin-left: 200px;
-    // padding-top: 50px;
     font-size: 30px;
-    // color: blue;
+    color: rgb(49, 49, 49);
     font-weight: 600;
 }
 
@@ -54,14 +59,20 @@
     font-size: 20px;
     width: 340px;
     height: 40px;
+    border-radius: 8px;
+    border: 1px solid gray;
 }
 
-
-.signup-button {
-  
+.signup-input:hover {
+    // border: 2px solid #0a66c2;
+}
+.signup-button,.demo-signin-signupForm {
     font-size: 20px;
+    width: 350px;
+    height: 40px;
     cursor: pointer;
-    
+    background-color: #0a66c2;  
+    border-radius: 8px;
 }
 
 // .button-div{
@@ -70,16 +81,11 @@
     // height: 40px;
 // }
 
-// .signup-button:hover {
-
-// }
-
-.demo-signin-signupForm {
-    font-size: 20px;
-    width: 350px;
-    height: 40px;
-    cursor: pointer;
+.signup-button:hover,.demo-signin-signupForm:hover {
+    background-color: #0a66c2;
+    box-shadow: 1px 2px 2px #0a131d;
 }
+
 
 .already-account{
     padding-top: 20px;

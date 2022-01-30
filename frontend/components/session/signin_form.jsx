@@ -82,7 +82,6 @@ class SigninForm extends React.Component{
         return (
            
             <div className='signin-container'>
-                 {/* <h1 className='heading'>ConnectIn</h1> */}
                 <form onSubmit={this.handleSubmit} className='signin-form-box'>
                 <div>
                     <div className='signin-greetings'>

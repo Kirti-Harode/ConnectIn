@@ -26,62 +26,63 @@ class LoggedIn extends React.Component {
 
     render(){
         return(
-            <div className='splash-header'>
-                
-                <nav className='left-bar'>
-                    <Link to='/'>
-                        <div className='small-logo'>
-                            <img className='small-logo-img' src={smallLogo}/>
-                        </div>
-                    </Link>
+            <div className='splash-header-container'>
+                <div className='splash-content'>
+                {/* <nav className='left-bar'> */}
+                    <span className='logo-div'>
+                        <Link to='/'>
+                           <img className='small-logo-img' src={smallLogo}/>
+                        </Link>
+                    </span>
                     <div className='search-container'>
-                        <FaSearch className='search-icon'/>
-                        <input id='search-bar' type="text" placeholder='Search' ></input>
-            
+                        <div className='search-input-div'>
+                            <input className='search-input' type="text" placeholder='Search' ></input>
+                        </div>
+                        {/* <div className='search-icon-div'> */}
+                            <FaSearch className='search-icon'/>
+                        {/* </div> */}
+                       
                     </div>
-                </nav>   
+                {/* </nav>    */}
 
                 <nav className='right-nav'>
-                    <Link to='/feed'>
-                        <div className='home'>
-                            <FaHome className='Home-icon'/>
-                            <h1 className='home-heading'>Home</h1>
-                        </div>
-                    </Link>
-                    
-                    <Link to='/mynetwork'>
-                        <div className='network'>
-                            <FaUserFriends className='network-icon' />
-                            <p className='network-heading'>My Network</p>
-                        </div>
-                    </Link>
-
-                    <Link to='/jobs'>
-                        <div className='jobs'>
-                            <IoIosBriefcase className='jobs-icon'/>
-                            <h2 className='jobs-heading'>Jobs</h2>
-                        </div>
-                    </Link>
-
-                    <Link to='/message'>
-                        <div className='message'>
-                            <IoChatboxEllipses className='message-icon'/>
-                            <h2 className='message-heading'>Messaging</h2>
-                        </div>
-                    </Link>
-
-                    <Link to='/notification'>
-                        <div className='notification'>
-                            <FaBell className='notification-icon'/>
-                            <h2 className='notification-heading'>Notifications</h2>
-                        </div>
-                    </Link>
-
+                    <ul className='nav-list'>
+                        <li className='home-nav'>
+                            <Link to='/feed' className='links'>
+                                <FaHome className='Home-icon'/>
+                                <span className='home-heading'>Home</span>
+                            </Link>
+                        </li>
+                        <li className='network-nav'>
+                            <Link to='/mynetwork' className='links'>
+                                <FaUserFriends className='network-icon' />
+                                <span className='network-heading'>My Network</span>
+                            </Link>
+                        </li>
+                        <li className='jobs-nav'>
+                            <Link to='/jobs' className='links'>
+                                <IoIosBriefcase className='jobs-icon'/>
+                                <span className='jobs-heading'>Jobs</span>
+                            </Link>
+                        </li>
+                        <li className='message-nav'>
+                            <Link to='/message' className='links'>
+                                <IoChatboxEllipses className='message-icon'/>
+                                <span className='message-heading'>Messaging</span>
+                            </Link>
+                        </li>
+                        <li className='notification-nav'>
+                            <Link to='/notification' className='links'>
+                                <FaBell className='notification-icon'/>
+                                <span className='notification-heading'>Notifications</span>
+                            </Link>
+                        </li>
+                    <li>
                     <div className='me-dropdown'>
                         <button className='dropdown-button' onFocus={this.hiddenFalse} onBlur={this.hiddenTrue}>
                             <div className='profile-icon-div'>
                                 <FaUserGraduate className='profile-icon'/>
-                                <h2 className='me-heading'>Me</h2>
+                                <span className='me-heading'>Me</span>
                             </div>
                             <ul className={this.state.hidden ? 'hidden-dropdown' : 'reveal-dropdown'} onClick={e => e.stopPropagation()} >
                                 <div className='dropdown-top'>
@@ -107,7 +108,10 @@ class LoggedIn extends React.Component {
                             </ul>
                         </button>
                     </div>
+                    </li>
+                    </ul>
                 </nav>
+                </div>
             </div>
         )
     }
