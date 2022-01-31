@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: eductaions
+# Table name: educations
 #
 #  id             :bigint           not null, primary key
 #  user_id        :integer          not null

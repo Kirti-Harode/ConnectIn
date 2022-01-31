@@ -27,6 +27,14 @@ class User < ApplicationRecord
     has_one :about
     has_many :educations
     has_many :experiences
+
+    has_many :connections,
+        foreign_key: :connector_id,
+        class_name: :Connection
+
+    has_many :connectees,
+        foreign_key: :connectee_id,
+        class_name: :Connection
     
     def valid_email(params)
         errors = {
