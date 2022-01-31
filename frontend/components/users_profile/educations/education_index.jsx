@@ -17,8 +17,8 @@ class EducationIndex extends React.Component {
     render(){
         return (
             <div className="education-div">
-                <header>
-                    <h2>Education</h2>
+                <header className="edu-heading" >
+                    <h2 className="edu-h2">Education</h2>
                     <MdAdd className="education-createButton"/>
                 </header>
                 <div className="education-index-div">

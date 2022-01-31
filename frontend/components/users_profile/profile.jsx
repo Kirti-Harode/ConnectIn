@@ -18,10 +18,10 @@ class Profile extends React.Component {
                 <section className="about-index-conatiner">
                     <AboutIndexContainer />
                 </section>
-                <section className="about-index-conatiner">
+                <section className="exp-index-conatiner">
                     <ExperienceIndexConatiner />
                 </section>
-                <section className="about-index-conatiner">
+                <section className="edu-index-conatiner">
                     <EducationIndexConatiner />
                 </section>
             </div>

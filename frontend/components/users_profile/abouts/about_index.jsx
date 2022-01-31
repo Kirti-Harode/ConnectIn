@@ -13,7 +13,7 @@ class AboutIndex extends React.Component{
     render(){
         return(
             <div className="about-div">
-                <header>
+                <header className="about-header">
                     <h1 className="about-heading">About</h1>
                     <MdAdd className="about-createButton"/>
                 </header>

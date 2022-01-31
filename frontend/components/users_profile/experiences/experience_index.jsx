@@ -17,8 +17,8 @@ class ExperienceIndex extends React.Component {
     render(){
         return (
             <div className="experience-div">
-                <header>
-                    <h2>Experiences</h2>
+                <header className="exp-heading">
+                    <h2 className="exp-h2">Experience</h2>
                     <MdAdd className="experience-createButton"/>
                 </header>
                 <div className="experience-index-div">

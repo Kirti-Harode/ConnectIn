@@ -44,7 +44,7 @@ class Intro extends React.Component {
                         <h2>{this.props.profileUser.location}</h2>
                     </div>
                     <div className="user-connections">
-                        <h2>connections</h2>
+                        <h2>10 connections</h2>
                     </div>
                 </div>
             </div>

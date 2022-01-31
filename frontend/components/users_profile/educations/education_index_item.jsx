@@ -2,21 +2,22 @@ import React from "react";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 import { MdCreate } from "react-icons/md";
-
+import eduImg from '../../../../app/assets/images/education_img.png'
 class EducationIndexItem extends React.Component {
     render(){
         return(
             <div className="education-index-item-div">
-                <p>Education Image</p>
+                <img src={eduImg} className="edu-img"/>
 
                 <div className="education-body-div">
-                    <div className="education-items">
+                    <div className="education-school">
                         <p>{this.props.education.school}</p>
                     </div>
                     <div className='degree-info'>
                         <p>{this.props.education.degree}</p>
                         <p>{this.props.education.field_of_study}</p>
-                        <p>{this.props.education.grade}</p>
+                        <br/>
+                        {/* <p>{' ' + this.props.education.grade}</p> */}
                     </div>
 
                     <div className='start-end-date'>
@@ -24,7 +25,7 @@ class EducationIndexItem extends React.Component {
                     </div>
 
                     <div className='activities'>
-                        <h3>Activities: {this.props.education.activities}</h3>
+                        {/* <h3>Activities: {this.props.education.activities}</h3> */}
                         <p>{this.props.education.description}</p>
                     </div>
                 </div>

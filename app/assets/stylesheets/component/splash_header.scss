@@ -318,6 +318,8 @@ ul {
 }
 
 .reveal-dropdown{
+    display: flex;
+    flex-direction: column;
     position: absolute;
     background-color: white;
     padding-top: 10px;
@@ -329,17 +331,21 @@ ul {
     // height: 200px;
     width: 200px;
     box-shadow: 0.5px 1px 2px #272727;
+    // background-color: pink;
+    
 }
 
-// .dropdown-top {
-//     padding-top: 10px;
-// }
+.dropdown-top {
+    display: flex;
+    flex-direction: column;
+    // background-color: yellow;
+}
 
 .user-profile-div {
     display: flex;
     flex-direction: row;
     align-items: center;
-
+    // background-color: green;
     .user-details {
         display: flex;
         flex-direction: column;
