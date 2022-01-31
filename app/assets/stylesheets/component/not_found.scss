@@ -1,0 +1,31 @@
+.error-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: whitesmoke;
+    width: 97vw;
+    height: 100%;
+    padding: 10px;
+    padding-top: 70px;
+
+    .not-found1 {
+        padding-top: 100px;
+        // color: firebrick;
+        color: salmon;
+        font-size: 40px;
+        font-weight: 800;
+    }
+    
+    .not-found2{
+        padding-top: 30px;
+        color: royalblue;
+        font-size: 20px;
+        font-weight: 600;
+    }
+
+    .error-img{
+        margin-top: 10px;
+        width: 800px;
+        height: 500px;
+    }
+}
