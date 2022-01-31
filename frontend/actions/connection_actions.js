@@ -19,6 +19,7 @@ const removeConnection = connectionId => ({
     connectionId
 });
 
+
 export const fetchConnections = userId => dispatch => (
     ConnectionApiUtil.fetchConnections(userId)
     .then(connections => dispatch(receiveConnections(connections)))
@@ -33,3 +34,4 @@ export const deleteConnection = connectionId => dispatch => (
     ConnectionApiUtil.deleteConnection(connectionId)
     .then(()=> dispatch(removeConnection(connectionId)))
 );
+

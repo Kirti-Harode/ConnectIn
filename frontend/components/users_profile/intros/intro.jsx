@@ -2,15 +2,19 @@ import React from "react";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 import { fetchUsers, fetchUser } from "../../../actions/user_actions";
+import {fetchConnections, createConnection, deleteConnection} from '../../../actions/connection_actions'
 import backgroundImage from '../../../../app/assets/images/homeOffice.png'
 import profile from '../../../../app/assets/images/profile.png'
 import { MdCreate } from "react-icons/md";
 class Intro extends React.Component {
     constructor(props){
         super(props)
-        // this.state = {
-
-        // }
+        this.state = {
+            requested: false,
+            accepted: false,
+            connectionId: null
+        }
+        
     }
 
     componentDidMount(){
@@ -54,15 +58,19 @@ class Intro extends React.Component {
 
 const mapStateToProps = (state, ownProps) => ({
     currentUser: state.entities.users[state.session.id],
-    profileUser: state.entities.users[ownProps.match.params.userId]
-    // connections
+    profileUser: state.entities.users[ownProps.match.params.userId],
+    connections: Object.values(state.entities.connections)
+    
 });
 
 const mapDispatchToProps = dispatch => ({
     fetchUser: userId => dispatch(fetchUser(userId)),
-    fetchUsers: () => dispatch(fetchUsers())
+    fetchUsers: () => dispatch(fetchUsers()),
+    fetchConnections: userId => dispatch(fetchConnections(userId)),
+    createConnection: connection => dispatch(createConnection(connection)),
+    deleteConnection: connectionId => dispatch(deleteConnection(connectionId))
     // showmodel
-    // connections
+   
 });
 
 const IntroContainer = withRouter(connect(mapStateToProps, mapDispatchToProps)(Intro));

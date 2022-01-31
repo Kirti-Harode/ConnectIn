@@ -6,6 +6,7 @@ export const fetchConnections = userId => (
     })
 );
 
+
 export const createConnection = connection => (
     $.ajax ({
         url: 'api/connections',

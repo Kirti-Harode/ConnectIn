@@ -13,16 +13,15 @@ Education.delete_all
 
 
 demo_user = User.create!(
-    email: 'test@gmail.com',
+    email: 'kirti@gmail.com',
     password: 'password',
-    fname: 'Kitty',
-    lname: 'Cat',
-    bio: "I am Demo User",
-    pronouns: 'He/His/Him',
+    fname: 'Kirti',
+    lname: 'Harode',
+    bio: "I love to code and the universe",
+    pronouns: 'she/her/hers',
     location: "Sunnyvale"
     
 )
-user0 = User.create!(email: 'KirtiHarode@gmail.com', fname: 'Kirti', lname: 'Harode', password: 'password', bio: "I love to code", pronouns: 'she/her/hers', location: "SF");
 
 user1 = User.create!(email: 'harry@gmail.com', fname: 'Harry', lname: 'potter', password: 'password', bio: "I love to code", pronouns: 'He/His/Him', location: "SF");
 user2 = User.create!(email: 'AlexCiminillo@gmail.com', fname: 'Alex ', lname: 'Ciminillo', password: 'password', bio: "I love to code", pronouns: 'He/His/Him', location: "CA");
