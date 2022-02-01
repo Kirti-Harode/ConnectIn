@@ -10,6 +10,9 @@ Rails.application.routes.draw do
     resources :educations, only: [:index, :create, :update, :destroy]
     resources :experiences, only: [:index, :create, :update, :destroy]
     resources :connections, only: [:index, :create, :show, :destroy]
+    resources :posts, only: [:index, :create, :show, :update, :destroy]
+    resources :likes, only: [:index, :create, :show, :destroy]
+    resources :comments, only: [:index, :create, :show, :update, :destroy]
   end
 
 end

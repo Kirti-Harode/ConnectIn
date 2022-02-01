@@ -22,7 +22,7 @@ class User < ApplicationRecord
     attr_reader :password 
     after_initialize :ensure_session_token 
 
-    has_one_attached :profile_photo #, dependent: :destroy
+    has_one_attached :profile_photo, dependent: :destroy
 
     has_one :about
     has_many :educations
@@ -35,6 +35,10 @@ class User < ApplicationRecord
     has_many :connectees,
         foreign_key: :connectee_id,
         class_name: :Connection
+    
+    has_many :posts, dependent: :destroy
+    has_many :comments, dependent: :destroy 
+    has_many :likes, dependent: :destroy
     
     def valid_email(params)
         errors = {
