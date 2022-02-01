@@ -8,9 +8,12 @@ import Welcome from "./welcome_page/welcome";
 import { AuthRoute, ProtectedRoute } from "../util/route_util";
 import NotFound from "./not_found_error/not_found";
 import ProfileContainer from "./users_profile/profile_container";
+import Modal from "./modal/modal";
+
 const App = () => {
     return (
         <div>
+            <Modal />
             <header>
                 <HeaderContainer/>
             </header>

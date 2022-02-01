@@ -11,7 +11,7 @@ const mapStateToProps = (state, ownProps) => ({
 
 const mapDispatchToProps = dispatch => ({
     fetchUser: userId => dispatch(fetchUser(userId)),
-    fetchUsers: () => dispatch(fetchUsers())
+    // fetchUsers: () => dispatch(fetchUsers())
     // showmodel
 });
 

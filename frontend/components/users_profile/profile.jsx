@@ -6,7 +6,7 @@ import ExperienceIndexConatiner from './experiences/experience_index'
 class Profile extends React.Component {
 
     componentDidMount(){
-        this.props.fetchUsers();
+        // this.props.fetchUsers();
     }
 
     render (){

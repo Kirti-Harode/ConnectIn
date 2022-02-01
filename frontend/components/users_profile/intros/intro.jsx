@@ -6,23 +6,52 @@ import {fetchConnections, createConnection, deleteConnection} from '../../../act
 import backgroundImage from '../../../../app/assets/images/homeOffice.png'
 import profile from '../../../../app/assets/images/profile.png'
 import { MdCreate } from "react-icons/md";
+import { openModal } from "../../../actions/modal_actions";
 class Intro extends React.Component {
     constructor(props){
         super(props)
         this.state = {
-            requested: false,
-            accepted: false,
+            connected: false,
+            connectons: 0,
             connectionId: null
         }
-        
+        this.handleConnection = this.handleConnection.bind(this);
+    }
+
+    handleConnection(e){
+        e.preventDefault();
+
     }
 
     componentDidMount(){
-        this.props.fetchUsers();
+        // this.props.fetchUsers();
         this.props.fetchUser(this.props.profileUser.id);
-        // connections
+        this.props.fetchConnections(this.props.profileUser.id).then(() => {
+            this.props.connections.map(connection => {
+                if(connection.connectee_id == this.props.profileUser.id) {
+                    this.setState({connections: this.state.connectons + 1})
+                    if(connection.connector_id == this.props.currentUser.id){
+                        this.setState({connected: true})
+                        this.setState({connectionId: connection.id})
+
+                    }
+                }
+            })
+        })
     }
     render(){
+        let editButton ;
+
+        if(this.props.currentUser && this.props.profileUser){
+            if(this.props.currentUser.id === this.props.profileUser.id){
+                editButton = (<div className="edit-button-div" onClick={() => {return this.props.openModal('editUserIntro', this.props.currentUser.id)}}>
+                    <MdCreate className="edit-user-info"/>
+                </div>)
+            }
+            else{
+                editButton = null;
+            }
+        }
         return(
             <div className="user-info-div">
                 <div className="background-image-div">
@@ -37,9 +66,7 @@ class Intro extends React.Component {
                             <h1 className="user-name">{this.props.profileUser.fname} {this.props.profileUser.lname}</h1>
                             <h3 className="user-pronouns">({this.props.profileUser.pronouns})</h3>
                         </div>
-                        <div className="edit-button-div">
-                            <MdCreate className="edit-user-info"/>
-                        </div>
+                        {editButton}
                     </header>
                     <div className="user-bio">
                         <h2>{this.props.profileUser.bio}</h2>
@@ -48,7 +75,7 @@ class Intro extends React.Component {
                         <h2>{this.props.profileUser.location}</h2>
                     </div>
                     <div className="user-connections">
-                        <h2>10 connections</h2>
+                        <h2>{this.state.connectons} connections</h2>
                     </div>
                 </div>
             </div>
@@ -68,8 +95,8 @@ const mapDispatchToProps = dispatch => ({
     fetchUsers: () => dispatch(fetchUsers()),
     fetchConnections: userId => dispatch(fetchConnections(userId)),
     createConnection: connection => dispatch(createConnection(connection)),
-    deleteConnection: connectionId => dispatch(deleteConnection(connectionId))
-    // showmodel
+    deleteConnection: connectionId => dispatch(deleteConnection(connectionId)),
+    openModal: (modal, id) => dispatch(openModal(modal, id))
    
 });
 

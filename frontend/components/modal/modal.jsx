@@ -1,13 +1,13 @@
 import React from 'react';
 import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
-import UserIntroForm from '../users_profile/intros/intro_form'
-import CreateAboutForm from '../users_profile/abouts/create_about_container';
-import EditAboutForm from '../users_profile/abouts/edit_about_container';
-import CreateExperienceForm from '../users_profile/experiences/create_experience_container';
-import EditExperienceForm from '../users_profile/experiences/edit_experience_container';
-import CreateEducationForm from '../users_profile/educations/create_education_container';
-import EditEducationForm from '../users_profile/educations/edit_education_container';
+import UserIntro from '../users_profile/intros/intro_form'
+import CreateAbout from '../users_profile/abouts/create_about_container';
+import EditAbout from '../users_profile/abouts/edit_about_container';
+import CreateExperience from '../users_profile/experiences/create_experience_container';
+import EditExperience from '../users_profile/experiences/edit_experience_container';
+import CreateEducation from '../users_profile/educations/create_education_container';
+// import EditEducation from '../users_profile/educations/edit_education_container';
 
 const Modal = ({modal, closeModal})  => {
     if (!modal) {
@@ -16,25 +16,25 @@ const Modal = ({modal, closeModal})  => {
     let component;
     switch (modal) {
         case 'editUserIntro':
-            component = <UserIntroForm />
+            // component = <UserIntro />
             break;
         case 'createAbout':
-            component = <CreateAboutForm />;
+            component = <CreateAbout />;
             break;
         case 'editAbout':
-            component = <EditAboutForm />;
+            component = <EditAbout />;
             break;
         case 'createExperience':
-            component = <CreateExperienceForm />;
+            // component = <CreateExperience />;
             break;
         case 'editExperience':
-            component = <EditExperienceForm />;
+            // component = <EditExperience />;
             break;
         case 'createEducation':
-            component = <CreateEducationForm />;
+            // component = <CreateEducation />;
             break;
         case 'editEducation':
-            component = <EditEducationForm />;
+            // component = <EditEducation />;
             break;
         default:
             return null;

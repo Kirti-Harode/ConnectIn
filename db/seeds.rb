@@ -53,7 +53,7 @@ user27 = User.create!(email: 'YuHuanW@gmail.com', fname: 'YuHuan', lname: 'W', p
 
 about1 = About.create!(user_id: user1.id, body: "Software Engineer, ability to create video Games.");
 about2 = About.create!(user_id: demo_user.id, body: "Hi I am demo user Currently working under Kirti to help her develop ConnectIn ")
-about3 = About.create!(user_id: demo_user.id, body: "I am a Programmer, coding is my life.");
+about3 = About.create!(user_id: user2.id, body: "I am a Programmer, coding is my life.");
 
 experience1 = Experience.create!(
     user_id: user1.id,
@@ -113,4 +113,16 @@ education2 = Education.create!(
     grade: "9.9",
     start_date: "August 2012",
     end_date: "December 2017",
+);
+
+education3 = Education.create!(
+    user_id: demo_user.id,
+    school: "App Academy",
+    degree: "Computer Engineering",
+    field_of_study: "React, Redux, Ruby on Rails, JavaaScript",
+    activities: "",
+    description: "Good Time",
+    grade: "9.9",
+    start_date: "Oct 2021",
+    end_date: "Feb 2022",
 )
