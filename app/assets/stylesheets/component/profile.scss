@@ -21,12 +21,12 @@
         border: 1px solid lightgray;
         display: flex;
 }
+// user's intro
 
 .user-intro{
     display: flex;
     flex-direction: column;
 }
-// user's intro
 .user-info-div {
     display: flex;
     flex-direction: column;
@@ -259,9 +259,7 @@
         font-size: 18px;
     }
 
-    p {
-        margin-top: 3px;
-    }
+   
 }
 
 .education-div {
@@ -332,13 +330,14 @@
     }
 
     .start-end-date, .activities {
+        padding-top: 10px;
         font-size: 0.8rem;
         color: gray;
     }
     h3 {
         font-weight: 900;
     }
-    p{
-        margin-top: 3px;
-    }
+    // p{
+        // margin-top: 3px;
+    // }
 }

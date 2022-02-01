@@ -16,7 +16,7 @@ const Modal = ({modal, closeModal})  => {
     let component;
     switch (modal) {
         case 'editUserIntro':
-            // component = <UserIntro />
+            component = <UserIntro />
             break;
         case 'createAbout':
             component = <CreateAbout />;
