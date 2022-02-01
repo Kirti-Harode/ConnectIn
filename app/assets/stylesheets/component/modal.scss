@@ -3,8 +3,6 @@
     position: fixed;
     background: rgba(0, 0, 0, 0.3);
     padding-top: 70px;
-    // top: 0;
-    // right: 0;
     z-index: 10;
     height: 100vh;
     width: 100vw;
@@ -28,10 +26,8 @@
         display: flex;
         justify-content: space-between;
         border-bottom: 1px solid lightgray;
+        padding: 15px 0px 12px 15px;
         font-weight: 500;
-        padding-top: 15px;
-        padding-left: 15px;
-        padding-bottom: 12px;
         font-size: 20px;
 
         .about-close-button{
@@ -69,10 +65,10 @@
     
     .about-form-footer{
         display: flex;
+        flex-direction: row;
         width: 670px;
         padding: 10px;
-        flex-direction: row;
-        align-self: flex-end;
+       
     }
 
     .about-delete-button{
@@ -114,14 +110,11 @@
     border: 1px solid gray;
     border-radius: 10px;
     width: 680px;
-    // height: 75vh;
 
     .intro-form-heading{
         font-size: 20px;
         font-weight: 500;
-        padding-top: 15px;
-        padding-left: 15px;
-        padding-bottom: 15px;
+        padding: 15px 0px 15px 15px;
         border-bottom: 1px solid lightgray;
         display: flex;
         justify-content: space-between;
@@ -143,9 +136,7 @@
         font-size: 0.9rem;
     }
     .intro-pronouns-div {
-        margin-top: -15px;
-        margin-bottom: 20px;
-        margin-left: 25px;
+        margin: -15px 0px 20px 25px;
     }
     select{
         margin-top: 5px;
@@ -156,8 +147,6 @@
     }
 
     .intro-names {
-        // display: flex;
-        // flex-direction: row;
         margin: 10px 0 20px 25px;
 
         .first-name, .last-name{
@@ -192,13 +181,10 @@
     }
 
     .intro-submit-div {
-        // border-top: 1px solid lightgray;
         width: 670px;
         padding: 10px;
         display: flex;
         margin-left: 40px;
-        // flex-direction: row;
-        // align-self: flex-end;
     }
 
     .user-intro-submit{
@@ -215,27 +201,21 @@
         
         &:hover {
             background-color: #0755a3; 
-            // border: 1px solid#0755a3 ;
         }
     }
 
     .intro-bio-div {
-        margin-top: -10px;
-        margin-bottom: 20px;
-        margin-left: 25px;
-
         display: flex;
         flex-direction: column;
         margin-right: 20px;
+        margin: -10px 0px 20px 25px;
+
     }
 
     .intro-location-div{
-        margin-top: -10px;
-        margin-bottom: 20px;
-        margin-left: 25px;
-
         display: flex;
         flex-direction: column;
+        margin: -10px 0px 20px 25px;
         margin-right: 20px;
         width: 215px;
     }
@@ -276,9 +256,7 @@
         
         display: flex;
         flex-direction: column;
-        margin-top: 0px;
-        margin-bottom: 13px;
-        margin-left: 25px;
+        margin: 0px 0px 13px 25px;
     }
     .exp-title-div{
         margin-top: 5px;
@@ -328,31 +306,25 @@
         margin-right: 10px;
         &:hover{
             background-color: rgba(0, 0, 0, 0.3);
-            // background-color: rgba(221, 28, 28, 0.5);
-
         }
     }
 
     .exp-form-heading{
         font-size: 20px;
         font-weight: 500;
-        padding-top: 10px;
-        padding-left: 15px;
-        padding-bottom: 5px;
+        padding: 10px 0px 5px 15px;
         border-bottom: 1px solid lightgray;
         display: flex;
         justify-content: space-between;
 
         .exp-close-button{
             padding-right: 15px;
-            cursor: pointer;
-            
+            cursor: pointer;   
         }
     }
 }
 
 // education form 
-
 
 .edu-form-div {
     background-color: white;
@@ -382,9 +354,7 @@
         
         display: flex;
         flex-direction: column;
-        margin-top: 5px;
-        margin-bottom: 13px;
-        margin-left: 25px;
+        margin: 5px 0px 13px 25px;
     }
     .edu-school-div{
         margin-top: 5px;
@@ -435,25 +405,20 @@
         margin-right: 10px;
         &:hover{
             background-color: rgba(0, 0, 0, 0.3);
-            // background-color: rgba(221, 28, 28, 0.5);
-
         }
     }
 
     .edu-form-heading{
         font-size: 20px;
         font-weight: 500;
-        padding-top: 10px;
-        padding-left: 15px;
-        padding-bottom: 5px;
+        padding: 10px 0px 5px 15px;
         border-bottom: 1px solid lightgray;
         display: flex;
         justify-content: space-between;
 
         .edu-close-button{
             padding-right: 15px;
-            cursor: pointer;
-            
+            cursor: pointer;           
         }
     }
 }
