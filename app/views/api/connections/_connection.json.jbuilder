@@ -1,0 +1,1 @@
+json.extract! connection, :id, :connectee_id :connector_id, :accepted

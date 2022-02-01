@@ -1,0 +1,424 @@
+
+.modal-background {
+    position: fixed;
+    background: rgba(0, 0, 0, 0.3);
+    padding-top: 70px;
+    z-index: 10;
+    height: 100vh;
+    width: 100vw;
+
+    .modal-child {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+// about form 
+
+.about-edit-form {
+    background-color: white;
+    border: 1px solid gray;
+    border-radius: 10px;
+    width: 680px;
+    height: 30vh;
+    
+    .about-form-heading {
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid lightgray;
+        padding: 15px 0px 12px 15px;
+        font-weight: 500;
+        font-size: 20px;
+
+        .about-close-button{
+            padding-right: 25px;
+            cursor: pointer;
+        }
+    
+    }
+
+    .about-form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .about-body-heading {
+        font-size: 0.9rem;
+        color: gray;
+    }
+
+    .about-description-div {
+        display: flex;
+        flex-direction: column;
+        margin-top: 10px;
+        margin-bottom: 20px;
+        margin-left: 25px;
+    }
+
+    .about-body-textarea{
+        margin-top: 5px;
+        width: 600px;
+        height: 75px;
+        border-radius: 5px;
+        border: 1px solid gray;
+    }
+    
+    .about-form-footer{
+        display: flex;
+        flex-direction: row;
+        width: 670px;
+        padding: 10px;
+       
+    }
+
+    .about-delete-button{
+        margin-left: 10px;
+        font-size: 0.9rem;
+        background-color: white;
+        border-radius: 4px;
+        color: gray;
+        border: 1px solid gray;
+        padding: 7px;
+        width: 100px;
+        cursor: pointer;
+
+        &:hover {
+            background-color: rgba(0, 0, 0, 0.3);
+        }
+    }
+
+    .about-save-button {
+        margin-left: 10px;
+        font-size: 0.9rem;
+        background-color: white;
+        border-radius: 4px;
+        color: gray;
+        border: 1px solid gray;
+        padding: 7px;
+        width: 100px;
+        cursor: pointer;
+        &:hover {
+            background-color: rgba(0, 0, 0, 0.3);
+        }
+    }
+}
+
+// user intro form
+
+.user-intro{
+    background-color: white;
+    border: 1px solid gray;
+    border-radius: 10px;
+    width: 680px;
+
+    .intro-form-heading{
+        font-size: 20px;
+        font-weight: 500;
+        padding: 15px 0px 15px 15px;
+        border-bottom: 1px solid lightgray;
+        display: flex;
+        justify-content: space-between;
+
+        .user-close-button{
+            padding-right: 15px;
+            cursor: pointer;
+            
+        }
+    }
+
+    .intro-form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    label {
+        color: gray;
+        font-size: 0.9rem;
+    }
+    .intro-pronouns-div {
+        margin: -15px 0px 20px 25px;
+    }
+    select{
+        margin-top: 5px;
+        height: 35px;
+        width: 210px;
+        border-radius: 5px;
+        border: 1px solid gray;
+    }
+
+    .intro-names {
+        margin: 10px 0 20px 25px;
+
+        .first-name, .last-name{
+            display: flex;
+            flex-direction: column;
+            margin-right: 20px;
+        }
+
+        input {
+            margin-top: 8px;
+            margin-bottom: 5px;
+            width: 200px;
+            height: 20px;
+        }
+    }
+
+    .input {
+        margin-top: 5px;
+        width: 600px;
+        height: 30px;
+        border-radius: 5px;
+        border: 1px solid gray;
+    }
+
+    .bio-textarea {
+        margin-left: 2px;
+        margin-top: 5px;
+        width: 500px;
+        height: 75px;
+        border-radius: 5px;
+        border: 1px solid gray;
+    }
+
+    .intro-submit-div {
+        width: 670px;
+        padding: 10px;
+        display: flex;
+        margin-left: 40px;
+    }
+
+    .user-intro-submit{
+        position: relative;
+        left: 90%;
+        font-size: 0.9rem;
+        background-color: #0a66c2;
+        border-radius: 24px;
+        color: white;
+        border: none;
+        padding: 7px;
+        width: 65px;
+        cursor: pointer;
+        
+        &:hover {
+            background-color: #0755a3; 
+        }
+    }
+
+    .intro-bio-div {
+        display: flex;
+        flex-direction: column;
+        margin-right: 20px;
+        margin: -10px 0px 20px 25px;
+
+    }
+
+    .intro-location-div{
+        display: flex;
+        flex-direction: column;
+        margin: -10px 0px 20px 25px;
+        margin-right: 20px;
+        width: 215px;
+    }
+    .location-input{
+        margin-top: 5px;
+    }
+}
+
+
+// experience form 
+
+.exp-form-div {
+    background-color: white;
+    border: 1px solid gray;
+    border-radius: 10px;
+    width: 680px;
+    height: 84vh;
+
+    .exp-form{
+        display: flex;
+        flex-direction: column;
+
+        label{
+            font-size: 0.9rem;
+            color: gray;
+        }
+    }
+
+    .exp-title-div, 
+    .exp-employment-div, 
+    .exp-start-date-div, 
+    .exp-end-date-div, 
+    .exp-location-div,
+    .exp-headline-div,
+    .exp-industry-div,
+    .exp-description-div,
+    .exp-company-div { 
+        
+        display: flex;
+        flex-direction: column;
+        margin: 0px 0px 13px 25px;
+    }
+    .exp-title-div{
+        margin-top: 5px;
+    }
+    textarea {
+        margin-top: 5px;
+        width: 600px;
+        height: 65px;
+        border-radius: 5px;
+        border: 1px solid gray;
+    }
+    input {
+        margin-top: 5px;
+        width: 600px;
+        height: 30px;
+        border-radius: 5px;
+        border: 1px solid gray;
+    }
+    .exp-save-button{
+        position: relative;
+        left: 65%;
+        font-size: 0.9rem;
+        background-color: #0a66c2;
+        border-radius: 24px;
+        color: white;
+        border: none;
+        padding: 7px;
+        width: 60px;
+        cursor: pointer;
+
+        &:hover {
+            background-color: #0755a3; 
+            border: 1px solid#0755a3 ;
+        }
+    }
+
+    .exp-delete-button{
+        font-size: 0.9rem;
+        background-color: white;
+        border-radius: 24px;
+        color: gray;
+        border: 1px solid gray;
+        padding: 7px;
+        width: 100px;
+        cursor: pointer;
+        margin-left: 25px;
+        margin-right: 10px;
+        &:hover{
+            background-color: rgba(0, 0, 0, 0.3);
+        }
+    }
+
+    .exp-form-heading{
+        font-size: 20px;
+        font-weight: 500;
+        padding: 10px 0px 5px 15px;
+        border-bottom: 1px solid lightgray;
+        display: flex;
+        justify-content: space-between;
+
+        .exp-close-button{
+            padding-right: 15px;
+            cursor: pointer;   
+        }
+    }
+}
+
+// education form 
+
+.edu-form-div {
+    background-color: white;
+    border: 1px solid gray;
+    border-radius: 10px;
+    width: 680px;
+    height: 84vh;
+
+    .edu-form{
+        display: flex;
+        flex-direction: column;
+
+        label{
+            font-size: 0.9rem;
+            color: gray;
+        }
+    }
+
+    .edu-school-div, 
+    .edu-degree-div, 
+    .edu-start-date-div, 
+    .edu-end-date-div, 
+    .edu-field-div,
+    .edu-activity-div,
+    .edu-description-div,
+    .edu-grade-div { 
+        
+        display: flex;
+        flex-direction: column;
+        margin: 5px 0px 13px 25px;
+    }
+    .edu-school-div{
+        margin-top: 5px;
+    }
+    textarea {
+        margin-top: 5px;
+        width: 600px;
+        height: 65px;
+        border-radius: 5px;
+        border: 1px solid gray;
+    }
+    input {
+        margin-top: 5px;
+        width: 600px;
+        height: 30px;
+        border-radius: 5px;
+        border: 1px solid gray;
+    }
+
+    .edu-save-button{
+        position: relative;
+        left: 65%;
+        font-size: 0.9rem;
+        background-color: #0a66c2;
+        border-radius: 24px;
+        color: white;
+        border: none;
+        padding: 7px;
+        width: 60px;
+        cursor: pointer;
+
+        &:hover {
+            background-color: #0755a3; 
+            border: 1px solid#0755a3 ;
+        }
+    }
+
+    .edu-delete-button{
+        font-size: 0.9rem;
+        background-color: white;
+        border-radius: 24px;
+        color: gray;
+        border: 1px solid gray;
+        padding: 7px;
+        width: 100px;
+        cursor: pointer;
+        margin-left: 25px;
+        margin-right: 10px;
+        &:hover{
+            background-color: rgba(0, 0, 0, 0.3);
+        }
+    }
+
+    .edu-form-heading{
+        font-size: 20px;
+        font-weight: 500;
+        padding: 10px 0px 5px 15px;
+        border-bottom: 1px solid lightgray;
+        display: flex;
+        justify-content: space-between;
+
+        .edu-close-button{
+            padding-right: 15px;
+            cursor: pointer;           
+        }
+    }
+}

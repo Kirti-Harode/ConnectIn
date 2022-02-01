@@ -53,10 +53,10 @@ class SignupForm extends React.Component {
     handleDemoSignin(e){
         e.preventDefault();
         this.props.login({
-            email: 'test@gmail.com',
+            email: 'kirti@gmail.com',
             password: 'password',
-            fname: 'Kitty',
-            lname: 'Cat'
+            fname: 'Kirti',
+            lname: 'Harode'
         })
         this.demo = true;
     }
@@ -73,55 +73,55 @@ class SignupForm extends React.Component {
         }
 
         return (
-            <div className='signup-container'>
-                {/* <h1 className='heading'>ConnectIn</h1> */}
-                <div>
+            <div className='signup-container'>  
                 <form onSubmit={this.handleSubmit} className='signup-form-box'>
-                    <div className='signup-greetings'>
-                        <h1 className='signup-heading'>Join now</h1>
-                        <p className='signup-msg'>Make the most of your professional life</p>
-                    </div>
-                    <ul className='signup-errors'>{error}</ul>
-                    <input 
-                        className='signup-input'
-                        type="text" 
-                        value={this.state.email} 
-                        onChange={this.update('email')} 
-                        placeholder='Email'>
-                    </input>
-                    <br/>
-                    <input 
-                        className='signup-input'
-                        type="text"
-                        value={this.state.fname} 
-                        onChange={this.update('fname')}
-                        placeholder='First Name'>
-                    </input>
-                    <br/>
-                    <input 
-                        className='signup-input'
-                        type="text" 
-                        value={this.state.lname} 
-                        onChange={this.update('lname')}
-                        placeholder='Last Name'>
-                    </input>
-                    <br/>
-                    <input 
-                        className='signup-input'
-                        type="password" 
-                        value={this.state.password} 
-                        onChange={this.update('password')} 
-                        placeholder='Password'>
-                    </input>
+                    <div>
+                        <div className='signup-greetings'>
+                            <h1 className='signup-heading'>Join now</h1>
+                            <p className='signup-msg'>Make the most of your professional life</p>
+                        </div>
+                        <ul className='signup-errors'>{error}</ul>
+                        <input 
+                            className='signup-input'
+                            type="text" 
+                            value={this.state.email} 
+                            onChange={this.update('email')} 
+                            placeholder='Email'>
+                        </input>
+                        <br/>
+                        <input 
+                            className='signup-input'
+                            type="text"
+                            value={this.state.fname} 
+                            onChange={this.update('fname')}
+                            placeholder='First Name'>
+                        </input>
+                        <br/>
+                        <input 
+                            className='signup-input'
+                            type="text" 
+                            value={this.state.lname} 
+                            onChange={this.update('lname')}
+                            placeholder='Last Name'>
+                        </input>
+                        <br/>
+                        <input 
+                            className='signup-input'
+                            type="password" 
+                            value={this.state.password} 
+                            onChange={this.update('password')} 
+                            placeholder='Password'>
+                        </input>
 
-                    <br/>
-                    <div className='button-div'>
-                     <button className='signup-button' value={this.props.formType}>{this.props.formType}</button>
+                        <br/>
+                        
+                        <button className='signup-button' value={this.props.formType}>{this.props.formType}</button>
+                        
+                        <button className="demo-signin-signupForm" onClick={this.handleDemoSignin}> Demo Sign In </button>
+                        <div className='already-account'> Already on ConnectIn?  <Link className='signin-link' to='/login'> Log in </Link></div>
                     </div>
-                    <button className="demo-signin-signupForm" onClick={this.handleDemoSignin}> Demo Sign In </button>
-                    <div className='already-account'> Already on ConnectIn?  <Link className='signin-link' to='/login'> Log in </Link></div>
                 </form>
-                </div>
+               
             </div>
 
         )

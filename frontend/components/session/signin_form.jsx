@@ -59,7 +59,7 @@ class SigninForm extends React.Component{
     handleDemoSignin(e){
         e.preventDefault()
         this.props.processForm({
-            email: 'test@gmail.com',
+            email: 'kirti@gmail.com',
             password: 'password',
             // fname: 'Kitty',
             // lname: 'Cat',
@@ -82,7 +82,6 @@ class SigninForm extends React.Component{
         return (
            
             <div className='signin-container'>
-                 {/* <h1 className='heading'>ConnectIn</h1> */}
                 <form onSubmit={this.handleSubmit} className='signin-form-box'>
                 <div>
                     <div className='signin-greetings'>
