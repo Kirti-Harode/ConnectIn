@@ -3,9 +3,20 @@ import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 import { MdCreate } from "react-icons/md";
 import eduImg from '../../../../app/assets/images/education_img.png'
+import { openModal } from "../../../actions/modal_actions";
+
 class EducationIndexItem extends React.Component {
     render(){
+        let editButton;
+        if (this.props.currentUser.id == this.props.match.params.userId) {
+            editButton = (<div className='edit-button-edu' onClick={() => (openModal('editEducation', this.props.education.id))} >
+                <MdCreate className="edit-button"/>
+           </div>)
+        }else{
+            editButton = null;
+        }
         return(
+           
             <div className="education-index-item-div">
                 <img src={eduImg} className="edu-img"/>
 
@@ -29,21 +40,19 @@ class EducationIndexItem extends React.Component {
                         <p>{this.props.education.description}</p>
                     </div>
                 </div>
-                <div className="edit-button-edu">
-                    <MdCreate className="edit-button"/>
-                </div>
+                {editButton}
             </div>
         )
     }
 }
 
 const mapStateToProps = (state, ownProps) => ({
-    // currentUser: state.entities.users[state.session.id],
-    // profileUser: state.entities.users[ownProps.match.params.userId]
+    currentUser: state.entities.users[state.session.id],
+    profileUser: state.entities.users[ownProps.match.params.userId]
 });
 
 const mapDispatchToProps = dispatch => ({
-    // showmodal
+    openModal: (modal, id) => dispatch(openModal(modal, id))
 });
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(EducationIndexItem));

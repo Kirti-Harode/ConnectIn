@@ -7,7 +7,7 @@ import EditAbout from '../users_profile/abouts/edit_about_container';
 import CreateExperience from '../users_profile/experiences/create_experience_container';
 import EditExperience from '../users_profile/experiences/edit_experience_container';
 import CreateEducation from '../users_profile/educations/create_education_container';
-// import EditEducation from '../users_profile/educations/edit_education_container';
+import EditEducation from '../users_profile/educations/edit_education_conatiner';
 
 const Modal = ({modal, closeModal})  => {
     if (!modal) {
@@ -31,10 +31,10 @@ const Modal = ({modal, closeModal})  => {
             // component = <EditExperience />;
             break;
         case 'createEducation':
-            // component = <CreateEducation />;
+            component = <CreateEducation />;
             break;
         case 'editEducation':
-            // component = <EditEducation />;
+            component = <EditEducation />;
             break;
         default:
             return null;

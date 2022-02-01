@@ -4,6 +4,7 @@ import { withRouter } from "react-router-dom";
 import {fetchAllEducations} from '../../../actions/education_actions';
 import { MdAdd } from "react-icons/md";
 import EducationIndexItem from './education_index_item';
+import { openModal } from "../../../actions/modal_actions";
 
 class EducationIndex extends React.Component {
     constructor(props){
@@ -15,11 +16,19 @@ class EducationIndex extends React.Component {
     }
 
     render(){
+        let createButton;
+        if (this.props.currentUser.id == this.props.match.params.userId) {
+            createButton = (<div className='create-btn' onClick={()=>this.props.openModal('createEducation')}>
+            <MdAdd className="education-createButton"/>
+            </div>)
+        }else{
+            createButton = null;
+        }
         return (
             <div className="education-div">
                 <header className="edu-heading" >
                     <h2 className="edu-h2">Education</h2>
-                    <MdAdd className="education-createButton"/>
+                    {createButton}
                 </header>
                 <div className="education-index-div">
                     {this.props.educations.map(education => {
@@ -40,8 +49,9 @@ const mapStateToProps = (state, ownProps) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-    fetchAllEducations: userId => dispatch(fetchAllEducations(userId))
-    // showmodal
+    fetchAllEducations: userId => dispatch(fetchAllEducations(userId)),
+    openModal: (modal, id) => dispatch(openModal(modal, id))
+   
 });
 
 const EducationIndexConatiner = withRouter(connect(mapStateToProps, mapDispatchToProps)(EducationIndex));
