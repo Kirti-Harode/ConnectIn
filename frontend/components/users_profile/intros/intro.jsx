@@ -15,13 +15,13 @@ class Intro extends React.Component {
             connectons: 0,
             connectionId: null
         }
-        this.handleConnection = this.handleConnection.bind(this);
+        // this.handleConnection = this.handleConnection.bind(this);
     }
 
-    handleConnection(e){
-        e.preventDefault();
+    // handleConnection(e){
+    //     e.preventDefault();
 
-    }
+    // }
 
     componentDidMount(){
         // this.props.fetchUsers();
