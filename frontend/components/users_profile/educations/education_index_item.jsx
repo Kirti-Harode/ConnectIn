@@ -9,7 +9,7 @@ class EducationIndexItem extends React.Component {
     render(){
         let editButton;
         if (this.props.currentUser.id == this.props.match.params.userId) {
-            editButton = (<div className='edit-button-edu' onClick={() => (openModal('editEducation', this.props.education.id))} >
+            editButton = (<div className='edit-button-edu' onClick={() => (this.props.openModal('editEducation', this.props.education.id))} >
                 <MdCreate className="edit-button"/>
            </div>)
         }else{

@@ -7,10 +7,7 @@ import EducationIndexItem from './education_index_item';
 import { openModal } from "../../../actions/modal_actions";
 
 class EducationIndex extends React.Component {
-    constructor(props){
-        super(props)
-    }
-
+   
     componentDidMount(){
         this.props.fetchAllEducations(this.props.profileUser.id);
     }

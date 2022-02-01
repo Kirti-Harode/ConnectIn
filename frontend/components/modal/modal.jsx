@@ -19,22 +19,22 @@ const Modal = ({modal, closeModal})  => {
             component = <UserIntro />
             break;
         case 'createAbout':
-            component = <CreateAbout />;
+            component = <CreateAbout />
             break;
         case 'editAbout':
-            component = <EditAbout />;
+            component = <EditAbout />
             break;
         case 'createExperience':
-            // component = <CreateExperience />;
+            component = <CreateExperience />
             break;
         case 'editExperience':
-            // component = <EditExperience />;
+            component = <EditExperience />
             break;
         case 'createEducation':
-            component = <CreateEducation />;
+            component = <CreateEducation />
             break;
         case 'editEducation':
-            component = <EditEducation />;
+            component = <EditEducation />
             break;
         default:
             return null;

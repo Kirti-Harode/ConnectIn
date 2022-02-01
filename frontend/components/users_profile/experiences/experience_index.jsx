@@ -4,22 +4,29 @@ import { withRouter } from "react-router-dom";
 import {fetchAllExperiences} from '../../../actions/experience_actions';
 import { MdAdd } from "react-icons/md";
 import ExperienceIndexItem from './experience_index_item';
+import { openModal } from "../../../actions/modal_actions";
 
 class ExperienceIndex extends React.Component {
-    constructor(props){
-        super(props)
-    }
-
+    
     componentDidMount(){
         this.props.fetchAllExperiences(this.props.profileUser.id);
     }
 
     render(){
+        let createButton;
+        if (this.props.currentUser.id == this.props.match.params.userId) {
+            createButton = (
+            <div className='exp-create-btn' onClick={(()=>this.props.openModal('createExperience'))}>
+                <MdAdd className="experience-createButton"/>
+            </div>)
+        }else{
+            createButton = null;
+        }
         return (
             <div className="experience-div">
                 <header className="exp-heading">
                     <h2 className="exp-h2">Experience</h2>
-                    <MdAdd className="experience-createButton"/>
+                    {createButton}
                 </header>
                 <div className="experience-index-div">
                     {this.props.experiences.map(experience => {
@@ -40,8 +47,9 @@ const mapStateToProps = (state, ownProps) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-    fetchAllExperiences: userId => dispatch(fetchAllExperiences(userId))
-    // showmodal
+    fetchAllExperiences: userId => dispatch(fetchAllExperiences(userId)),
+    openModal: (modal, id) => dispatch(openModal(modal, id))
+
 });
 
 const ExperienceIndexConatiner = withRouter(connect(mapStateToProps, mapDispatchToProps)(ExperienceIndex));
