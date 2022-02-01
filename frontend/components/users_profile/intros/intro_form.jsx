@@ -19,7 +19,7 @@ class EditUserIntro extends React.Component {
     }
 
     update(field){
-        return e=> this.setState({[field]: e.currentTarget.value});
+        return e => this.setState({[field]: e.currentTarget.value})
     }
 
     render(){
@@ -48,9 +48,9 @@ class EditUserIntro extends React.Component {
                             <div className='pronouns-selector'>
                                 <select onChange={this.update('pronouns')}>
                                     <option defaultValue>Please select</option> 
-                                    <option>She/Her</option>
-                                    <option>He/Him</option>
-                                    <option>They/Them</option>
+                                    <option>She/Her/Hers</option>
+                                    <option>He/Him/His</option>
+                                    <option>They/Them/Theirs</option>
                                 </select>
                             </div>
                         </div>
@@ -66,7 +66,7 @@ class EditUserIntro extends React.Component {
                 </div>
 
                 <div className="intro-submit-div">
-                    <button className="user-intro-submit" onClick={this.handleSubmit}>Submit</button>
+                    <button className="user-intro-submit" onClick={this.handleSubmit}>Save</button>
                 </div>
             </div>
         )

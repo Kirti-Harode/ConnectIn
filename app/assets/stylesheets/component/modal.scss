@@ -3,8 +3,8 @@
     position: fixed;
     background: rgba(0, 0, 0, 0.3);
     padding-top: 70px;
-    top: 0;
-    right: 0;
+    // top: 0;
+    // right: 0;
     z-index: 10;
     height: 100vh;
     width: 100vw;
@@ -22,7 +22,7 @@
     border: 1px solid gray;
     border-radius: 10px;
     width: 680px;
-    height: 40vh;
+    height: 30vh;
     
     .about-form-heading {
         display: flex;
@@ -196,6 +196,7 @@
         width: 670px;
         padding: 10px;
         display: flex;
+        margin-left: 40px;
         // flex-direction: row;
         // align-self: flex-end;
     }
@@ -204,16 +205,17 @@
         position: relative;
         left: 90%;
         font-size: 0.9rem;
-        background-color: lightgray;
+        background-color: #0a66c2;
         border-radius: 24px;
-        color: black;
+        color: white;
         border: none;
         padding: 7px;
         width: 65px;
         cursor: pointer;
         
         &:hover {
-            background-color: rgb(185, 185, 185);
+            background-color: #0755a3; 
+            // border: 1px solid#0755a3 ;
         }
     }
 
@@ -239,5 +241,219 @@
     }
     .location-input{
         margin-top: 5px;
+    }
+}
+
+
+// experience form 
+
+.exp-form-div {
+    background-color: white;
+    border: 1px solid gray;
+    border-radius: 10px;
+    width: 680px;
+    height: 84vh;
+
+    .exp-form{
+        display: flex;
+        flex-direction: column;
+
+        label{
+            font-size: 0.9rem;
+            color: gray;
+        }
+    }
+
+    .exp-title-div, 
+    .exp-employment-div, 
+    .exp-start-date-div, 
+    .exp-end-date-div, 
+    .exp-location-div,
+    .exp-headline-div,
+    .exp-industry-div,
+    .exp-description-div,
+    .exp-company-div { 
+        
+        display: flex;
+        flex-direction: column;
+        margin-top: 0px;
+        margin-bottom: 13px;
+        margin-left: 25px;
+    }
+    .exp-title-div{
+        margin-top: 5px;
+    }
+    textarea {
+        margin-top: 5px;
+        width: 600px;
+        height: 65px;
+        border-radius: 5px;
+        border: 1px solid gray;
+    }
+    input {
+        margin-top: 5px;
+        width: 600px;
+        height: 30px;
+        border-radius: 5px;
+        border: 1px solid gray;
+    }
+    .exp-save-button{
+        position: relative;
+        left: 65%;
+        font-size: 0.9rem;
+        background-color: #0a66c2;
+        border-radius: 24px;
+        color: white;
+        border: none;
+        padding: 7px;
+        width: 60px;
+        cursor: pointer;
+
+        &:hover {
+            background-color: #0755a3; 
+            border: 1px solid#0755a3 ;
+        }
+    }
+
+    .exp-delete-button{
+        font-size: 0.9rem;
+        background-color: white;
+        border-radius: 24px;
+        color: gray;
+        border: 1px solid gray;
+        padding: 7px;
+        width: 100px;
+        cursor: pointer;
+        margin-left: 25px;
+        margin-right: 10px;
+        &:hover{
+            background-color: rgba(0, 0, 0, 0.3);
+            // background-color: rgba(221, 28, 28, 0.5);
+
+        }
+    }
+
+    .exp-form-heading{
+        font-size: 20px;
+        font-weight: 500;
+        padding-top: 10px;
+        padding-left: 15px;
+        padding-bottom: 5px;
+        border-bottom: 1px solid lightgray;
+        display: flex;
+        justify-content: space-between;
+
+        .exp-close-button{
+            padding-right: 15px;
+            cursor: pointer;
+            
+        }
+    }
+}
+
+// education form 
+
+
+.edu-form-div {
+    background-color: white;
+    border: 1px solid gray;
+    border-radius: 10px;
+    width: 680px;
+    height: 84vh;
+
+    .edu-form{
+        display: flex;
+        flex-direction: column;
+
+        label{
+            font-size: 0.9rem;
+            color: gray;
+        }
+    }
+
+    .edu-school-div, 
+    .edu-degree-div, 
+    .edu-start-date-div, 
+    .edu-end-date-div, 
+    .edu-field-div,
+    .edu-activity-div,
+    .edu-description-div,
+    .edu-grade-div { 
+        
+        display: flex;
+        flex-direction: column;
+        margin-top: 5px;
+        margin-bottom: 13px;
+        margin-left: 25px;
+    }
+    .edu-school-div{
+        margin-top: 5px;
+    }
+    textarea {
+        margin-top: 5px;
+        width: 600px;
+        height: 65px;
+        border-radius: 5px;
+        border: 1px solid gray;
+    }
+    input {
+        margin-top: 5px;
+        width: 600px;
+        height: 30px;
+        border-radius: 5px;
+        border: 1px solid gray;
+    }
+
+    .edu-save-button{
+        position: relative;
+        left: 65%;
+        font-size: 0.9rem;
+        background-color: #0a66c2;
+        border-radius: 24px;
+        color: white;
+        border: none;
+        padding: 7px;
+        width: 60px;
+        cursor: pointer;
+
+        &:hover {
+            background-color: #0755a3; 
+            border: 1px solid#0755a3 ;
+        }
+    }
+
+    .edu-delete-button{
+        font-size: 0.9rem;
+        background-color: white;
+        border-radius: 24px;
+        color: gray;
+        border: 1px solid gray;
+        padding: 7px;
+        width: 100px;
+        cursor: pointer;
+        margin-left: 25px;
+        margin-right: 10px;
+        &:hover{
+            background-color: rgba(0, 0, 0, 0.3);
+            // background-color: rgba(221, 28, 28, 0.5);
+
+        }
+    }
+
+    .edu-form-heading{
+        font-size: 20px;
+        font-weight: 500;
+        padding-top: 10px;
+        padding-left: 15px;
+        padding-bottom: 5px;
+        border-bottom: 1px solid lightgray;
+        display: flex;
+        justify-content: space-between;
+
+        .edu-close-button{
+            padding-right: 15px;
+            cursor: pointer;
+            
+        }
     }
 }

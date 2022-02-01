@@ -18,11 +18,6 @@ class AboutForm extends React.Component {
     }
 
     render(){
-        const deleteButton = this.props.formType === 'Edit About' ? (
-            <button onClick={() => {this.props.deleteAbout(this.state.id)
-                this.props.closeModal()}} className='about-delete-button'>Delete</button>
-        ) : null ;
-
         return(
             <div className='about-edit-form'>
                 <header className='about-form-header'>
@@ -42,7 +37,8 @@ class AboutForm extends React.Component {
                     </form>
                 </div>
                 <footer className='about-form-footer'>
-                    {deleteButton}
+                <button onClick={() => {this.props.deleteAbout(this.state.id)
+                this.props.closeModal()}} className='about-delete-button'>Delete</button>
                     <button className='about-save-button' onClick={this.handleSubmit}>Save</button>
                 </footer>
             </div>

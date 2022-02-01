@@ -20,10 +20,6 @@ class ExperienceForm extends React.Component {
     }
 
     render(){
-        const deleteButton = this.props.formType === 'Edit Experience' ? (
-            <button onClick={() => {this.props.deleteExperience(this.state.id)
-                this.props.closeModal()}} className='exp-delete-button'>Delete</button>
-        ) : null;
         return(
             <div className='exp-form-div'>
             <header className='exp-form-header'>
@@ -60,7 +56,7 @@ class ExperienceForm extends React.Component {
                     </div>
                     <div className = 'exp-location-div'>
                         <label>Location</label>
-                        <textarea value={this.state.location} onChange={this.update('location')}/>
+                        <input type='text' value={this.state.location} onChange={this.update('location')}/>
                     </div>
                     <div className = 'exp-headline-div '>
                         <label>Headline</label>
@@ -76,10 +72,10 @@ class ExperienceForm extends React.Component {
                     </div>
                 </form>
             </div>
-            <footer className='exp-form-footer'>
-                {deleteButton}
+            <div className='exp-form-footer'>
+                <button onClick={() => {this.props.deleteExperience(this.state.id); this.props.closeModal()}} className='exp-delete-button'>Delete</button>
                 <button className='exp-save-button' onClick={this.handleSubmit}>Save</button>
-            </footer>
+            </div>
         </div>
         )
     }
