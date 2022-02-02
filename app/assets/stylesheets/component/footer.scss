@@ -1,0 +1,61 @@
+.creator-info-div{
+    border-bottom: 1px solid lightgray;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.creator-component {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    // margin-top: 10px;
+    margin-right: 20px;
+
+    .bottom-logo{
+        width: 100px;
+        height: 30px;
+        padding-bottom: 5px;
+    }
+    .tech, .links{
+        padding-top: 10px;
+        display: flex;
+        flex-direction: column;
+        color: #666666;
+        font-size: 14px;
+        font-weight: bold;
+    }
+    h2 {
+        color: #000000E6;
+        font-weight: 800;
+        padding-bottom: 5px;
+        font-size: 16px;
+    }
+
+    .linkedin-link, .github-link, .anglelist-link{
+        text-decoration: none;
+        color: royalblue;
+        padding-bottom: 5px;
+
+        &:hover {
+            font-size: 15px;
+            text-decoration: underline;
+        }
+    }
+
+    .pro-link{
+        text-decoration: none;
+        color: royalblue;
+        padding-bottom: 5px;
+        font-size: 14px;
+        &:hover {
+            font-size: 15px;
+            text-decoration: underline;
+        }
+    }
+
+    h3 {
+        padding-bottom: 8px;
+    }
+}
+

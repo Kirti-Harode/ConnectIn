@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import LoginFormContainer from '../session/signin_form_container';
-
+import CreatorInfo from '../footer/footer';
 class Welcome extends React.Component {
     constructor(props) {
         super(props)
@@ -32,6 +32,7 @@ class Welcome extends React.Component {
                     <img className='footer-img' src='https://static-exp3.licdn.com/sc/h/2vt8plqbv2l2pi6kxm89bqs59'/>
                     
                 </footer>
+                <CreatorInfo />
             </div>
         )
     }
