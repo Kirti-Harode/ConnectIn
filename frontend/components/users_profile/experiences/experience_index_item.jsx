@@ -17,7 +17,7 @@ class ExperienceIndexItem extends React.Component {
 
         return(
             <div className="experience-index-item-div">
-                <img src={expImg} className="exp-img"/>
+                <img src={window.experienceImg} className="exp-img"/>
 
                 <div className="experience-body-div">
                     <div className="exp-title">

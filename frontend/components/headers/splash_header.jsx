@@ -31,7 +31,7 @@ class LoggedIn extends React.Component {
                 {/* <nav className='left-bar'> */}
                     <span className='logo-div'>
                         <Link to='/'>
-                           <img className='small-logo-img' src={smallLogo}/>
+                           <img className='small-logo-img' src={window.smallLogo}/>
                         </Link>
                     </span>
                     <div className='search-container'>
@@ -87,10 +87,10 @@ class LoggedIn extends React.Component {
                             <ul className={this.state.hidden ? 'hidden-dropdown' : 'reveal-dropdown'} onClick={e => e.stopPropagation()} >
                                 <div className='dropdown-top'>
                                     <div className='user-profile-div'>
-                                        <p>User Profile pic</p>
+                                        <img src={window.defaultProfile} className='me-user-pic'/>
                                         <div className='user-details'>
                                             <h2 className='fname-lname'>{this.props.currentUser.fname} {this.props.currentUser.lname}</h2>
-                                            <h3 className='user-bio'>User bio</h3>
+                                            <h3 className='user-bio'>{this.props.currentUser.bio}</h3>
                                         </div>
                                     </div>
                                     <div className='view-profile-button' >

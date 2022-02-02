@@ -18,7 +18,7 @@ class EducationIndexItem extends React.Component {
         return(
            
             <div className="education-index-item-div">
-                <img src={eduImg} className="edu-img"/>
+                <img src={window.educationImg } className="edu-img"/>
 
                 <div className="education-body-div">
                     <div className="education-school">

@@ -69,8 +69,7 @@ class PostForm extends React.Component {
                         </div>
                     </div>
                     <div className="post-user-info-modal">
-                        <img className="user-profile-photo" src={//this.props.currentUser.profile_photo_url // || window.defaultimg default here
-                        } />
+                        <img className="user-profile-photo" src={this.props.currentUser.profile_photo_url || window.defaultProfile} />
                         <div className="user-name-bio">
                             <h1>{this.props.currentUser.fname} {this.props.currentUser.lname}</h1>
                             <h2>{this.props.currentUser.bio}</h2>

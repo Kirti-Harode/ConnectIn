@@ -5,7 +5,12 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'open-uri'
 
+Comment.delete_all
+Like.delete_all
+Connection.delete_all
+Post.delete_all
 Education.delete_all
 Experience.delete_all
 About.delete_all
@@ -125,4 +130,45 @@ education3 = Education.create!(
     grade: "9.9",
     start_date: "Oct 2021",
     end_date: "Feb 2022",
+)
+post1 = Post.create!(
+    body: "Welcome, all to ConnectIn, this is a LinkedIn clone.
+    ConnectIn is a platform to connect with people professionally.
+    A user can make a profile, edit their profile, 
+    create a post and even see posts from all the connected users. ",
+    author_id: demo_user.id
+)
+
+post1_photo = open('https://connectin-aa-dev.s3.us-west-1.amazonaws.com/logo_alpha.png')
+post1.media.attach(io: post1_photo, filename: 'logo_alpha.png')
+
+post2 = Post.create!(
+    body: "Hello, My name is Kirti and I am so tired now, I need some sleep :) ",
+    author_id: demo_user.id
+)
+
+
+post3 = Post.create!(
+    body: "Just joined ConnectIn :) ",
+    author_id: user1.id
+)
+
+
+
+comment1 = Comment.create!(
+    author_id: user1.id,
+    post_id: post1.id,
+    body: "You can do it!"
+)
+
+like1 = Like.create(
+    liker_id: user1.id,
+    likeable_item: "Post",
+    likeable_id: post1.id
+)
+
+connection1 = Connection.create!(
+    connectee_id: demo_user.id,
+    connector_id: user1.id,
+    accepted: true
 )

@@ -16,9 +16,17 @@
           ).html_safe %>
       </script>
     <% end %>
+  <script type='text/javascript'>
+    window.logo = '<%= image_url('logo_alpha.png')%>'
+    window.smallLogo = '<%= image_url('in_alpha.png')%>'
+    window.backgroundImg = '<%= image_url('background_img2.png')%>'
+    window.defaultProfile = '<%= image_url('profile.png')%>'
+    window.educationImg = '<%= image_url('education_img.png')%>'
+    window.experienceImg = '<%= image_url('experience_img.png')%>'
+  </script>
+
 
   </head>
-
   <body>
     <%= yield %>
   </body>

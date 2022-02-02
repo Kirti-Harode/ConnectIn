@@ -13,8 +13,8 @@
     margin-right: 20px;
 
     .bottom-logo{
-        width: 100px;
-        height: 30px;
+        width: 90px;
+        height: 25px;
         padding-bottom: 5px;
     }
     .tech, .links{
@@ -34,10 +34,10 @@
 
     .linkedin-link, .github-link, .anglelist-link{
         text-decoration: none;
-        color: royalblue;
         padding-bottom: 5px;
-
+        color: #666666;
         &:hover {
+            color: royalblue;
             font-size: 15px;
             text-decoration: underline;
         }
@@ -45,10 +45,11 @@
 
     .pro-link{
         text-decoration: none;
-        color: royalblue;
         padding-bottom: 5px;
         font-size: 14px;
+        color: #666666;
         &:hover {
+            color: royalblue;
             font-size: 15px;
             text-decoration: underline;
         }
@@ -56,6 +57,10 @@
 
     h3 {
         padding-bottom: 8px;
+    }
+
+    .creator-name{
+        color:#666666;
     }
 }
 

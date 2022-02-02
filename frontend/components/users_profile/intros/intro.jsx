@@ -55,10 +55,10 @@ class Intro extends React.Component {
         return(
             <div className="user-info-div">
                 <div className="background-image-div">
-                    <img className="back-img" src={backgroundImage}/>
+                    <img className="back-img" src={ window.backgroundImg}/>
                 </div>
                 <div className="profile-photo-div">
-                <img className="profile-img" src={profile}/>
+                <img className="profile-img" src={ window.defaultProfile}/>
                 </div>
                 <div className="user-details">
                     <header className="user-info-header">
