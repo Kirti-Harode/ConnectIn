@@ -1,4 +1,113 @@
-.post-creator-pic {
-    width: 20px;
-    height: 20px;
+
+.post-index-item-div{
+    background-color: white;
+    width: 540px;
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 10px 52px 10px 10px;
+    // margin-right: 45px;
+
+}
+
+.post-media{
+    background-color: rgb(191, 222, 243);
+    width: 400px;
+    height: inherit;
+}
+.like-comment-div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    border-top: 1px solid lightgray;
+    margin-top: 5px;
+    height: 35px;
+    
+}
+.post-like-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    margin-left: 30px;
+    font-size: 20px;
+    color: rgb(100, 98, 98);
+    border-radius: 10px;
+    // font-size: 20px;
+    padding: 5px;
+    margin-top: 5px;
+    width: 100px;
+    height: 30px;
+    margin-right: 10px;
+
+    &:hover {
+        background-color: rgba(22, 22, 22, 0.3);
+        color: black; 
+    }
+    .like-heading{
+        padding-bottom: 5px;
+        &:hover{
+         color: black; 
+        }
+    }
+}
+.comment-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    cursor: pointer;
+    border: none;
+    color: rgb(100, 98, 98);
+    border-radius: 10px;
+    font-size: 20px;
+    padding: 5px;
+    margin-top: 5px;
+    width: 100px;
+    height: 30px;
+    margin-right: 10px;
+    &:hover{
+        background-color: rgba(10, 10, 10, 0.3);
+        color: black;
+    }
+    .comment-heading  {
+        padding-bottom: 5px;
+        &:hover{
+          color: black;
+        }
+    }
+}
+
+.post-author-div{
+    position: relative;
+    display: flex;
+    margin-bottom: 15px;
+
+    .post-creator-pic {
+        width: 40px;
+        height: 40px;
+    }
+
+    .post-author-info{
+        display: flex;
+        flex-direction: column;
+        width: 450px;
+        margin-right: 240px;
+    }
+
+    .author-name{
+        font-size: 0.9rem;
+        font-weight: 600;
+        margin-bottom: 5px;
+        color: black;
+    }
+
+    .author-bio {
+        color: gray;
+        font-size: 0.8rem;
+        font-weight: 300;
+        padding-top: 15px;
+        // padding-right: 20px;
+    }
 }

@@ -7,7 +7,7 @@ import { BsThreeDots } from "react-icons/bs";
 import { MdEdit } from "react-icons/md";
 import { RiDeleteBin5Fill } from "react-icons/ri";
 import { FaRegCommentDots } from "react-icons/fa";
-
+import { BiLike } from "react-icons/bi";
 class PostIndexItem extends React.Component{
 
     constructor(props){
@@ -88,8 +88,8 @@ class PostIndexItem extends React.Component{
                     <img src={author.profilePhotoUrl || window.defaultProfile} className="post-creator-pic"/>
                     <div className="post-author-info">
                        <Link to={`/users/${post.authorId}`}>
-                           <h2>{author.fname} {author.lname}</h2>
-                           <h2>{author.bio}</h2>
+                           <h2 className="author-name">{author.fname} {author.lname}</h2>
+                           <h3 className="author-bio">{author.bio}</h3>
                        </Link>
                     </div>
                     {dropdown_post}
@@ -100,10 +100,17 @@ class PostIndexItem extends React.Component{
                         <img src={this.props.post.mediaUrl} className="post-media" />
                     </div>
                 </div>
-                <div className="comment-div" onClick={this.state.comments ? this.hideComments : this.revealComments}>
-                    <FaRegCommentDots className="comment-icon"/>
-                    <h3> Comment </h3>
+                <div className="like-comment-div">
+                    <div className="post-like-div">
+                        <BiLike className="post-like-icon"/>
+                        <h3 className="like-heading">Like</h3>
+                    </div>
+                    <div className="comment-div" onClick={this.state.comments ? this.hideComments : this.revealComments}>
+                        <FaRegCommentDots className="comment-icon"/>
+                        <h3 className="comment-heading"> Comment </h3>
+                    </div>
                 </div>
+                
                 {/* <BsThreeDots  className="comment-three-dots"/> */}
                 {showComments}
             </div>

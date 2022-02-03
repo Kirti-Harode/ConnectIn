@@ -34,17 +34,17 @@ class Feed extends React.Component{
                         <img className="feed-back-img" src={window.backgroundImg}/>
                     </div>
                     <div className="user-mini">
-                        <img src={window.defaultProfile || currentUser.profilePhotoUrl } className="user-profile-feed"/>
+                        <img src={window.defaultProfile || currentUser.profilePhotoUrl } className="user-profile-feed2"/>
                         <h1>{currentUser.fname} {currentUser.lname}</h1>
                         <h2>{currentUser.bio}</h2>
                     </div>
                     <div className="user-connections-info">
-                        <h3>Connections {connections.length} </h3> 
+                        <p>Connections 0 {connections.length} </p> 
                     </div>
                 </div>
                 <div className="right-side-creator-div">
                     {/* <img src=''/> */}
-                    <h1>My photo goes here</h1>
+                    <h1 className="my-photo">My photo goes here</h1>
                     <h1>Kirti Harode</h1>
                     <div className="creator-info-links">
                         <a href="">
