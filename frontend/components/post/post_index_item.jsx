@@ -8,6 +8,9 @@ import { MdEdit } from "react-icons/md";
 import { RiDeleteBin5Fill } from "react-icons/ri";
 import { FaRegCommentDots } from "react-icons/fa";
 import { BiLike } from "react-icons/bi";
+import CommentIndexContainer from "../comment/comment-index";
+import CreateCommentContainer from "../comment/comment_form";
+
 class PostIndexItem extends React.Component{
 
     constructor(props){
@@ -74,8 +77,8 @@ class PostIndexItem extends React.Component{
         if(this.state.comments){
             showComments = (
                 <div>
-                    <h1>Add commentform here</h1>
-                    <h2>add comment index container here</h2>
+                    <CommentIndexContainer postId={post.id}/>
+                    <CreateCommentContainer comments={this.props.comments} postId={post.id}/>
                 </div>
             )
         }else{
@@ -110,8 +113,6 @@ class PostIndexItem extends React.Component{
                         <h3 className="comment-heading"> Comment </h3>
                     </div>
                 </div>
-                
-                {/* <BsThreeDots  className="comment-three-dots"/> */}
                 {showComments}
             </div>
         )
@@ -120,7 +121,7 @@ class PostIndexItem extends React.Component{
 
 
 const mapStateToProps =  (state, ownProps) =>({
-    comments: Object.values(state.entities.comments),//.filter(comment => comment.post_id === ownProps.post.id),
+    comments: Object.values(state.entities.comments).filter(comment => comment.post_id === ownProps.post.id),
     likes: Object.values(state.entities.likes),//.filter(like => like.likeable_id === ownProps.post.id),
     liked: Object.values(state.entities.likes),//.filter(like => like.liker_id === state.session.id),
    

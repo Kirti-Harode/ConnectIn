@@ -16,5 +16,5 @@ class Like < ApplicationRecord
         foreign_key: :liker_id,
         class_name: :User
 
-    belongs_to :likeable_type, polymorphic: true
+    # belongs_to :likeable_type, polymorphic: true
 end

@@ -107,7 +107,7 @@
         border: 1px solid lightgray;
         background-color: white;
         right: 3vw;
-        height: 300px;
+        height: 400px;
         width: 200px;
         border-radius: 10px;
     }
@@ -121,7 +121,7 @@
     }
 
     h3{
-        font-size: 0.9rem;
+        font-size: 0.8rem;
         color: gray;
         margin-top: 5px;
         padding: 0px 5px;
@@ -133,21 +133,29 @@
     }
     .creator-info-links{
         margin-top: 10px;
-        // display: flex;
-        // flex-direction: row;
+        display: flex;
+        flex-direction: column;
 
     }
     a{
         text-decoration: none;
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
         margin: 5px;
-
+       
         
     }
 
+    .portfolio, .github, .linkedin, .angellist{
+        font-size: 30px;
+        color: #0a66c2;
+        &:hover{
+           font-size: 31px;
+           color: #0c5cac ;
+        }
+    }
     // .feed-user-info{
     //     display: flex;
     //     flex-direction: column;
@@ -185,7 +193,11 @@
     //     padding-top: 10px;
     // }
    
-  
+  .myPic{
+      width: 120px;
+    //   height: 100px;
+    //   border-radius: 10%;
+  }
 
     
 }

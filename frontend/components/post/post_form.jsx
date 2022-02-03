@@ -8,7 +8,7 @@ class PostForm extends React.Component {
         this.state = this.props.post;
         this.handleSubmit = this.handleSubmit.bind(this)
         this.handleFile = this.handleFile.bind(this)
-        this.openFileLoader = this.openFileLoader(this)
+        this.openFileLoader = this.openFileLoader.bind(this)
     }
 
     updateInput(field){

@@ -11,6 +11,7 @@ class CommentIndex extends React.Component{
                     <CommentIndexItem 
                         comment={comment} 
                         authorId={comment.author_id} 
+                        author={comment.author}
                         key={comment.id}
                         currentUser={this.props.currentUser}/>
                 ))}

@@ -7,7 +7,8 @@ import { fetchPosts } from "../../actions/post_actions";
 import { openModal } from "../../actions/modal_actions";
 import {fetchLikes} from '../../actions/like_actions';
 import PostIndexConatiner from '../post/post_index';
-
+import { BsGithub, BsPersonCircle, BsLinkedin } from "react-icons/bs";
+import { FaAngellist } from "react-icons/fa";
 class Feed extends React.Component{
     componentDidMount(){
         // this.props.fetchPosts()
@@ -43,21 +44,25 @@ class Feed extends React.Component{
                     </div>
                 </div>
                 <div className="right-side-creator-div">
-                    {/* <img src=''/> */}
-                    <h1 className="my-photo">My photo goes here</h1>
+                    <img src={window.myPic} className="myPic"/>
+                    
                     <h1>Kirti Harode</h1>
                     <div className="creator-info-links">
                         <a href="">
+                            <BsPersonCircle className="portfolio"/>
                             <h3>Portfolio</h3>
                         </a>
-                        <a href="">
+                        <a href="https://github.com/Kirti-Harode">
+                            <BsGithub className="github"/>
                             <h3>Github</h3>
                         </a>
-                        <a href="">
+                        <a href="https://www.linkedin.com/in/kirti-harode-02b35b1b5/">
+                            <BsLinkedin className="linkedin"/>
                             <h3>LinkedIn</h3>
                         </a>
                         <a href="">
-                            <h3>AngleList</h3>
+                            <FaAngellist className="angellist"/>
+                            <h3>AngelList</h3>
                         </a>
                     </div>
                 </div>

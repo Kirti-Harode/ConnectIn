@@ -10,7 +10,7 @@ class CommentForm extends React.Component {
         this.updateBody = this.updateBody.bind(this)
     }
 
-    handleSubmit(){
+    handleSubmit(e){
         e.preventDefault()
         this.props.createComment(this.state)
         this.setState({
@@ -26,7 +26,7 @@ class CommentForm extends React.Component {
         return(
             <div className="create-comment-form-div">
                 <form className="create-cmt-form" onSubmit={this.handleSubmit}>
-                    <input type='text' value={this.state.body} className="cmt-body-input" placeholder="Add a comment..." />
+                    <input type='text' value={this.state.body} className="cmt-body-input" placeholder="Add a comment..." onChange={this.updateBody}/>
                     <button className="cmt-post-button">Post</button>
                 </form>
             </div>

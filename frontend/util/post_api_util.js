@@ -35,7 +35,7 @@ export const updatePost = formData => (
 
 export const deletePost = postId => (
     $.ajax({
-        method: 'DELETE',
-        url: `/api/posts/${postId}`
+        url: `/api/posts/${postId}`,
+        method: 'DELETE'
     })
 );

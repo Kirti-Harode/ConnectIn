@@ -1,0 +1,116 @@
+.create-comment-form-div{
+    display: flex;
+    margin-top: 10px;
+
+    .cmt-body-input{
+        border: 1px solid gray;
+        border-radius: 15px;
+        padding: 5px 5px 5px 10px;
+        height: 20px;
+        width: 440px;
+        margin-right: 7px;
+    }
+
+    .cmt-post-button{
+        width: 44px;
+        height: 30px;
+        border-radius: 8px;
+        border: none;
+        background-color: #0a66c2;
+        color: white;  
+        cursor: pointer;
+
+        &:hover{
+            border: 2px solid #0a66c2;
+            width: 45px;
+            height: 32px;
+            background-color: #0858a8;
+        }
+    }
+}
+
+.edit-comment-input{
+    width: 380px;
+    height: 20px;
+    border-radius: 10px;
+    border: none;
+    padding: 3px;
+    padding-left: 10px;
+    margin-right: 5px;
+
+    .edit-cmt-save-btn{
+        border: none;
+        border-radius: 8px;
+        background-color: #0a66c2;
+        color: white;
+        height: 25px; 
+    }
+}
+
+.comment-author-info{
+    display: flex;
+    flex-direction: row;
+    background-color: #f2f2f2;
+    padding:7px 7px 7px 7px;
+    border-radius: 7px;
+    width: 470px;
+    margin-top: 4px;
+    margin-right: 40px;
+
+    .comment-author-header{
+        display: flex;
+        position: relative;
+        flex-direction: column;
+        margin-bottom: 12px;  
+    }
+
+    h2{
+        font-size: 0.8rem;
+        font-weight: 500; 
+    }
+
+    h3{
+        font-size: 0.7rem;
+        // color: gray; 
+    }
+    p{
+        font-size: 0.8rem;
+    }
+    
+}
+.comment-author-pic{
+    width: 30px;
+    height: 30px;
+}
+.dropdownComment{
+    display: flex;
+    position: absolute;
+    left: 430px;
+    bottom: 10px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #f2f2f2;
+    border: none;
+    width: 25px;
+
+    &:hover{
+        background-color: rgba(0, 0, 0, 0.3);
+    }
+
+    .open-dropdown-comment{
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 0px;
+        background-color: white;
+        border-radius: 8px;
+        border: 1px solid gray;
+        width: 80px;
+        height: 65px;
+        padding: 5px 0px;
+    }
+
+    .hide-dropdown-comment{
+        display: none;
+    }
+}

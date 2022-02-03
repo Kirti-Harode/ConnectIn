@@ -18,5 +18,5 @@ class Post < ApplicationRecord
         class_name: :User
 
     has_many :comments, dependent: :destroy 
-    has_many :likes, as: :likeable_type, dependent: :destroy     
+    # has_many :likes, as: :likeable_type, dependent: :destroy     
 end
