@@ -11,25 +11,54 @@ import PostIndexConatiner from '../post/post_index';
 class Feed extends React.Component{
     componentDidMount(){
         // this.props.fetchPosts()
-        this.props.fetchLikes()
+        // this.props.fetchLikes()
+        this.props.fetchUsers()
+        this.props.fetchConnections()
     }
 
     render (){
+        const { currentUser, openModal, connections } = this.props;
         return(
             <div className="feed-div">
-                <div className="feed-user-info">
-                    <img src={window.defaultProfile} className="user-profile-feed"/>
-                    <h1>{this.props.currentUser.fname} {this.props.currentUser.lname}</h1>
+                <div className="feed-new-post-div">
+                    <div className="feed-new-post-form-div">
+                        <img className="user-profile-feed" src={currentUser.profilePhotoUrl || window.defaultProfile }/>
+                        <button onClick={() => openModal('createPost')} className="start-new-post-button">start a post</button>
+                    </div>
                 </div>
-                <div>
-                    <PostIndexConatiner />
 
+                <PostIndexConatiner />
+
+                <div className="left-side-info-div">
+                    <div className="user-background-pic">
+                        <img className="feed-back-img" src={window.backgroundImg}/>
+                    </div>
+                    <div className="user-mini">
+                        <img src={window.defaultProfile || currentUser.profilePhotoUrl } className="user-profile-feed"/>
+                        <h1>{currentUser.fname} {currentUser.lname}</h1>
+                        <h2>{currentUser.bio}</h2>
+                    </div>
+                    <div className="user-connections-info">
+                        <h3>Connections {connections.length} </h3> 
+                    </div>
                 </div>
-                <div className="feed-creator-div">
-                    <div>
-                        <h1>Creator: Kirti Harode</h1>
-                        <h2>Skills: React, Redux</h2>
-                        <h3>Links: </h3>
+                <div className="right-side-creator-div">
+                    {/* <img src=''/> */}
+                    <h1>My photo goes here</h1>
+                    <h1>Kirti Harode</h1>
+                    <div className="creator-info-links">
+                        <a href="">
+                            <h3>Portfolio</h3>
+                        </a>
+                        <a href="">
+                            <h3>Github</h3>
+                        </a>
+                        <a href="">
+                            <h3>LinkedIn</h3>
+                        </a>
+                        <a href="">
+                            <h3>AngleList</h3>
+                        </a>
                     </div>
                 </div>
                 
