@@ -73,26 +73,30 @@
         position: relative;
         flex-direction: column;
         margin-bottom: 12px;  
-    }
 
-    h2{
-        font-size: 0.8rem;
-        font-weight: 500; 
-    }
+        h3{
+            padding-top: 2px;
+            font-size: 0.6rem;
+            color: gray; 
+        }
+        p{
+            font-size: 0.8rem;
+        }
+        
+       
 
-    h3{
-        // font-size: 0.7rem;
-        // color: gray; 
-    }
-    p{
-        font-size: 0.8rem;
-    }
-    
-    .cmt-body{
-        padding-left: 10px;
-    }
+  }
+ 
+}
+.comment-author-name{
+    font-size: 12px;
+    font-weight: 500; 
+    // color: black;
+}
 
-  
+.cmt-body, .edit-comment-input{
+    color: rgb(78, 78, 78);
+    // padding-left: 10px;
 }
 .comment-author-pic{
     width: 30px;

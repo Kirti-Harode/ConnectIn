@@ -13,8 +13,8 @@ class Feed extends React.Component{
     componentDidMount(){
         // this.props.fetchPosts()
         // this.props.fetchLikes()
-        this.props.fetchUsers()
-        this.props.fetchConnections()
+        // this.props.fetchUsers()
+        // this.props.fetchConnections()
     }
 
     render (){
@@ -83,12 +83,12 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-    fetchUser: userId => dispatch(fetchUser(userId)),
-    fetchUsers: () => dispatch(fetchUsers()),
-    fetchPosts: () => dispatch(fetchPosts()),
-    fetchComments: () => dispatch(fetchComments()),
-    fetchConnections: (userId) => dispatch(fetchConnections(userId)),
-    fetchLikes: ()=> dispatch(fetchLikes()),
+    // fetchUser: userId => dispatch(fetchUser(userId)),
+    // fetchUsers: () => dispatch(fetchUsers()),
+    // fetchPosts: () => dispatch(fetchPosts()),
+    // fetchComments: () => dispatch(fetchComments()),
+    // fetchConnections: (userId) => dispatch(fetchConnections(userId)),
+    // fetchLikes: ()=> dispatch(fetchLikes()),
     openModal: (modal, id) => dispatch(openModal(modal, id))
 });
 

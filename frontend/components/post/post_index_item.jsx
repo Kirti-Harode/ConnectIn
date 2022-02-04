@@ -84,7 +84,7 @@ class PostIndexItem extends React.Component{
                     <AiOutlineLike className="num-like-icon"/>
                 </div>
                 <div className="num-likes">
-                    {likes.length}
+                    {likes.length} |
                 </div>
             </div>)
         }else{

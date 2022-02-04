@@ -60,13 +60,38 @@
     }
     .like-heading{
         padding-bottom: 5px;
+        cursor: pointer;
         &:hover{
          color: black; 
         }
     }
 }
-
-
+.post-likes-count{
+  display: flex;
+  margin-top: 20px;
+  padding-top: 1px;
+}
+.comment-counts{
+    margin-top: 21px;
+    padding-left: 1px;
+}
+.cmt-like-count-div{
+    display: flex;
+    // justify-content: space-around;
+    margin-left: 40px;
+    color: rgb(97, 97, 97);
+    font-size: 0.8rem;
+}
+.num-like-icon{
+    color:#0a66c2 ;
+}
+.liked{
+    display: flex;
+    color: #0a66c2;
+}
+.num-likes{
+    padding-left: 1px;
+}
 .post-author-div{
     position: relative;
     display: flex;
@@ -91,10 +116,10 @@
     
     .author-name{
         // text-decoration: none;
-        font-size: 0.8rem;
+        font-size: 0.9rem;
         // font-weight: 600;
         // margin-bottom: 5px;
-        color: rgb(46, 46, 46);
+        color: rgb(0, 0, 0);
         
     }
 
@@ -178,6 +203,7 @@
 
     h2 {
         font-size: 0.7rem;
+        font-weight: 600;
         color: gray;
     }
 
