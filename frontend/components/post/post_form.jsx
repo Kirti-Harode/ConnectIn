@@ -78,7 +78,7 @@ class PostForm extends React.Component {
                 </header>
 
                 <div className="post-form-content">
-                    <form className="post-form">
+                    <form className="post-form" onSubmit={this.handleSubmit}>
                         <div className="post-textarea-div">
                             <textarea className="post-body-textarea" 
                                 placeholder="What do you want to talk about?" 

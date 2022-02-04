@@ -36,7 +36,5 @@ export const updatePost = post => dispatch => (
 );
 
 export const deletePost = postId => dispatch => {
-    debugger
-    console.log(PostApiUtil.deletePost(postId))
     return PostApiUtil.deletePost(postId).then(() => dispatch(removePost(postId)))
 };

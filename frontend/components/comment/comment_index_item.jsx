@@ -64,7 +64,7 @@ class CommentIndexItem extends React.Component {
                 </div>
             )
         }else{
-            commentInput = (<p>{this.state.body}</p>)
+            commentInput = (<p className="cmt-body">{this.state.body}</p>)
         };
 
         let dropdownComment;
@@ -76,11 +76,11 @@ class CommentIndexItem extends React.Component {
                         <div className="comment-edit-delete-div">
                             <div className="comment-edit-button" onClick={()=> {this.handleEdit()}}>
                                 <MdEdit className="comment-edit-icon"/>
-                                    Edit Comment
+                                    Edit
                             </div>
                            <div className="comment-delete-button" onClick={() => (deleteComment(comment.id))}>
                                 <RiDeleteBin5Fill className="comment-delete-icon"/>
-                                Delete comment
+                                Delete
                             </div>
                         </div>
                     </ul>
@@ -95,7 +95,7 @@ class CommentIndexItem extends React.Component {
                 <img src={author.profilePhotoUrl || window.defaultProfile} className="comment-author-pic"/>
                 <div className="comment-author-info">
                     <div className="comment-author-header">
-                        <Link to={`/users/${comment.authorId}`}>
+                        <Link to={`/users/${comment.authorId}`} className="author-detail-link">
                             <h2 className="comment-author-name">{author.fname} {author.lname}</h2>
                             <h3 className="comment-author-bio">{author.bio}</h3>
                         </Link>

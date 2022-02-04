@@ -10,20 +10,22 @@ import { FaRegCommentDots } from "react-icons/fa";
 import { BiLike } from "react-icons/bi";
 import CommentIndexContainer from "../comment/comment-index";
 import CreateCommentContainer from "../comment/comment_form";
-
+import {createLike, fetchLikes, deleteLike} from '../../actions/like_actions'
+import { AiOutlineLike } from "react-icons/ai";
 class PostIndexItem extends React.Component{
 
     constructor(props){
         super(props)
         this.state = {
             open: false,
-            comments: false
-            // about likes
+            comments: false,
+            like: []
         }
         this.handleOpen = this.handleOpen.bind(this)
         this.handleClose = this.handleClose.bind(this)
         this.hideComments = this.hideComments.bind(this)
         this.revealComments = this.revealComments.bind(this)
+        this.handleLikes = this.handleLikes.bind(this)
     }
    
     handleOpen(){
@@ -42,12 +44,65 @@ class PostIndexItem extends React.Component{
         this.setState({comments: true});
     }
 
-    handleLikes(){
+    componentWillReceiveProps(){
+        this.setState({
+            like: this.props.liked,
+        })
+    }
+    componentDidUpdate(prevProps){
+        if (this.props.likes.length !== prevProps.likes.length) {
+            this.props.fetchLikes();
+        } 
+    }
 
+    handleLikes(e){
+        e.preventDefault()
+        if(this.state.like.length === 0){
+            this.props.createLike({
+                likeable_id: this.props.post.id,
+                likeable_item: 'post'
+            })
+        }else{
+            this.props.deleteLike(this.props.liked[0].id)
+        }
+    }
+    componentDidMount(){
+        // this.props.fetchPosts();
+        this.props.fetchLikes()
     }
 
     render(){
         const { currentUser, post, openModal, deletePost, author } = this.props;
+
+        let likes = this.props.likes.filter(like => like.likeableId === post.id);
+
+        let likeCount;
+        if(likes.length > 0){
+            likeCount = (
+            <div className="post-likes-count">
+                <div className="like-count">
+                    <AiOutlineLike className="num-like-icon"/>
+                </div>
+                <div className="num-likes">
+                    {likes.length}
+                </div>
+            </div>)
+        }else{
+            likeCount = null;
+        };
+        
+            // console.log(this.props.comments)
+        let commentCount;
+        if(this.props.comments.length > 0){
+            commentCount = (
+                <div className="comment-counts" onClick={this.revealComments}>
+                    {this.props.comments.length}
+                    comments
+                </div>
+            )
+        }else{
+            commentCount = null;
+        };
 
         let dropdown_post;
         if(currentUser.id == post.authorId){
@@ -98,13 +153,17 @@ class PostIndexItem extends React.Component{
                     {dropdown_post}
                 </div>
                 <div className="post-body-div">
-                     <p>{post.body}</p>
+                     <p className="post-body">{post.body}</p>
                     <div>
                         <img src={this.props.post.mediaUrl} className="post-media" />
                     </div>
                 </div>
+                <div className="cmt-like-count-div">
+                    {likeCount}
+                    {commentCount}
+                </div>
                 <div className="like-comment-div">
-                    <div className="post-like-div">
+                    <div className={this.state.like.length != 0 ? "post-like-div liked" : 'post-like-div not-liked'} onClick={this.handleLikes}>
                         <BiLike className="post-like-icon"/>
                         <h3 className="like-heading">Like</h3>
                     </div>
@@ -121,14 +180,19 @@ class PostIndexItem extends React.Component{
 
 
 const mapStateToProps =  (state, ownProps) =>({
-    comments: Object.values(state.entities.comments).filter(comment => comment.post_id === ownProps.post.id),
+    currentUser: state.entities.users[state.session.id],
+    comments: Object.values(state.entities.comments).filter(comment => comment.postId === ownProps.post.id),
+    liker: state.session.id,
     likes: Object.values(state.entities.likes),//.filter(like => like.likeable_id === ownProps.post.id),
-    liked: Object.values(state.entities.likes),//.filter(like => like.liker_id === state.session.id),
+    liked: Object.values(state.entities.likes).filter(like => like.likerId === state.session.id && like.likeableId === ownProps.post.id),
    
 });
 
 const mapDispatchToProps = dispatch => ({
-    openModal: (modal, id) => dispatch(openModal(modal, id))
+    openModal: (modal, id) => dispatch(openModal(modal, id)),
+    createLike: like => dispatch(createLike(like)),
+    deleteLike: likeId => dispatch(deleteLike(likeId)),
+    fetchLikes: () => dispatch(fetchLikes())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(PostIndexItem);

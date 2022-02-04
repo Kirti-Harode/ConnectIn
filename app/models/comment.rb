@@ -21,5 +21,5 @@ class Comment < ApplicationRecord
         foreign_key: :post_id,
         class_name: :Post
 
-    # has_many :likes, as: :likeable_type, dependent: :destroy    
+    # has_many :likes, as: :likeable_item, dependent: :destroy    
 end

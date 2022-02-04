@@ -13,15 +13,15 @@
         background-color: white;
         border: 1px solid lightgray;
         border-radius: 10px;
-        width: 540px;
-        padding: 15px;
+        width: 530px;
+        padding: 20px;
         margin-right: 45px;
     }
     .feed-new-post-form-div{
         display: flex;
         flex-direction: row;
         align-items: center;
-        margin-bottom: 20px;
+        // margin-bottom: 20px;
     }
 
     .start-new-post-button{
@@ -37,7 +37,9 @@
         font-size: 16px;
         padding: 15px;
     }
+    
     .user-profile-feed{
+        border-radius: 50%;
         width: 60px;
         height: 60px;
         margin-right: 10px;
@@ -70,9 +72,28 @@
             border-bottom: 1px solid lightgray;
             width: 100%;
             padding-bottom: 25px;
+
+            h1{
+                margin-top: 10px;
+                font-weight: 500;
+            }
+        
+            h3{
+                font-size: 0.8rem;
+                color: gray;
+                margin-top: 5px;
+                padding: 0px 5px;
+                cursor: pointer;
+
+                &:hover{
+                    color: #0a66c2;
+        
+                }
+            }
         }
 
         .user-profile-feed2{
+            border-radius: 50%;
             width: 80px;
             height: 80px;
             margin-right: 10px;
@@ -95,7 +116,6 @@
             padding-top: 20px;
             color: #0a66c2;
         }
-
     }
 
     .right-side-creator-div{
@@ -111,42 +131,35 @@
         width: 200px;
         border-radius: 10px;
     }
+    h1{
+        padding-top: 2px;
+    }
     .my-photo{
         border-radius: 50%;
         width: 100px;
     }
-    h1{
-        margin-top: 10px;
-        font-weight: 500;
-    }
-
-    h3{
-        font-size: 0.8rem;
-        color: gray;
-        margin-top: 5px;
-        padding: 0px 5px;
-        cursor: pointer;
-        &:hover{
-            color: #0a66c2;
-
-        }
-    }
+    
     .creator-info-links{
         margin-top: 10px;
         display: flex;
         flex-direction: column;
 
+        a{
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 5px;
+            color: gray;
+
+        }
+        h3{
+            padding-top: 2px;
+            font-size: 0.8rem;
+        }
     }
-    a{
-        text-decoration: none;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        margin: 5px;
-       
-        
-    }
+   
 
     .portfolio, .github, .linkedin, .angellist{
         font-size: 30px;

@@ -36,7 +36,7 @@ class PostIndex extends React.Component {
 
 const mapStateToProps = state => ({
     currentUser: state.entities.users[state.session.id],
-    posts: Object.values(state.entities.posts)
+    posts: Object.values(state.entities.posts).reverse()
 });
 
 const mapDispatchToProps = dispatch => ({
