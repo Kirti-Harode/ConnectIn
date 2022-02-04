@@ -8,6 +8,8 @@ import CreateExperience from '../users_profile/experiences/create_experience_con
 import EditExperience from '../users_profile/experiences/edit_experience_container';
 import CreateEducation from '../users_profile/educations/create_education_container';
 import EditEducation from '../users_profile/educations/edit_education_conatiner';
+import CreatePost from '../post/create_post_container';
+import EditPost from '../post/edit_post_conatiner';
 
 const Modal = ({modal, closeModal})  => {
     if (!modal) {
@@ -35,6 +37,12 @@ const Modal = ({modal, closeModal})  => {
             break;
         case 'editEducation':
             component = <EditEducation />
+            break;
+        case 'createPost':
+            component = <CreatePost />
+            break;
+        case 'editPost':
+            component = <EditPost />
             break;
         default:
             return null;

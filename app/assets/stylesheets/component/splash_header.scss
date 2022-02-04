@@ -115,22 +115,21 @@ ul {
         display: flex;
         align-items: center;
         .links {
-            align-items: center;
-            background: transparent;
             display: flex;
+            align-items: center;
             flex-direction: column;
+            background: transparent;
+            justify-content: center;
+            position: relative;
+            text-decoration: none;
             font-size: 12px;
             font-weight: 400;
-            justify-content: center;
             line-height: 1.5;
             min-height: 52px;
             min-width: 80px;
-            position: relative;
-            text-decoration: none;
             margin-top: 12px;
             // margin-left: 10px;
             // margin-right: 10px;
-           
         }
 
         span {
@@ -310,7 +309,7 @@ ul {
 }
 
 .user-profile-div{
-    color: red
+    color: rgb(3, 3, 3);
 }
 
 .hidden-dropdown {
@@ -370,7 +369,14 @@ ul {
     cursor: pointer;
 
 }
-
+.me-user-pic{
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    padding-left: 5px;
+    padding-right: 10px;
+    padding-bottom: 5px;
+}
 .view-profile {
     font-size: 0.9rem;
     font-weight: bold;

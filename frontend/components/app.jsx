@@ -3,7 +3,7 @@ import { Route, Switch } from "react-router-dom";
 import SigninFormContainer from "./session/signin_form_container";
 import SignupFormContainer from "./session/signup_form_container";
 import HeaderContainer from "./headers/header";
-import FeedContainer from './feed/feed_container'
+import FeedContainer from './feed/feed'
 import Welcome from "./welcome_page/welcome";
 import { AuthRoute, ProtectedRoute } from "../util/route_util";
 import NotFound from "./not_found_error/not_found";

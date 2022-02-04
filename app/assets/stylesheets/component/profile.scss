@@ -30,7 +30,7 @@
 .user-info-div {
     display: flex;
     flex-direction: column;
-    height: 350px;
+    height: 355px;
     // width: 58vw;
     // height: 400px;
     // margin-left: 150px;
@@ -52,8 +52,9 @@
         // padding-bottom: 10px;
         // padding-left: 20px;
         position: relative;
-        bottom: 12vh;
+        bottom: 8vh;
         left: 1vw;
+        margin-bottom: 15px;
     }
     .profile-img {
         border-radius: 50%;
@@ -71,6 +72,7 @@
     .user-name-div {
         display: flex;
         align-items: center;
+        padding-top: 5px;
     }
     .user-name {
         font-size: 1.3rem;
