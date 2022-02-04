@@ -76,7 +76,7 @@
     }
     .user-name {
         font-size: 1.3rem;
-        font-weight: 500;
+        font-weight: 400;
     }
     .user-pronouns {
         padding-left: 5px;
@@ -94,7 +94,7 @@
     .user-connections {
         color: #0a66c2;
         font-size: 0.8rem;
-        font-weight: 500;
+        font-weight: 400;
         margin-top: 5px;
     }
     .edit-user-info {
@@ -159,14 +159,14 @@
         border-bottom: 1px solid lightgray;
         width: 608px;
         font-size: 1rem;
-        font-weight: 500;
+        font-weight: 400;
         margin-left: 60px;
         // margin-bottom: 5px;
         padding-bottom: 10px;
     }
 
     .about-body-p {
-        font-weight: 300;
+        font-weight: 100;
         font-size: 0.9rem;
         // margin-left: 5px;
         // margin-top: 3px;
@@ -230,8 +230,8 @@
         width: 580px;
     }
     .exp-title {
-        font-size: 1.0rem;
-        // font-weight: 800;
+        font-size: 1rem;
+        font-weight: 500;
         margin-bottom: 5px;
     }
     .exp-company {
@@ -239,8 +239,10 @@
         flex-direction: column;
         // border-bottom: 1px solid lightgray;
         padding-bottom: 10px;
-        // font-weight: 600;
+        font-weight: 300;
         // width: 600px;
+        font-size: 0.9rem;
+
     }
     .exp-description {
         font-size: 0.8rem;
@@ -321,7 +323,7 @@
     padding-bottom: 10px;
 
     .education-school {
-        font-weight: 500;
+        font-weight: 400;
         margin-bottom: 5px;
         font-size: 1rem;
     }
@@ -329,6 +331,7 @@
     .degree-info {
         display: flex;
         font-size: 0.8rem;
+        font-weight: 300;
     }
 
     .start-end-date, .activities {
@@ -337,7 +340,8 @@
         color: gray;
     }
     h3 {
-        font-weight: 900;
+        font-weight: 300;
+        font-size: 0.8rem;
     }
     // p{
         // margin-top: 3px;

@@ -89,13 +89,19 @@
  
 }
 .comment-author-name{
-    font-size: 12px;
+    font-size: 13px;
     font-weight: 500; 
     // color: black;
 }
-
+.comment-author-bio{
+    padding-top: 2px;
+    font-size: 1rem;
+    font-weight: 300;
+}
 .cmt-body, .edit-comment-input{
     color: rgb(78, 78, 78);
+    font-weight: 300;
+    font-size: 0.9rem;
     // padding-left: 10px;
 }
 .comment-author-pic{

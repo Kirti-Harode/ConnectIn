@@ -38,7 +38,7 @@ class MyNetwork extends React.Component {
                             <div className="connector-info">
                                 <Link to={`/users/${user.id}`} className="connected-users-link">
                                     <h2>{user.fname} {user.lname}</h2>
-                                    <p>{user.bio}</p>
+                                    <p className="connected-user-bio">{user.bio}</p>
                                 </Link>
                             </div>
                         </div>

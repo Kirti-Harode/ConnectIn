@@ -32,7 +32,7 @@
         .manage-heading{
             color: rgb(82, 82, 82);
             font-size: 15px;
-            font-weight: 800;
+            font-weight: 700;
             padding-top: 10px;
         }
         .all-headings{
@@ -44,6 +44,7 @@
                 padding-top: 10px;
                 padding-bottom: 10px;
                 color: rgb(82, 82, 82);
+                font-weight: 300;
             }
             .icons{
                 padding-right: 8px;
@@ -86,14 +87,16 @@
 
             }
             h2{
-                font-weight: 900;
+                font-weight: 400;
                 padding-bottom: 8px;
             }
 
             p{
                 font-size: 0.9rem;
                 color: gray;
+                font-weight: 200;
             }
         }
     }
 }
+
