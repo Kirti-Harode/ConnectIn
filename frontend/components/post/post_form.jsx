@@ -24,13 +24,13 @@ class PostForm extends React.Component {
         const file = e.target.files[0]
 
         fileReader.onloadend = () => {
-            this.setState({ media: file, media_url: fileReader.result })
+            this.setState({ media: file, mediaUrl: fileReader.result })
         };
 
         if(file) {
             fileReader.readAsDataURL(file)
         } else {
-            this.setState({ media_url: "", media: null });
+            this.setState({ mediaUrl: "", media: null });
         }
     }
 
@@ -57,7 +57,7 @@ class PostForm extends React.Component {
     }
 
     render(){
-        const media_preview = this.state.media_url ? <img src={this.state.media_url} /> : null;
+        const media_preview = this.state.mediaUrl ? <img src={this.state.mediaUrl} /> : null;
 
         return(
             <div className="post-form-div">
@@ -95,7 +95,7 @@ class PostForm extends React.Component {
                                 </div>
                                 <input type="file" id="post-media" accept='image/*' onChange={this.handleFile} />
                             </div>
-                            <button className="post-submit-button" onClick={()=>this.handleSubmit()}>Post</button>
+                            <button className="post-submit-button" >Post</button>
                         </div>
                     </form>
                 </div>

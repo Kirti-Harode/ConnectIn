@@ -10,7 +10,7 @@ const mapStateToProps = state => ({
         body: '',
         author_id: state.session.id,
         media: null,
-        media_url: null
+        mediaUrl: null
     }
     // user fname, lname
 });
