@@ -58,11 +58,16 @@ user25 = User.create!(email: 'SpencerIascone@gmail.com', fname: 'Spencer', lname
 user26 = User.create!(email: 'DiegoChavez@gmail.com', fname: 'Diego', lname: 'Chavez', password: 'password', bio: "Instructor at App Academy", pronouns: 'he/him/his', location: "CA");
 user27 = User.create!(email: 'YuHuanW@gmail.com', fname: 'YuHuan', lname: 'W', password: 'password', bio: "Instructor at App Academy", pronouns: 'he/him/his', location: "CA");
 
-user1_photo = open('https://connectin-aa-dev.s3.us-west-1.amazonaws.com/harryP.png')
-user1.profile_photo.attach(io: user1_photo, filename: 'harryP.png' )
+user1_photo = open('https://connectin-aa-dev.s3.us-west-1.amazonaws.com/harry.jpeg')
+user1.profile_photo.attach(io: user1_photo, filename: 'harry.jpeg' )
+
+user5_photo = open('https://connectin-aa-dev.s3.us-west-1.amazonaws.com/arleen.png')
+user5.profile_photo.attach(io: user5_photo, filename: 'arleen.png' )
 
 about1 = About.create!(user_id: user1.id, body: "Software Engineer, ability to create magic with coding.");
-about2 = About.create!(user_id: demo_user.id, body: "Hi I am a demo user for connectIn.")
+about2 = About.create!(user_id: demo_user.id, body: "Hello, I am a software engineer with experience in building full-stack web applications implementing technologies like React, Redux, PostgreSQL, MongoDB, Ruby on Rails, Express.  
+    My most recent projects involve making a professional networking clone website of LinkedIn and the development of a 2d game in JavaScript and canvas.
+    Additional Skills: Ruby - Javascript - SQL - HTML5 - CSS - Webpack")
 about3 = About.create!(user_id: user2.id, body: "I love programming.");
 
 experience1 = Experience.create!(
@@ -77,32 +82,7 @@ experience1 = Experience.create!(
     industry: "Computer",
     description: "some description"
 )
-
 experience2 = Experience.create!(
-    user_id: demo_user.id,
-    title: "Software Engineer",
-    employment_type: "Full-time",
-    company: "ConnectIn",
-    location: " Sunnyvale, California, United States",
-    start_date: "Dec 2021",
-    end_date: "At present",
-    headline: "Connect people professionally",
-    industry: "Web",
-    description: "some description"
-)
-experience3 = Experience.create!(
-    user_id: demo_user.id,
-    title: "CEO",
-    employment_type: "Full-time",
-    company: "ConnectIn",
-    location: " Sunnyvale, California, United States",
-    start_date: "Dec 2021",
-    end_date: "jan-2022",
-    headline: "Connect people professionally",
-    industry: "Web",
-    description: "some description"
-)
-experience4 = Experience.create!(
     user_id: demo_user.id,
     title: "Intern",
     employment_type: "Full-time",
@@ -112,9 +92,9 @@ experience4 = Experience.create!(
     end_date: "2017",
     headline: "Electrical Equipment Company",
     industry: "",
-    description: "Assembles the Electrical Equipments "
+    description: "Engineering and manufacturing company "
 )
-experience5 = Experience.create!(
+experience3 = Experience.create!(
     user_id: demo_user.id,
     title: "Intern",
     employment_type: "Full-time",
@@ -124,7 +104,33 @@ experience5 = Experience.create!(
     end_date: "2018",
     headline: "Web Development",
     industry: "",
-    description: ""
+    description: "Web development"
+)
+
+experience4 = Experience.create!(
+    user_id: demo_user.id,
+    title: "Software Engineer",
+    employment_type: "Full-time",
+    company: "ConnectIn",
+    location: " Sunnyvale, California, United States",
+    start_date: "Dec 2021",
+    end_date: "At present",
+    headline: "Connect people professionally",
+    industry: "Web",
+    description: "Professional networking"
+)
+
+experience5 = Experience.create!(
+    user_id: demo_user.id,
+    title: "CEO",
+    employment_type: "Full-time",
+    company: "ConnectIn",
+    location: " Sunnyvale, California, United States",
+    start_date: "Dec 2021",
+    end_date: "jan-2022",
+    headline: "Connect people professionally",
+    industry: "Web",
+    description: "Professional networkin"
 )
 
 education1 = Education.create!(
@@ -186,8 +192,8 @@ education5 = Education.create!(
 education6 = Education.create!(
     user_id: demo_user.id,
     school: "App Academy",
-    degree: "Computer Engineering",
-    field_of_study: "React, Redux, Ruby on Rails, JavaaScript",
+    degree: "Computer software Engineering",
+    field_of_study: "React, Redux, Ruby on Rails, JavaaScript, webpack",
     activities: "",
     description: "Good Time",
     grade: "9.9",
@@ -233,7 +239,7 @@ post4.media.attach(io: post4_photo, filename: 'happy.png')
 
 post5 = Post.create!(
     body: ":) ",
-    author_id: user23.id
+    author_id: user1.id
 )
 
 post5_photo = open('https://connectin-aa-dev.s3.us-west-1.amazonaws.com/coding_meme1.png')
@@ -249,7 +255,7 @@ post6.media.attach(io: post6_photo, filename: 'coding_meme2.png')
 
 post7 = Post.create!(
     body: "Just joined ConnectIn :)",
-    author_id: user10.id
+    author_id: user20.id
 )
 
 comment1 = Comment.create!(
@@ -395,6 +401,26 @@ like10 = Like.create(
     liker_id: user20.id,
     likeable_item: "Post",
     likeable_id: post6.id
+)
+like11 = Like.create(
+    liker_id: user20.id,
+    likeable_item: "Post",
+    likeable_id: post4.id
+)
+like12 = Like.create(
+    liker_id: user2.id,
+    likeable_item: "Post",
+    likeable_id: post4.id
+)
+like13 = Like.create(
+    liker_id: user10.id,
+    likeable_item: "Post",
+    likeable_id: post4.id
+)
+like14 = Like.create(
+    liker_id: user11.id,
+    likeable_item: "Post",
+    likeable_id: post4.id
 )
 connection1 = Connection.create!(
     connectee_id: demo_user.id,
