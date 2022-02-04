@@ -3,8 +3,8 @@ import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 import { fetchUsers, fetchUser } from "../../../actions/user_actions";
 import {fetchConnections, createConnection, deleteConnection} from '../../../actions/connection_actions'
-import backgroundImage from '../../../../app/assets/images/homeOffice.png'
-import profile from '../../../../app/assets/images/profile.png'
+// import backgroundImage from '../../../../app/assets/images/homeOffice.png'
+// import profile from '../../../../app/assets/images/profile.png'
 import { MdCreate } from "react-icons/md";
 import { openModal } from "../../../actions/modal_actions";
 class Intro extends React.Component {
