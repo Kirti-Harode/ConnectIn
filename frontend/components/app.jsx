@@ -9,6 +9,7 @@ import { AuthRoute, ProtectedRoute } from "../util/route_util";
 import NotFound from "./not_found_error/not_found";
 import ProfileContainer from "./users_profile/profile_container";
 import Modal from "./modal/modal";
+import MyNetwrok from './my_network/my_network';
 
 const App = () => {
     return (
@@ -19,9 +20,10 @@ const App = () => {
             </header>
             <Switch>
                 <ProtectedRoute exact path='/feed' component={FeedContainer} />
+                <ProtectedRoute exact path='/mynetwork' component={MyNetwrok} />
                 <AuthRoute exact path='/' component={Welcome} />
-                <AuthRoute path="/login" component={SigninFormContainer} />
-                <AuthRoute path="/signup" component={SignupFormContainer} />
+                <AuthRoute exact path="/login" component={SigninFormContainer} />
+                <AuthRoute exact path="/signup" component={SignupFormContainer} />
                 <ProtectedRoute exact path='/users/:userId' component={ProfileContainer} />
                 <Route component={NotFound} />
             </Switch>

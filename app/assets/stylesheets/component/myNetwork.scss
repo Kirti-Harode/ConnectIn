@@ -1,0 +1,99 @@
+.connector-pic{
+    width: 70px;
+    border-radius: 50%;
+    margin-left: 30px;
+}
+
+.network-outer-div{
+    display: flex;
+    // align-items: center;
+    // flex-direction: row;
+    // justify-content: column;
+    padding-top: 100px;
+    min-height: 100vh;
+    background-color: #f3f2ef;
+    // display: flex;
+    flex-direction: row;
+    // align-items: center;
+    justify-content: space-between;
+
+    .left-side-bar{
+        display: flex;
+        flex-direction: column;
+        // align-items: center;
+        margin-left: 116px;
+        width: 200px;
+        height: 330px;
+        border-radius: 10px;
+        border: 1px solid lightgray;
+        background-color: white;
+        padding-left: 5px;
+
+        .manage-heading{
+            color: rgb(82, 82, 82);
+            font-size: 15px;
+            font-weight: 800;
+            padding-top: 10px;
+        }
+        .all-headings{
+            // position: absolute;
+            margin-top: 12px;
+            display: flex;
+            flex-direction: column;
+            li{
+                padding-top: 10px;
+                padding-bottom: 10px;
+                color: rgb(82, 82, 82);
+            }
+            .icons{
+                padding-right: 8px;
+                font-size: 20px;
+            }
+
+        }
+    }
+    .network-inner-div{
+        background-color: white;
+        border-radius: 10px;
+        border: 1px solid lightgray;
+        min-width: 500px;
+        margin-right: 400px;
+
+        .my-connections-heading{
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            border-bottom: 1px solid lightgray;
+
+            h1 {
+                font-size: 1.2rem;
+                font-family: 500;
+            }
+        }
+
+        .each-connected-user{
+            display: flex;
+            align-items: center;
+            padding: 20px 10px;
+            border-bottom: 1px solid lightgray;
+
+            .connected-users-link{
+                color: black;
+            }
+            
+            .connector-info{
+                margin-left: 20px;
+
+            }
+            h2{
+                font-weight: 900;
+                padding-bottom: 8px;
+            }
+
+            p{
+                font-size: 0.9rem;
+                color: gray;
+            }
+        }
+    }
+}
