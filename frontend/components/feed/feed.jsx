@@ -11,10 +11,10 @@ import { BsGithub, BsPersonCircle, BsLinkedin } from "react-icons/bs";
 import { FaAngellist } from "react-icons/fa";
 class Feed extends React.Component{
     componentDidMount(){
-        // this.props.fetchPosts()
-        // this.props.fetchLikes()
-        // this.props.fetchUsers()
-        // this.props.fetchConnections()
+        this.props.fetchPosts()
+        this.props.fetchLikes()
+        this.props.fetchUsers()
+        this.props.fetchConnections(this.props.currentUser.id)
     }
 
     render (){
@@ -40,7 +40,7 @@ class Feed extends React.Component{
                         <h2>{currentUser.bio}</h2>
                     </div>
                     <div className="user-connections-info">
-                        <p>Connections 0 {connections.length} </p> 
+                        <p>Connections {connections.length} </p> 
                     </div>
                 </div>
                 <div className="right-side-creator-div">
@@ -79,16 +79,16 @@ const mapStateToProps = state => ({
     posts: state.entities.posts,
     comments: state.entities.comments,
     likes: Object.values(state.entities.likes),
-    connections: state.entities.connections
+    connections: Object.values(state.entities.connections)
 });
 
 const mapDispatchToProps = dispatch => ({
-    // fetchUser: userId => dispatch(fetchUser(userId)),
-    // fetchUsers: () => dispatch(fetchUsers()),
-    // fetchPosts: () => dispatch(fetchPosts()),
-    // fetchComments: () => dispatch(fetchComments()),
-    // fetchConnections: (userId) => dispatch(fetchConnections(userId)),
-    // fetchLikes: ()=> dispatch(fetchLikes()),
+    fetchUser: userId => dispatch(fetchUser(userId)),
+    fetchUsers: () => dispatch(fetchUsers()),
+    fetchPosts: () => dispatch(fetchPosts()),
+    fetchComments: () => dispatch(fetchComments()),
+    fetchConnections: (userId) => dispatch(fetchConnections(userId)),
+    fetchLikes: ()=> dispatch(fetchLikes()),
     openModal: (modal, id) => dispatch(openModal(modal, id))
 });
 

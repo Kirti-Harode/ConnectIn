@@ -52,6 +52,9 @@ class Intro extends React.Component {
                 editButton = null;
             }
         }
+        // console.log(this.props.currentUser.fname)
+        // console.log(this.props.profileUser.fname)
+        
         return(
             <div className="user-info-div">
                 <div className="background-image-div">
@@ -75,7 +78,7 @@ class Intro extends React.Component {
                         <h2>{this.props.profileUser.location}</h2>
                     </div>
                     <div className="user-connections">
-                        <h2>{this.state.connectons} connections</h2>
+                        <h2>{this.props.connections.length} connections</h2>
                     </div>
                 </div>
             </div>

@@ -27,6 +27,8 @@ demo_user = User.create!(
     location: "Sunnyvale"
     
 )
+# demo_user.photo = open()
+# demo_user.profile_photo.attach(io: filename: )
 
 user1 = User.create!(email: 'harry@gmail.com', fname: 'Harry', lname: 'potter', password: 'password', bio: "Web developer", pronouns: 'He/His/Him', location: "SF");
 user2 = User.create!(email: 'AlexCiminillo@gmail.com', fname: 'Alex ', lname: 'Ciminillo', password: 'password', bio: "Web developer", pronouns: 'He/His/Him', location: "CA");
@@ -233,48 +235,66 @@ connection1 = Connection.create!(
     connector_id: user1.id,
     accepted: true
 )
-connection1 = Connection.create!(
+connection2 = Connection.create!(
     connectee_id: demo_user.id,
     connector_id: user2.id,
     accepted: true
 )
-connection1 = Connection.create!(
+connection3 = Connection.create!(
     connectee_id: demo_user.id,
     connector_id: user3.id,
     accepted: true
 )
-connection1 = Connection.create!(
+connection4 = Connection.create!(
     connectee_id: demo_user.id,
     connector_id: user4.id,
     accepted: true
 )
-connection1 = Connection.create!(
+connection5 = Connection.create!(
     connectee_id: demo_user.id,
     connector_id: user5.id,
     accepted: true
 )
-connection1 = Connection.create!(
+connection6 = Connection.create!(
     connectee_id: demo_user.id,
     connector_id: user6.id,
     accepted: true
 )
-connection1 = Connection.create!(
+connection7 = Connection.create!(
     connectee_id: demo_user.id,
     connector_id: user7.id,
     accepted: true
 )
-connection1 = Connection.create!(
+connection8 = Connection.create!(
     connectee_id: demo_user.id,
     connector_id: user8.id,
     accepted: true
 )
-connection1 = Connection.create!(
+connection9 = Connection.create!(
     connectee_id: demo_user.id,
     connector_id: user9.id,
     accepted: true
 )
-connection1 = Connection.create!(
+connection10 = Connection.create!(
     connectee_id: demo_user.id,
     connector_id: user10.id,
+    accepted: true
+)
+
+connection11 = Connection.create!(
+    connectee_id: user11.id,
+    connector_id: demo_user.id,
+    accepted: true
+)
+
+connection12 = Connection.create!(
+    connectee_id: user12.id,
+    connector_id: demo_user.id,
+    accepted: true
+)
+
+connection13 = Connection.create!(
+    connectee_id: user13.id,
+    connector_id: demo_user.id,
     accepted: true
 )
