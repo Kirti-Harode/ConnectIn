@@ -9,6 +9,8 @@ import {fetchLikes} from '../../actions/like_actions';
 import PostIndexConatiner from '../post/post_index';
 import { BsGithub, BsPersonCircle, BsLinkedin } from "react-icons/bs";
 import { FaAngellist } from "react-icons/fa";
+import { Link } from "react-router-dom";
+
 class Feed extends React.Component{
     componentDidMount(){
         this.props.fetchPosts()
@@ -36,11 +38,13 @@ class Feed extends React.Component{
                     </div>
                     <div className="user-mini">
                         <img src={currentUser.profilePhotoUrl || window.defaultProfile } className="user-profile-feed2"/>
-                        <h1>{currentUser.fname} {currentUser.lname}</h1>
-                        <h2>{currentUser.bio}</h2>
+                        <Link className="mini-user-link" to={`/users/${currentUser.id}`}>
+                            <h1>{currentUser.fname} {currentUser.lname}</h1>
+                            <h2>{currentUser.bio}</h2>
+                        </Link>
                     </div>
                     <div className="user-connections-info">
-                        <p>Connections {connections.length} </p> 
+                        <Link to='/mynetwork' className="feed-conections">Connections {connections.length} </Link> 
                     </div>
                 </div>
                 <div className="right-side-creator-div">

@@ -89,7 +89,7 @@ class CommentIndexItem extends React.Component {
         }else{
             dropdownComment = null;
         };
-        console.log(author)
+        
         return(
             <div className="comment-outer-div">
                 <img src={author.profilePhotoUrl || window.defaultProfile} className="comment-author-pic"/>

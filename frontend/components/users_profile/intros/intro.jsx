@@ -24,7 +24,7 @@ class Intro extends React.Component {
     // }
 
     componentDidMount(){
-        // this.props.fetchUsers();
+        this.props.fetchUsers();
         this.props.fetchUser(this.props.profileUser.id);
         this.props.fetchConnections(this.props.profileUser.id).then(() => {
             this.props.connections.map(connection => {
