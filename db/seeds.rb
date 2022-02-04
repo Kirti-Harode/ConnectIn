@@ -27,8 +27,8 @@ demo_user = User.create!(
     location: "Sunnyvale"
     
 )
-# demo_user.photo = open()
-# demo_user.profile_photo.attach(io: filename: )
+demo_user_photo = open("https://connectin-aa-dev.s3.us-west-1.amazonaws.com/mypic1.png")
+demo_user.profile_photo.attach(io: demo_user_photo, filename: 'mypic1.png' )
 
 user1 = User.create!(email: 'harry@gmail.com', fname: 'Harry', lname: 'potter', password: 'password', bio: "Web developer", pronouns: 'He/His/Him', location: "SF");
 user2 = User.create!(email: 'AlexCiminillo@gmail.com', fname: 'Alex ', lname: 'Ciminillo', password: 'password', bio: "Web developer", pronouns: 'He/His/Him', location: "CA");

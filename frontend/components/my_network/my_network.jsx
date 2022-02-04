@@ -34,7 +34,7 @@ class MyNetwork extends React.Component {
 
                     {connectedUsers.map(user => (
                         <div className="each-connected-user" key={user.id}>
-                            <img className="connector-pic" src={user.profilePhoto || window.defaultProfile}/>
+                            <img className="connector-pic" src={user.profilePhotoUrl || window.defaultProfile}/>
                             <div className="connector-info">
                                 <Link to={`/users/${user.id}`} className="connected-users-link">
                                     <h2>{user.fname} {user.lname}</h2>

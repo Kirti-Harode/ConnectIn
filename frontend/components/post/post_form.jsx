@@ -69,7 +69,7 @@ class PostForm extends React.Component {
                         </div>
                     </div>
                     <div className="post-user-info-modal">
-                        <img className="user-profile-photo" src={this.props.currentUser.profile_photo_url || window.defaultProfile} />
+                        <img className="user-profile-photo" src={this.props.currentUser.profilePhotoUrl || window.defaultProfile} />
                         <div className="user-name-bio">
                             <h1>{this.props.currentUser.fname} {this.props.currentUser.lname}</h1>
                             <h2>{this.props.currentUser.bio}</h2>
@@ -95,7 +95,7 @@ class PostForm extends React.Component {
                                 </div>
                                 <input type="file" id="post-media" accept='image/*' onChange={this.handleFile} />
                             </div>
-                            <button className="post-submit-button">Post</button>
+                            <button className="post-submit-button" onClick={()=>this.handleSubmit()}>Post</button>
                         </div>
                     </form>
                 </div>

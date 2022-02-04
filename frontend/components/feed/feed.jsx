@@ -23,7 +23,7 @@ class Feed extends React.Component{
             <div className="feed-div">
                 <div className="feed-new-post-div">
                     <div className="feed-new-post-form-div">
-                        <img className="user-profile-feed" src={currentUser.profilePhotoUrl || window.defaultProfile }/>
+                        <img className="user-profile-feed" src={currentUser.profilePhotoUrl|| window.defaultProfile }/>
                         <button onClick={() => openModal('createPost')} className="start-new-post-button">start a post</button>
                     </div>
                 </div>
@@ -35,7 +35,7 @@ class Feed extends React.Component{
                         <img className="feed-back-img" src={window.backgroundImg}/>
                     </div>
                     <div className="user-mini">
-                        <img src={window.defaultProfile || currentUser.profilePhotoUrl } className="user-profile-feed2"/>
+                        <img src={currentUser.profilePhotoUrl || window.defaultProfile } className="user-profile-feed2"/>
                         <h1>{currentUser.fname} {currentUser.lname}</h1>
                         <h2>{currentUser.bio}</h2>
                     </div>

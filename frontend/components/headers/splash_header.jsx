@@ -87,7 +87,7 @@ class LoggedIn extends React.Component {
                             <ul className={this.state.hidden ? 'hidden-dropdown' : 'reveal-dropdown'} onClick={e => e.stopPropagation()} >
                                 <div className='dropdown-top'>
                                     <div className='user-profile-div'>
-                                        <img src={window.defaultProfile} className='me-user-pic'/>
+                                        <img src={ this.props.currentUser.profilePhotoUrl || window.defaultProfile } className='me-user-pic'/>
                                         <div className='user-details'>
                                             <h2 className='fname-lname'>{this.props.currentUser.fname} {this.props.currentUser.lname}</h2>
                                             <h3 className='user-bio'>{this.props.currentUser.bio}</h3>

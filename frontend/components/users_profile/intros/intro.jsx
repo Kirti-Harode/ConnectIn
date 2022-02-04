@@ -61,7 +61,7 @@ class Intro extends React.Component {
                     <img className="back-img" src={ window.backgroundImg}/>
                 </div>
                 <div className="profile-photo-div">
-                <img className="profile-img" src={ window.defaultProfile}/>
+                <img className="profile-img" src={ this.props.profileUser.profilePhotoUrl || window.defaultProfile}/>
                 </div>
                 <div className="user-details">
                     <header className="user-info-header">
