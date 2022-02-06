@@ -5,10 +5,6 @@ import EducationIndexConatiner from './educations/education_index'
 import ExperienceIndexConatiner from './experiences/experience_index'
 class Profile extends React.Component {
 
-    componentDidMount(){
-        // this.props.fetchUsers();
-    }
-
     render (){
         return(
             <div className="profile-div">

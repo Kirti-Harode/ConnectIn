@@ -29,10 +29,7 @@ class AboutIndex extends React.Component{
                 </header>
                 <div className="about-body-index">
                     {this.props.abouts.map(about => {
-                        // debugger
-                        // if (about.user_id == this.props.match.params.userId){
-                            return <AboutIndexItem about={about} key={about.id}/>
-                        // }
+                        return <AboutIndexItem about={about} key={about.id}/>
                     })}
                 </div>
             </div>
