@@ -9,7 +9,7 @@ import { openModal } from "../../../actions/modal_actions";
 class ExperienceIndex extends React.Component {
     
     componentDidMount(){
-        this.props.fetchAllExperiences(this.props.profileUser.id);
+        this.props.fetchAllExperiences(this.props.otherUser.id);
     }
 
     render(){
@@ -42,7 +42,7 @@ class ExperienceIndex extends React.Component {
 
 const mapStateToProps = (state, ownProps) => ({
     currentUser: state.entities.users[state.session.id],
-    profileUser: state.entities.users[ownProps.match.params.userId],
+    otherUser: state.entities.users[ownProps.match.params.userId],
     experiences: Object.values(state.entities.experiences).reverse()
 });
 

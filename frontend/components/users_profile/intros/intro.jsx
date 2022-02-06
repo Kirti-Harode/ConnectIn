@@ -25,10 +25,10 @@ class Intro extends React.Component {
 
     componentDidMount(){
         this.props.fetchUsers();
-        this.props.fetchUser(this.props.profileUser.id);
-        this.props.fetchConnections(this.props.profileUser.id).then(() => {
+        this.props.fetchUser(this.props.otherUser.id);
+        this.props.fetchConnections(this.props.otherUser.id).then(() => {
             this.props.connections.map(connection => {
-                if(connection.connectee_id == this.props.profileUser.id) {
+                if(connection.connectee_id == this.props.otherUser.id) {
                     this.setState({connections: this.state.connectons + 1})
                     if(connection.connector_id == this.props.currentUser.id){
                         this.setState({connected: true})
@@ -42,8 +42,8 @@ class Intro extends React.Component {
     render(){
         let editButton ;
 
-        if(this.props.currentUser && this.props.profileUser){
-            if(this.props.currentUser.id === this.props.profileUser.id){
+        if(this.props.currentUser && this.props.otherUser){
+            if(this.props.currentUser.id === this.props.otherUser.id){
                 editButton = (<div className="edit-button-div" onClick={() => {return this.props.openModal('editUserIntro', this.props.currentUser.id)}}>
                     <MdCreate className="edit-user-info"/>
                 </div>)
@@ -53,7 +53,7 @@ class Intro extends React.Component {
             }
         }
         // console.log(this.props.currentUser.fname)
-        // console.log(this.props.profileUser.fname)
+        // console.log(this.props.otherUser.fname)
         
         return(
             <div className="user-info-div">
@@ -61,21 +61,21 @@ class Intro extends React.Component {
                     <img className="back-img" src={ window.backgroundImg}/>
                 </div>
                 <div className="profile-photo-div">
-                <img className="profile-img" src={ this.props.profileUser.profilePhotoUrl || window.defaultProfile}/>
+                <img className="profile-img" src={ this.props.otherUser.profilePhotoUrl || window.defaultProfile}/>
                 </div>
                 <div className="user-details">
                     <header className="user-info-header">
                         <div className="user-name-div">
-                            <h1 className="user-name">{this.props.profileUser.fname} {this.props.profileUser.lname}</h1>
-                            <h3 className="user-pronouns">({this.props.profileUser.pronouns})</h3>
+                            <h1 className="user-name">{this.props.otherUser.fname} {this.props.otherUser.lname}</h1>
+                            <h3 className="user-pronouns">({this.props.otherUser.pronouns})</h3>
                         </div>
                         {editButton}
                     </header>
                     <div className="user-bio">
-                        <h2>{this.props.profileUser.bio}</h2>
+                        <h2>{this.props.otherUser.bio}</h2>
                     </div>
                     <div className="user-location">
-                        <h2>{this.props.profileUser.location}</h2>
+                        <h2>{this.props.otherUser.location}</h2>
                     </div>
                     <div className="user-connections">
                         <h2>{this.props.connections.length} connections</h2>
@@ -88,7 +88,7 @@ class Intro extends React.Component {
 
 const mapStateToProps = (state, ownProps) => ({
     currentUser: state.entities.users[state.session.id],
-    profileUser: state.entities.users[ownProps.match.params.userId],
+    otherUser: state.entities.users[ownProps.match.params.userId],
     connections: Object.values(state.entities.connections)
     
 });

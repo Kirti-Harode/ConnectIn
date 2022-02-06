@@ -7,7 +7,7 @@ import { MdAdd } from "react-icons/md";
 import { openModal } from "../../../actions/modal_actions";
 class AboutIndex extends React.Component{
     componentDidMount(){
-        this.props.fetchAllAbouts(this.props.profileUser.id)
+        this.props.fetchAllAbouts(this.props.otherUser.id)
     }
 
     render(){
@@ -42,7 +42,7 @@ class AboutIndex extends React.Component{
 
 const mapStateToProps = (state, ownProps) => ({
     currentUser: state.entities.users[state.session.id],
-    profileUser: state.entities.users[ownProps.match.params.userId],
+    otherUser: state.entities.users[ownProps.match.params.userId],
     abouts: Object.values(state.entities.abouts).reverse()
     .filter(about => about.user_id == ownProps.match.params.id)
 });

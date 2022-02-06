@@ -9,7 +9,7 @@ import { openModal } from "../../../actions/modal_actions";
 class EducationIndex extends React.Component {
    
     componentDidMount(){
-        this.props.fetchAllEducations(this.props.profileUser.id);
+        this.props.fetchAllEducations(this.props.otherUser.id);
     }
 
     render(){
@@ -41,7 +41,7 @@ class EducationIndex extends React.Component {
 
 const mapStateToProps = (state, ownProps) => ({
     currentUser: state.entities.users[state.session.id],
-    profileUser: state.entities.users[ownProps.match.params.userId],
+    otherUser: state.entities.users[ownProps.match.params.userId],
     educations: Object.values(state.entities.educations).reverse()
 });
 

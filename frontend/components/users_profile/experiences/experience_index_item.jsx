@@ -50,7 +50,7 @@ class ExperienceIndexItem extends React.Component {
 
 const mapStateToProps = (state, ownProps) => ({
     currentUser: state.entities.users[state.session.id],
-    profileUser: state.entities.users[ownProps.match.params.userId]
+    otherUser: state.entities.users[ownProps.match.params.userId]
 });
 
 const mapDispatchToProps = dispatch => ({
