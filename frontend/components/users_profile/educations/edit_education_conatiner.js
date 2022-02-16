@@ -18,4 +18,3 @@ const mDTP = (dispatch) => ({
   
 const EditEducation = connect(mSTP, mDTP)(EducationForm);
   
-export default EditEducation;
