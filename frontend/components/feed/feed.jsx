@@ -23,15 +23,15 @@ class Feed extends React.Component{
         const { currentUser, openModal, connections } = this.props;
         return(
             <div className="feed-div">
+            
                 <div className="feed-new-post-div">
                     <div className="feed-new-post-form-div">
                         <img className="user-profile-feed" src={currentUser.profilePhotoUrl|| window.defaultProfile }/>
                         <button onClick={() => openModal('createPost')} className="start-new-post-button">start a post</button>
                     </div>
                 </div>
-
                 <PostIndexConatiner />
-
+                
                 <div className="left-side-info-div">
                     <div className="user-background-pic">
                         <img className="feed-back-img" src={window.backgroundImg}/>

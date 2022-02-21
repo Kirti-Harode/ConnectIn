@@ -8,6 +8,7 @@
     padding: 20px;
     padding-top: 100px;
     justify-content: space-between;
+    padding-left: 30px;
 
     .feed-new-post-div{
         background-color: white;
@@ -54,7 +55,8 @@
         background-color: white;
         border: 1px solid lightgray;
         border-radius: 10px;
-        left: 3vw;
+        // left: 10vw;
+        margin-right: 1000px;
         height: 250px;
         width: 200px;
 
@@ -134,7 +136,8 @@
         position: fixed;
         border: 1px solid lightgray;
         background-color: white;
-        right: 3vw;
+        // right: 13vw;
+        margin-left: 900px;
         height: 400px;
         width: 200px;
         border-radius: 10px;
