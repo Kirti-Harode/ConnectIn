@@ -44,7 +44,7 @@ class PostIndexItem extends React.Component{
         this.setState({comments: true});
     }
 
-    componentWillReceiveProps(){
+    UNSAFE_componentWillReceiveProps(){
         this.setState({
             like: this.props.liked,
         })
