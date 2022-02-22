@@ -1,7 +1,7 @@
 
 .post-index-item-div{
     background-color: white;
-    width: 540px;
+    width: 570px;
     border: 1px solid lightgray;
     border-radius: 10px;
     padding: 15px;
@@ -139,24 +139,44 @@
     }
 
     .dropdown-post-button{
-        // width: 20px;
-        height: 10px;
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
         border: none;
         background-color: white;
         cursor: pointer;
+        margin-left: 40px;
+        padding-left: 2px;
+        padding-top: 2px;
+        padding-right: 4px;
+        &:hover{
+            background-color: rgb(236, 236, 236);
+
+        }
     }
+    .post-three-dots{
+        font-size: 18px;
+    }
+
     .reveal-dropdown{
-        width: 100px;
+        width: 150px;
         height: 40px;
-        // padding-left: 20px;
+        margin-left: 20px;
         padding-bottom: 2px;
+        position: absolute;
+        // left: 10px;
+        right: -15px;
+        border: 1px solid #e6e6e6;
+        box-shadow: 0px 4px 6px #acaaaa;
+
     }
     .post-edit-button, .post-delete-button{
         cursor: pointer;
+        padding-bottom: 2px;
+        color: rgb(66, 66, 66);
         &:hover{
             background-color: lightgray;
             border-radius: 5px;
-            // border: 1px solid gray;
         }
     }
 

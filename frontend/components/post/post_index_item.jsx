@@ -12,6 +12,7 @@ import CommentIndexContainer from "../comment/comment-index";
 import CreateCommentContainer from "../comment/comment_form";
 import {createLike, fetchLikes, deleteLike} from '../../actions/like_actions'
 import { AiOutlineLike } from "react-icons/ai";
+
 class PostIndexItem extends React.Component{
 
     constructor(props){
