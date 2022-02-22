@@ -13,6 +13,7 @@ class Search extends React.Component{
             searchResult: []
         }
         this.handleSearch = this.handleSearch.bind(this);
+        this.handleClick = this.handleClick.bind(this);
     }
 
     handleSearch(e){
@@ -33,13 +34,20 @@ class Search extends React.Component{
         }
     }
 
+    handleClick(){
+        this.setState({ 
+            searchInput: '',
+            searchResult: []
+        })
+       
+    }
     render(){
         let result;
         if (this.state.searchResult.length !== 0){
             result = this.state.searchResult.slice(0,4).map((user, idx) => (
                 <div key={idx} className="search-result-user">
                     <img className="search-user-pic" src={user.profilePhotoUrl || window.defaultProfile}/>   
-                    <Link to={`/users/${user.id}`} className="search-user-link">
+                    <Link to={`/users/${user.id}`} className="search-user-link" onClick={this.handleClick}>
                         <h2 className="search-user-name">{user.fname} {user.lname}</h2>
                         <p className="search-user-bio">{user.bio}</p>
                     </Link>
