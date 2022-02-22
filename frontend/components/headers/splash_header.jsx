@@ -34,13 +34,15 @@ class LoggedIn extends React.Component {
                            <img className='small-logo-img' src={window.smallLogo}/>
                         </Link>
                     </span>
-                    <div className='search-container'>
-                        <div className='search-input-div'>
-                            <input className='search-input' type="text" placeholder='Search' ></input>
-                        </div>
-                        <FaSearch className='search-icon'/>
+                    <div>
+                        {/* <div className='search-container'>
+                            <div className='search-input-div'>
+                                <input className='search-input' type="text" placeholder='Search' ></input>
+                            </div>
+                            <FaSearch className='search-icon'/>
+                        </div> */}
+                        <Search />
                     </div>
-                {/* <Search /> */}
                 <nav className='right-nav'>
                     <ul className='nav-list'>
                         <li className='home-nav'>

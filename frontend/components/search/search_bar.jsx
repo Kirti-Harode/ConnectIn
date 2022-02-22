@@ -1,7 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import {fetchUsers, fetchUser} from '../../actions/user_actions';
+import { fetchUsers, fetchUser } from '../../actions/user_actions';
+import { FaSearch } from "react-icons/fa";
 
 class Search extends React.Component{
 
@@ -11,10 +12,7 @@ class Search extends React.Component{
             searchInput: '',
             searchResult: []
         }
-    }
-
-    updateSearchInput(){
-        this.setState({searchInput: e.currentTarget.value});
+        this.handleSearch = this.handleSearch.bind(this);
     }
 
     handleSearch(e){
@@ -23,26 +21,48 @@ class Search extends React.Component{
       
         if(searchLetter === ''){
             this.setState({searchResult: []});
-
         }
         else{
-            let filtered = this.props.allUsers.filter(user => {
-                user.fname.toLowerCase().includes(searchLetter.toLowerCase());
+            let filtered = []
+            this.props.allUsers.filter(user => {
+                if (user.fname.toLowerCase().includes(searchLetter.toLowerCase())){
+                    filtered.push(user)
+                }
             });
-
             this.setState({searchResult: filtered});
         }
     }
 
     render(){
+        let result;
+        if (this.state.searchResult.length !== 0){
+            result = this.state.searchResult.slice(0,4).map((user, idx) => (
+                <div key={idx}>
+                    <Link to={`/users/${user.id}`} className="connected-users-link">
+                        <h2>{user.fname} {user.lname}</h2>
+                        <p className="connected-user-bio">{user.bio}</p>
+                    </Link>
+                </div>
+            ));
+        }
+        else if (this.state.searchInput !== '' || this.state.searchResult.length === 0){
+            result = (
+                <div>
+                    <p>
+                        No results found
+                    </p>
+                </div>
+            )
+        }
         return (
             <div>
-              
-            
-                {/* <Link to={`/users/${user.id}`} className="connected-users-link">
-                    <h2>{user.fname} {user.lname}</h2>
-                    <p className="connected-user-bio">{user.bio}</p>
-                </Link> */}
+                <div className='search-container'>
+                    <div className='search-input-div'>
+                        <input className='search-input' type="text" placeholder='Search' onChange={this.handleSearch}></input>
+                    </div>
+                    <FaSearch className='search-icon'/>
+                </div>
+              {result}
             </div>
         )
     }
