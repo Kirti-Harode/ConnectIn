@@ -37,20 +37,19 @@ class Search extends React.Component{
         let result;
         if (this.state.searchResult.length !== 0){
             result = this.state.searchResult.slice(0,4).map((user, idx) => (
-                <div key={idx}>
-                    <Link to={`/users/${user.id}`} className="connected-users-link">
-                        <h2>{user.fname} {user.lname}</h2>
-                        <p className="connected-user-bio">{user.bio}</p>
+                <div key={idx} className="search-result-user">
+                    <img className="search-user-pic" src={user.profilePhotoUrl || window.defaultProfile}/>   
+                    <Link to={`/users/${user.id}`} className="search-user-link">
+                        <h2 className="search-user-name">{user.fname} {user.lname}</h2>
+                        <p className="search-user-bio">{user.bio}</p>
                     </Link>
                 </div>
             ));
         }
         else if (this.state.searchInput !== '' || this.state.searchResult.length === 0){
             result = (
-                <div>
-                    <p>
-                        No results found
-                    </p>
+                <div className="search-no-result">
+                    <p> No results found </p>
                 </div>
             )
         }
@@ -62,7 +61,9 @@ class Search extends React.Component{
                     </div>
                     <FaSearch className='search-icon'/>
                 </div>
-              {result}
+                <div className={this.state.searchInput === '' ? "hide-search-result" : "reveal-search-result"}>
+                    {result}
+                </div>
             </div>
         )
     }

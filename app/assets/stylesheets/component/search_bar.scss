@@ -47,3 +47,60 @@
     margin: 0;
     color: gray;
 }
+
+.hide-search-result{
+    display: none;
+}
+
+.search-user-pic{
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+}
+
+.reveal-search-result{
+    // display: block;
+    // display: flex;
+    flex-direction: column;
+    position: absolute;
+    align-items: center;
+    width: 400px;
+    height: fit-content;
+    background-color: white;
+    margin-top: 10px;
+    box-shadow: 0px 4px 6px #acaaaa;
+    border-radius: 10px;
+
+    // flex-direction: column;
+    // position: absolute;
+    // // top: 100%;
+    // right: 150px;
+    // background-color: white;
+    // padding-top: 10px;
+    // // margin-right: 100px;
+    // display: block;
+    // // border: 1px solid lightgray;
+    // // height: 200px;
+    // width: 200px;
+}
+
+.search-result-user{
+    display: flex;
+    flex-direction: row;
+    margin: 30px 0px 20px 30px;
+
+    .search-user-link{
+        text-decoration: none;
+        padding-left: 10px;
+        padding-top: 8px;
+    }
+    .search-user-name{
+        color: rgb(49, 49, 49);
+        font-size: 0.9rem;
+    }
+    .search-user-bio{
+        padding-top: 4px;
+        font-size: 0.8rem;
+        color: rgb(83, 83, 83);
+    }
+}
