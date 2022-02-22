@@ -263,17 +263,19 @@ ul {
     flex-direction: column;
     position: absolute;
     // top: 100%;
-    right: 150px;
+    // right: 150px;
     background-color: white;
-    padding-top: 10px;
-    margin-top: 10px;
-    // margin-right: 100px;
-    display: block;
+    // padding-top: 10px;
+    margin-top: 8px;
+    margin-left: -150px;
+    // display: block;
     // border: 1px solid lightgray;
     border-radius: 10px;
-    // height: 200px;
-    width: 200px;
+    height: 200px;
+    width: 300px;
     box-shadow: 0.5px 1px 2px #272727;
+    box-shadow: 0px 4px 6px #acaaaa;
+
     // background-color: pink;
     
 }
@@ -289,6 +291,7 @@ ul {
     flex-direction: row;
     align-items: center;
     // background-color: green;
+    margin: 20px 0px 20px 20px;
     .user-details {
         display: flex;
         flex-direction: column;
@@ -297,43 +300,64 @@ ul {
 }
 
 .fname-lname {
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-weight: 400;
+    // padding-left: 10px;
+    color: rgb(37, 37, 37);
 }
 
 .user-bio {
-    font-size: 0.7rem;
+    padding-left: 10px;
+    font-size: 0.9rem;
     font-weight: 300;
+    color: rgb(71, 71, 71);
+
 }
 
 .view-profile-button {
     cursor: pointer;
-
 }
 .me-user-pic{
     border-radius: 50%;
-    width: 70px;
-    height: 70px;
+    width: 90px;
+    height: 90px;
     padding-left: 5px;
     padding-right: 10px;
     padding-bottom: 5px;
 }
 .view-profile {
-    font-size: 0.9rem;
+    font-size: 1.1rem;
     font-weight: 400;
+    height: 22px;
     border: 1px solid #0a66c2;
     border-radius: 20px;
     color: #0a66c2;
     margin-bottom: 4px;
     padding-top: 2px;
     padding-bottom: 2px;
+
+    &:hover{
+        color: white;
+        background-color: #0a66c2;
+        box-shadow: 0px 4px 6px #acaaaa;
+    }
 }
 
 .logout-button {
     cursor: pointer;
     color: gray;
-    font-size: 1.0rem;
+    font-size: 1.1rem;
     border-top: 1px solid lightgray;
-    padding-top: 2px;
-    margin-bottom: 7px;
+    // margin-bottom: 7px;
+    p{
+        padding-top: 2px;
+        border-radius: 20px;
+        padding-bottom: 2px;
+        height: 25px;
+        &:hover{
+            color: white;
+            background-color: rgb(133, 133, 133);
+            box-shadow: 0px 4px 6px #acaaaa;
+        }
+    }
 }
