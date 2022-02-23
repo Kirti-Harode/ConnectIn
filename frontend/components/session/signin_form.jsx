@@ -39,7 +39,7 @@ class SigninForm extends React.Component{
     renderErrors (){
         if(this.state.errors.length){
            return (this.state.errors.map((error,index) => (
-                ( <ul key={index}>{error}</ul> )
+                ( <div key={index}>{error}</div> )
            )))
         }
         else{
@@ -58,13 +58,18 @@ class SigninForm extends React.Component{
 
     handleDemoSignin(e){
         e.preventDefault()
+        this.setState({
+            email: 'kirti@gmail.com',
+            password: 'password',
+            erorrs: []
+        })
         this.props.processForm({
             email: 'kirti@gmail.com',
             password: 'password',
-            // fname: 'Kitty',
-            // lname: 'Cat',
             erorrs: []
         })
+       
+       
         this.demo = true;
     }
 
@@ -88,7 +93,6 @@ class SigninForm extends React.Component{
                         <h1 className='signin-heading'>Sign in</h1>
                         <p className='signin-msg'>Stay updated on your professional world</p>
                     </div>
-                    <ul className='signin-errors'>{error}</ul>
                     <input 
                         className='signin-email'
                         type="text" 
@@ -104,7 +108,10 @@ class SigninForm extends React.Component{
                         onChange={this.update('password')} 
                         placeholder='Password'>     
                     </input>
-                    <br/>
+                    
+                    <div className='signin-errors'>{error}</div>
+                    
+                    {/* <br/> */}
                     <button className='signin-button' value={this.props.formType}>{this.props.formType}</button>
                     <button  className="demo-signin-button" onClick={this.handleDemoSignin} >Demo Sign In</button>
                     <div className='new-here'> New to ConnectIn?  <Link className='signup-link' to='/signup'> Sign up</Link></div>

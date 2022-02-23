@@ -8,7 +8,6 @@
     color: rgb(17, 14, 14);
 }
     
-    
 .signup-errors {
     color: red;
     font-size: 15px;
@@ -17,30 +16,16 @@
 .signup-form-box{   
     display: flex;
     padding-top: 20px;
-    // width: 380px;
     width: 352px;
     height: 500px; 
     background-color: white;
     font-size: 3.2rem;
     padding-left: 15px;
-
-    // border: 1px solid black;
-    // display: block;
-    // margin-top: 150px;
-    // margin-right: 300px;
-    // margin-left:  -200px;
-    // justify-content: center;
-    // flex-direction: column;
-    // align-items: center;
-    // padding-top: 100px;
-    // border: none;
-    
-    // box-shadow: 0 4px 12px rgb(0 0 0 / 15%);
     padding: 24px;
     border-radius: 4px;
     margin: 0 auto;
-    // background: #fff;
-    box-shadow: 0.5px 2px 4px #272727;
+    box-shadow: 0px 4px 6px #acaaaa;
+
 }   
 
 .signup-heading {
@@ -53,38 +38,36 @@
     padding-top: 10px;
     font-size: 15px;
     padding-bottom: 10px;
+    color: rgb(49, 49, 49);
 }
 
 .signup-input {
-    font-size: 20px;
+    font-size: 18px;
     width: 340px;
     height: 40px;
     border-radius: 8px;
     border: 1px solid gray;
+    padding-left: 5px;
 }
 
 .signup-button,.demo-signin-signupForm {
-    font-size: 20px;
+    font-size: 19px;
     width: 350px;
     height: 40px;
     cursor: pointer;
     background-color: #0a66c2;  
     border-radius: 8px;
+    color: white;
+    border: none;
 }
-
-// .button-div{
-    // margin-left: 0px;
-    // width: 100px;
-    // height: 40px;
-// }
 
 .signup-button:hover,.demo-signin-signupForm:hover {
-    background-color: #0a66c2;
-    box-shadow: 1px 2px 2px #0a131d;
+    background-color: #074f97;
+    box-shadow: 0px 4px 6px #acaaaa;
 }
-
 
 .already-account{
     padding-top: 20px;
     font-size: 15px;
+    color: rgb(49, 49, 49);
 }

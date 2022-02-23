@@ -10,6 +10,7 @@
     .modal-child {
         display: flex;
         justify-content: center;
+        margin-top: 20px;
     }
 }
 
@@ -20,8 +21,11 @@
     border: 1px solid gray;
     border-radius: 10px;
     width: 680px;
-    height: 30vh;
+    height: 400px;
     
+    .about-form-div{
+        margin-top: 30px;
+    }
     .about-form-heading {
         display: flex;
         justify-content: space-between;
@@ -33,8 +37,12 @@
         .about-close-button{
             padding-right: 25px;
             cursor: pointer;
+            
         }
     
+        .about-close-icon{
+            font-size: 25px;
+        }
     }
 
     .about-form {
@@ -58,7 +66,7 @@
     .about-body-textarea{
         margin-top: 5px;
         width: 600px;
-        height: 75px;
+        height: 170px;
         border-radius: 5px;
         border: 1px solid gray;
     }
@@ -68,37 +76,39 @@
         flex-direction: row;
         width: 670px;
         padding: 10px;
-       
+        margin-left: 6px;
     }
 
     .about-delete-button{
         margin-left: 10px;
-        font-size: 0.9rem;
+        font-size: 1rem;
         background-color: white;
         border-radius: 4px;
-        color: gray;
+        color: rgb(51, 51, 51);
         border: 1px solid gray;
         padding: 7px;
         width: 100px;
         cursor: pointer;
 
         &:hover {
-            background-color: rgba(0, 0, 0, 0.3);
+            background-color: rgba(8, 8, 8, 0.712);
+            box-shadow: 0px 4px 6px #acaaaa;
+            color: white;
         }
     }
 
     .about-save-button {
         margin-left: 10px;
-        font-size: 0.9rem;
-        background-color: white;
+        font-size: 1rem;
+        border: 1px solid #065cb1;
+        background-color: #0a66c2;
         border-radius: 4px;
-        color: gray;
-        border: 1px solid gray;
+        color: white;
         padding: 7px;
         width: 100px;
         cursor: pointer;
         &:hover {
-            background-color: rgba(0, 0, 0, 0.3);
+            box-shadow: 0px 4px 6px #acaaaa;
         }
     }
 }
@@ -114,15 +124,15 @@
     .intro-form-heading{
         font-size: 20px;
         font-weight: 400;
-        padding: 15px 0px 15px 15px;
+        padding: 15px 0px 15px 25px;
         border-bottom: 1px solid lightgray;
         display: flex;
         justify-content: space-between;
 
         .user-close-button{
-            padding-right: 15px;
+            padding-right: 30px;
             cursor: pointer;
-            
+            font-size: 25px;
         }
     }
 
@@ -159,7 +169,10 @@
             margin-top: 8px;
             margin-bottom: 5px;
             width: 200px;
-            height: 20px;
+            height: 25px;
+            border: 1px solid gray;
+            border-radius: 5px;
+            padding-left: 5px;
         }
     }
 
@@ -189,18 +202,18 @@
 
     .user-intro-submit{
         position: relative;
-        left: 90%;
-        font-size: 0.9rem;
+        left: 88%;
+        font-size: 1rem;
         background-color: #0a66c2;
         border-radius: 24px;
         color: white;
         border: none;
         padding: 7px;
-        width: 65px;
+        width: 80px;
         cursor: pointer;
         
         &:hover {
-            background-color: #0755a3; 
+            box-shadow: 0px 4px 6px #acaaaa;
         }
     }
 
@@ -221,6 +234,11 @@
     }
     .location-input{
         margin-top: 5px;
+        border: 1px solid gray;
+        width: 195px;
+        padding-left: 5px;
+        border-radius: 5px;
+        height: 25px;
     }
 }
 
@@ -233,7 +251,8 @@
     border-radius: 10px;
     width: 680px;
     height: 84vh;
-
+    overflow-y: scroll;
+    margin-bottom: 10px;
     .exp-form{
         display: flex;
         flex-direction: column;
@@ -277,19 +296,18 @@
     }
     .exp-save-button{
         position: relative;
-        left: 65%;
-        font-size: 0.9rem;
+        left: 62%;
+        font-size: 1rem;
+        border: 1px solid #065cb1;
         background-color: #0a66c2;
         border-radius: 24px;
         color: white;
-        border: none;
         padding: 7px;
-        width: 60px;
+        width: 85px;
         cursor: pointer;
-
+        margin-bottom: 10px;
         &:hover {
-            background-color: #0755a3; 
-            border: 1px solid#0755a3 ;
+            box-shadow: 0px 4px 6px #acaaaa;
         }
     }
 
@@ -297,15 +315,19 @@
         font-size: 0.9rem;
         background-color: white;
         border-radius: 24px;
-        color: gray;
-        border: 1px solid gray;
+        color: rgb(53, 53, 53);
+        border: 1px solid rgb(58, 58, 58);
         padding: 7px;
         width: 100px;
         cursor: pointer;
         margin-left: 25px;
         margin-right: 10px;
+        margin-bottom: 10px;
+
         &:hover{
-            background-color: rgba(0, 0, 0, 0.3);
+            background-color: rgba(0, 0, 0, 0.61);
+            box-shadow: 0px 4px 6px #acaaaa;
+            color: white;
         }
     }
 
@@ -320,6 +342,7 @@
         .exp-close-button{
             padding-right: 15px;
             cursor: pointer;   
+            font-size: 25px;
         }
     }
 }
@@ -332,6 +355,7 @@
     border-radius: 10px;
     width: 680px;
     height: 84vh;
+    overflow-y: scroll;
 
     .edu-form{
         display: flex;
@@ -376,19 +400,19 @@
 
     .edu-save-button{
         position: relative;
-        left: 65%;
-        font-size: 0.9rem;
+        left: 62%;
+        font-size: 1rem;
+        border: 1px solid #065cb1;
         background-color: #0a66c2;
         border-radius: 24px;
-        color: white;
-        border: none;
+        color: white;    
         padding: 7px;
-        width: 60px;
+        width: 85px;
         cursor: pointer;
+        margin-bottom: 10px;
 
         &:hover {
-            background-color: #0755a3; 
-            border: 1px solid#0755a3 ;
+            box-shadow: 0px 4px 6px #acaaaa;
         }
     }
 
@@ -396,15 +420,19 @@
         font-size: 0.9rem;
         background-color: white;
         border-radius: 24px;
-        color: gray;
-        border: 1px solid gray;
+        color: rgb(53, 53, 53);
+        border: 1px solid rgb(58, 58, 58);
         padding: 7px;
         width: 100px;
         cursor: pointer;
         margin-left: 25px;
         margin-right: 10px;
+        margin-bottom: 10px;
+
         &:hover{
-            background-color: rgba(0, 0, 0, 0.3);
+            background-color: rgba(0, 0, 0, 0.61);
+            box-shadow: 0px 4px 6px #acaaaa;
+            color: white;
         }
     }
 
@@ -418,7 +446,8 @@
 
         .edu-close-button{
             padding-right: 15px;
-            cursor: pointer;           
+            cursor: pointer; 
+            font-size: 25px;          
         }
     }
 }

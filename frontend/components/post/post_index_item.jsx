@@ -12,6 +12,7 @@ import CommentIndexContainer from "../comment/comment-index";
 import CreateCommentContainer from "../comment/comment_form";
 import {createLike, fetchLikes, deleteLike} from '../../actions/like_actions'
 import { AiOutlineLike } from "react-icons/ai";
+
 class PostIndexItem extends React.Component{
 
     constructor(props){
@@ -44,7 +45,7 @@ class PostIndexItem extends React.Component{
         this.setState({comments: true});
     }
 
-    componentWillReceiveProps(){
+    UNSAFE_componentWillReceiveProps(){
         this.setState({
             like: this.props.liked,
         })

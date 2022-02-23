@@ -41,11 +41,12 @@ class MyNetwork extends React.Component {
                                     <p className="connected-user-bio">{user.bio}</p>
                                 </Link>
                             </div>
+                            <Link className="mesage-button" >Message</Link>
+                            <button className="disconnect-button"> Disconnect</button>
                         </div>
                     ))}
                 </div>
 
-               
             </div>
         )
     }

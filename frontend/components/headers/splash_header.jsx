@@ -7,7 +7,7 @@ import smallLogo from '../../../app/assets/images/in_alpha.png'
 import { FaHome, FaUserFriends, FaUserGraduate, FaSearch, FaBell} from "react-icons/fa";
 import {IoIosBriefcase } from "react-icons/io";
 import { IoChatboxEllipses } from "react-icons/io5";
-
+import Search from '../search/search_bar';
 class LoggedIn extends React.Component {
     constructor(props){
         super(props)
@@ -28,23 +28,21 @@ class LoggedIn extends React.Component {
         return(
             <div className='splash-header-container'>
                 <div className='splash-content'>
-                {/* <nav className='left-bar'> */}
+                
                     <span className='logo-div'>
                         <Link to='/'>
                            <img className='small-logo-img' src={window.smallLogo}/>
                         </Link>
                     </span>
-                    <div className='search-container'>
-                        <div className='search-input-div'>
-                            <input className='search-input' type="text" placeholder='Search' ></input>
-                        </div>
-                        {/* <div className='search-icon-div'> */}
+                    <div>
+                        {/* <div className='search-container'>
+                            <div className='search-input-div'>
+                                <input className='search-input' type="text" placeholder='Search' ></input>
+                            </div>
                             <FaSearch className='search-icon'/>
-                        {/* </div> */}
-                       
+                        </div> */}
+                        <Search />
                     </div>
-                {/* </nav>    */}
-
                 <nav className='right-nav'>
                     <ul className='nav-list'>
                         <li className='home-nav'>

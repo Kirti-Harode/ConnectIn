@@ -8,12 +8,13 @@
     padding: 20px;
     padding-top: 100px;
     justify-content: space-between;
+    padding-left: 30px;
 
     .feed-new-post-div{
         background-color: white;
         border: 1px solid lightgray;
         border-radius: 10px;
-        width: 530px;
+        width: 560px;
         padding: 20px;
         margin-right: 45px;
     }
@@ -54,15 +55,16 @@
         background-color: white;
         border: 1px solid lightgray;
         border-radius: 10px;
-        left: 3vw;
+        // left: 10vw;
+        margin-right: 1000px;
         height: 250px;
-        width: 200px;
+        width: 250px;
 
         .feed-back-img{
-            width: 200px;
+            width: 250px;
             height: 80px;
             border-radius: 10px;
-            margin-top: -25px;
+            margin-top: -26px;
         }
         .user-mini{
             display: flex;
@@ -76,6 +78,7 @@
             h1{
                 margin-top: 10px;
                 font-weight: 300;
+                margin-left: 15px;
             }
         
             h3{
@@ -134,9 +137,10 @@
         position: fixed;
         border: 1px solid lightgray;
         background-color: white;
-        right: 3vw;
+        // right: 13vw;
+        margin-left: 925px;
         height: 400px;
-        width: 200px;
+        width: 250px;
         border-radius: 10px;
     }
     h1{

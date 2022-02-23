@@ -42,7 +42,7 @@ class SignupForm extends React.Component {
     renderErrors (){
         if(this.state.errors.length){
            return this.state.errors.map((error,index) => {
-               return ( <li key={index}>{error}</li> )
+               return ( <p key={index}>{error}</p> )
             })
         }
         else{
@@ -52,6 +52,13 @@ class SignupForm extends React.Component {
 
     handleDemoSignin(e){
         e.preventDefault();
+        this.setState({
+            email: 'kirti@gmail.com',
+            password: 'password',
+            fname: 'Kirti',
+            lname: 'Harode'
+        });
+
         this.props.login({
             email: 'kirti@gmail.com',
             password: 'password',
@@ -80,7 +87,7 @@ class SignupForm extends React.Component {
                             <h1 className='signup-heading'>Join now</h1>
                             <p className='signup-msg'>Make the most of your professional life</p>
                         </div>
-                        <ul className='signup-errors'>{error}</ul>
+                        <div className='signup-errors'>{error}</div>
                         <input 
                             className='signup-input'
                             type="text" 

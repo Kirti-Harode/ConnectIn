@@ -1,7 +1,7 @@
 
 .post-index-item-div{
     background-color: white;
-    width: 540px;
+    width: 570px;
     border: 1px solid lightgray;
     border-radius: 10px;
     padding: 15px;
@@ -139,24 +139,44 @@
     }
 
     .dropdown-post-button{
-        // width: 20px;
-        height: 10px;
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
         border: none;
         background-color: white;
         cursor: pointer;
+        margin-left: 40px;
+        padding-left: 2px;
+        padding-top: 2px;
+        padding-right: 4px;
+        &:hover{
+            background-color: rgb(236, 236, 236);
+
+        }
     }
+    .post-three-dots{
+        font-size: 18px;
+    }
+
     .reveal-dropdown{
-        width: 100px;
+        width: 150px;
         height: 40px;
-        // padding-left: 20px;
+        margin-left: 20px;
         padding-bottom: 2px;
+        position: absolute;
+        // left: 10px;
+        right: -15px;
+        border: 1px solid #e6e6e6;
+        box-shadow: 0px 4px 6px #acaaaa;
+
     }
     .post-edit-button, .post-delete-button{
         cursor: pointer;
+        padding-bottom: 2px;
+        color: rgb(66, 66, 66);
         &:hover{
             background-color: lightgray;
             border-radius: 5px;
-            // border: 1px solid gray;
         }
     }
 
@@ -191,10 +211,12 @@
         display: flex;
         justify-content: space-between;
         font-weight: 1;
-        padding: 15px 0px 10px 15px;
+        padding: 15px 0px 5px 15px;
         border-bottom: 1px solid lightgray;
+
        h1{
            font-weight: 400;
+           padding-top: 2px;
        }
     }
     .post-user-info-modal{
@@ -202,27 +224,37 @@
         display: flex;
     }
 
-    h1 {
-        font-size: 0.9rem;
+    // h1 {
+        // font-size: 0.9rem;
+    // }
+
+    .user-name-bio{
+        margin-top: 6px;
     }
 
     h2 {
         font-size: 0.7rem;
         font-weight: 400;
         color: gray;
+        padding-top: 1px;
     }
 
     .user-profile-photo{
         border-radius: 50%;
-        width: 40px;
-        margin-right: 5px;
+        width: 50px;
+        height: 50px;
+        margin-right: 10px;
         margin-top: -7px;
     }
     .post-close-button-div{
-        margin-right: 10px;
+        margin-right: 15px;
+        
     }
 
-    
+    .post-close-icon{
+        font-size: 25px;
+        margin-top: -4px;
+    }
     .post-form-content{
         display: flex;
         flex-direction: column;
@@ -273,6 +305,12 @@
             cursor: pointer;
             // display: none;
         }
+    }
+
+    .post-media-preview{
+        // width: 20px;
+        height: 200px;
+        display: flex;
     }
 }
 
