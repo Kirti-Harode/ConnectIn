@@ -1,4 +1,5 @@
 import React from "react";
+import { BsDisplay } from "react-icons/bs";
 import { GrFormClose } from "react-icons/gr";
 import { MdPhoto } from "react-icons/md";
 
@@ -89,9 +90,9 @@ class PostForm extends React.Component {
                             {media_preview}
                         </div>
                         <div className="post-form-footer">
-                            <div className="post-photo-button">
-                                <div className="photo-add" onClick={()=> this.openFileLoader}>
-                                    <MdPhoto className="add-photo-icon"/>
+                            <div className="post-photo-button" >
+                                <div className="photo-add" >
+                                    <MdPhoto className="add-photo-icon" onClick={()=> this.openFileLoader}/>
                                 </div>
                                 <input type="file" id="post-media" accept='image/*' onChange={this.handleFile} />
                             </div>
