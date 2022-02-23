@@ -1,28 +1,25 @@
 .connector-pic{
     width: 70px;
+    height: 70px;
     border-radius: 50%;
     margin-left: 30px;
 }
 
 .network-outer-div{
     display: flex;
-    // align-items: center;
-    // flex-direction: row;
-    // justify-content: column;
+    flex-direction: row;
     padding-top: 100px;
     min-height: 100vh;
     background-color: #f3f2ef;
-    // display: flex;
-    flex-direction: row;
-    // align-items: center;
     justify-content: space-between;
-
+    padding-left: 15vw;
+    padding-right: 100vw;
     .left-side-bar{
         display: flex;
         flex-direction: column;
-        // align-items: center;
-        margin-left: 116px;
-        width: 200px;
+        position: fixed;
+        // margin-left: 180px;
+        width: 250px;
         height: 330px;
         border-radius: 10px;
         border: 1px solid lightgray;
@@ -34,6 +31,7 @@
             font-size: 15px;
             font-weight: 700;
             padding-top: 10px;
+            padding-left: 12px;
         }
         .all-headings{
             // position: absolute;
@@ -54,12 +52,15 @@
         }
     }
     .network-inner-div{
+        display: flex;
+        flex-direction: column;
         background-color: white;
         border-radius: 10px;
         border: 1px solid lightgray;
-        min-width: 500px;
-        margin-right: 400px;
-
+        min-width: 700px;
+        margin-left: 340px;
+        // margin-right: 10vw;
+        
         .my-connections-heading{
             padding: 20px;
             display: flex;

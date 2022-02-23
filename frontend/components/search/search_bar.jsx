@@ -19,7 +19,7 @@ class Search extends React.Component{
     handleSearch(e){
         this.setState({searchInput: e.currentTarget.value});
         let searchLetter = e.currentTarget.value;
-      
+        
         if(searchLetter === ''){
             this.setState({searchResult: []});
         }
@@ -35,6 +35,7 @@ class Search extends React.Component{
     }
 
     handleClick(){
+        
         this.setState({ 
             searchInput: '',
             searchResult: []
@@ -42,6 +43,7 @@ class Search extends React.Component{
        
     }
     render(){
+       
         let result;
         if (this.state.searchResult.length !== 0){
             result = this.state.searchResult.slice(0,4).map((user, idx) => (
@@ -65,7 +67,7 @@ class Search extends React.Component{
             <div>
                 <div className='search-container'>
                     <div className='search-input-div'>
-                        <input className='search-input' type="text" placeholder='Search' onChange={this.handleSearch}></input>
+                        <input className='search-input' type="text" value={this.state.searchInput} placeholder='Search' onChange={this.handleSearch}></input>
                     </div>
                     <FaSearch className='search-icon'/>
                 </div>

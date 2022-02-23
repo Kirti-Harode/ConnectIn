@@ -6,6 +6,16 @@ import {openModal} from '../../../actions/modal_actions';
 
 class AboutIndexItem extends React.Component {
     render(){
+        let editButton;
+        if (this.props.currentUser.id == this.props.match.params.userId) {
+            editButton = ( 
+            <div className="edit-button-about" onClick={() => (this.props.openModal('editAbout', this.props.about.id))}>
+                <MdCreate className="edit-button"/>
+            </div>
+        )
+        }else{
+            editButton = null;
+        }
         return(
             <div className="about-index-item-div">
                 <div className="about-info-div">
@@ -13,10 +23,7 @@ class AboutIndexItem extends React.Component {
                         <p className="about-body-p">{this.props.about.body}</p>
                     </div>
                 </div>
-                <div className="edit-button-about" onClick={() => (this.props.openModal('editAbout', this.props.about.id))}>
-                    <MdCreate className="edit-button"/>
-                </div>
-                
+                {editButton}
             </div>
         )
     }

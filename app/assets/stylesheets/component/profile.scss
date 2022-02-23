@@ -48,26 +48,22 @@
         border-radius: 10px;
     }
     .profile-photo-div{
-        // margin-top: -80px;
-        // padding-bottom: 10px;
-        // padding-left: 20px;
         position: relative;
-        bottom: 8vh;
-        left: 1vw;
-        margin-bottom: 15px;
+        bottom: 70px;
+        left: 10px;
+        // margin-bottom: 15px;
     }
     .profile-img {
         border-radius: 50%;
         width: 130px;
+        height: 132px;
         border: 3px solid white;
-        // width: 140px;
-        // height: 140px;
     }
     .user-info-header {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-    
+        
     }
     .user-name-div {
         display: flex;
@@ -96,6 +92,7 @@
         font-size: 0.8rem;
         font-weight: 400;
         margin-top: 5px;
+        margin-bottom: 10px;
     }
     .edit-user-info {
         cursor: pointer;
@@ -106,7 +103,7 @@
     .user-details {
         position: relative;
         padding-left: 40px;
-        bottom: 12vh;
+        bottom: 90px;
         padding: 15px;
     }
 }
@@ -119,6 +116,7 @@
     .about-createButton{
         font-size: 25px;
         cursor: pointer;
+        margin-right: 10px;
     }
 
     .about-header {
@@ -156,12 +154,9 @@
     .about-body-div {
         display: flex;
         align-items: center;
-        border-bottom: 1px solid lightgray;
         width: 608px;
         font-size: 1rem;
         font-weight: 400;
-        margin-left: 60px;
-        // margin-bottom: 5px;
         padding-bottom: 10px;
     }
 
@@ -174,7 +169,7 @@
         // margin-top: 3px;
     }
     .edit-button {
-        // padding-left: 30px;
+        margin-left: 55px;
         cursor: pointer;
         font-size: 18px;
     }
@@ -202,7 +197,7 @@
     .experience-createButton{
         cursor: pointer;
         font-size: 25px;
-
+        margin-right: 10px;
     }
     .exp-h2 {
         // font-weight: 900;
@@ -232,19 +227,18 @@
         width: 580px;
     }
     .exp-title {
+        margin-top: 8px;
         font-size: 1rem;
         font-weight: 500;
-        margin-bottom: 5px;
+        // margin-bottom: 5px;
     }
     .exp-company {
         display: flex;
         flex-direction: column;
-        // border-bottom: 1px solid lightgray;
-        padding-bottom: 10px;
+        padding-bottom: 3px;
         font-weight: 300;
-        // width: 600px;
         font-size: 0.9rem;
-
+        padding-top: 1px;
     }
     .exp-description {
         font-size: 0.8rem;
@@ -259,6 +253,8 @@
     .exp-location {
         font-size: 0.8rem;
         color: gray;
+        padding-top: 1px;
+        padding-bottom: 2px;
     }
     .edit-button {
         cursor: pointer;
@@ -285,7 +281,7 @@
     .education-createButton {
         cursor: pointer;
         font-size: 25px;
-
+        margin-right: 20px;
     }
     .education-index-div {
         padding-top: 15px;
@@ -328,6 +324,7 @@
         font-weight: 400;
         margin-bottom: 5px;
         font-size: 1rem;
+        margin-top: 10px;
     }
 
     .degree-info {
