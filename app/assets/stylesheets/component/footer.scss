@@ -1,13 +1,22 @@
 .creator-info-div{
     border-bottom: 1px solid lightgray;
-    padding-left: 20px;
-    padding-right: 20px;
+    left: 18vw;
+    right: 15vw;
+    position: absolute;
+    top: 830px;
+
+    .my-name, .creator-links, .other-pro-links{
+        margin-right: 200px;
+    }
+    .other-pro-links{
+        padding-bottom: 5px;
+    }
 }
 .creator-component {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding-top: 10px;
+    // padding-top: 10px;
     padding-bottom: 10px;
     // margin-top: 10px;
     margin-right: 20px;
@@ -18,24 +27,23 @@
         padding-bottom: 5px;
     }
     .tech, .links{
-        padding-top: 10px;
+        padding-top: 5px;
         display: flex;
         flex-direction: column;
-        color: #666666;
+        color: #242424;
         font-size: 14px;
-        font-weight: bold;
     }
     h2 {
         color: #000000E6;
         font-weight: 400;
+        font-size: 18px;
         padding-bottom: 5px;
-        font-size: 16px;
     }
 
     .linkedin-link, .github-link, .anglelist-link{
         text-decoration: none;
         padding-bottom: 5px;
-        color: #666666;
+        color: #1f1f1f;
         &:hover {
             color: royalblue;
             font-size: 15px;
@@ -46,8 +54,9 @@
     .pro-link{
         text-decoration: none;
         padding-bottom: 5px;
+        padding-top: 10px;
         font-size: 14px;
-        color: #666666;
+        color: #222222;
         &:hover {
             color: royalblue;
             font-size: 15px;
@@ -60,7 +69,7 @@
     }
 
     .creator-name{
-        color:#666666;
+        color:#222222;
     }
 }
 

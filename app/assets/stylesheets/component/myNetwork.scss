@@ -1,6 +1,6 @@
 .connector-pic{
-    width: 70px;
-    height: 70px;
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
     margin-left: 30px;
 }
@@ -19,12 +19,12 @@
         flex-direction: column;
         position: fixed;
         // margin-left: 180px;
-        width: 250px;
+        width: 280px;
         height: 330px;
         border-radius: 10px;
         border: 1px solid lightgray;
         background-color: white;
-        padding-left: 5px;
+        padding-left: 10px;
 
         .manage-heading{
             color: rgb(82, 82, 82);
@@ -57,7 +57,7 @@
         background-color: white;
         border-radius: 10px;
         border: 1px solid lightgray;
-        min-width: 700px;
+        min-width: 780px;
         margin-left: 340px;
         // margin-right: 10vw;
         
@@ -68,8 +68,8 @@
             border-bottom: 1px solid lightgray;
 
             h1 {
-                font-size: 1.2rem;
-                font-family: 500;
+                font-size: 1.4rem;
+                color: #404040;
             }
         }
 
@@ -90,12 +90,91 @@
             h2{
                 font-weight: 400;
                 padding-bottom: 8px;
+                font-size: 19px;
             }
 
             p{
                 font-size: 0.9rem;
-                color: gray;
+                color: rgb(71, 71, 71);
                 font-weight: 200;
+            }
+        }
+    }
+
+    .message-button{
+        margin-left: 200px;
+        margin-right: 10px;
+        width: 100px;
+        height: 25px;
+        border: 1px solid royalblue;
+        border-radius: 15px;
+        color: royalblue;
+        padding-left: 20px;
+        padding-top: 5px;
+        font-size: 19px;
+        position: absolute;
+        left: 950px;
+
+        &:hover{
+            background-color: royalblue;
+            color: white;
+            box-shadow: 0px 4px 6px #acaaaa;
+        }
+    }
+
+    .disconnect-button {
+        font-size: 28px;
+        color: #484848;
+        position: absolute;
+        left: 1280px;
+        border: none; 
+        background-color: white;
+        cursor: pointer;
+        
+        .connection-dots{
+            width: 35px;
+            height: 30px;
+            border-radius: 15px;
+            margin-top: 6px;
+            &:hover{
+                background-color: #7a7a7ab2;
+            }
+        }
+
+        .hide-connection-dropdown{
+            display: none;
+        }
+        .reveal-connection-dropdown{
+            width: 220px;
+            height: 40px;
+            margin-left: 20px;
+            padding-bottom: 2px;
+            position: absolute;
+            border: 1px solid #e6e6e6;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px #acaaaa;
+            background-color: white;
+            right: -30px;
+        }
+
+        .remove-connection{
+            margin-top: 8px;
+            padding-left: 13px;
+            display: flex;
+            flex-direction: row;
+            width: 214px;
+            height: 30px;
+            cursor: pointer;
+            &:hover{
+                background-color: #8080805c;
+            }
+            .remove-icon{
+                font-size: 25px;
+            }
+            h2{
+                padding-top: 3px;
+                font-size: 17px;
+                padding-left: 5px;
             }
         }
     }

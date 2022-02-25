@@ -27,14 +27,10 @@ class CreatorInfo extends React.Component {
                     <div className="tech-used">
                         <h2>Technologies Implemented</h2>
                         <div className="tech">
-                            <h3>Ruby on Rails</h3>
-                            <h3>JavaScript</h3>
-                            <h3>React</h3>
-                            <h3>Redux</h3>
-                            <h3>jQuery</h3>
-                            <h3>JBuilder</h3>
-                            <h3>PostgreSQl</h3>
-                            <h3>AWS</h3>
+                            <h3> Backend: Ruby on Rails </h3>
+                            <h3> Frontend: JavaScript, React, Redux</h3>
+                            <h3> Database: PostgreSQl </h3>
+                            <h3> Other: jQuery, JBuilder, AWS</h3>
                         </div>
                     </div>
                 </div>

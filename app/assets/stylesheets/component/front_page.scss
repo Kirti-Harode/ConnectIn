@@ -7,7 +7,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-left: 80px;
+    margin-left: 180px;
 }
 .welcome-msg {
     color: rgb(146,93,79);
@@ -25,41 +25,48 @@ body{
     height: 30px;
     border: 0.5px solid lightgray;
     margin-top: 10px;
-    margin-bottom: 2px;
-    padding-top: 20px;
-    padding-left: 5px;
-    font-size: 20px;
-    color: rgb(70, 70, 70);
-    border-radius: 5px;
+    padding: 15px 0px 5px 15px;
+    font-size: 22px;
+    color: #464646;
+    border-radius: 10px;
+    cursor: pointer;
+    &:hover{
+        box-shadow: 1px 4px 6px #b8b8b8;
+    }
+    .a-tags{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        text-decoration: none;
+        color: rgb(61, 61, 61);
+        .icon{
+            margin-right: 10px;
+        }
+    }
 }
 
 .welcome-img {
-    // position: relative;
-    // z-index: -1;
     margin-left: 150px;
-    width: 650px;
-    padding-top: 150px;
-    
+    width: 700px;
+    padding-top: 70px;
+    margin-right: 200px;
 }
 
 .join-msg1 {
-    margin-left: 80px;
     font-size: 40px;
     font-weight: 200;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    padding-bottom: 10px;
 }
 .footer {
-    margin-top: 100px;
+    margin-top: 10px;
 }
 .footer-img{
     display: flex;
 }
 .join-sec {
-    // background-image: url(https://static-exp3.licdn.com/sc/h/2vt8plqbv2l2pi6kxm89bqs59);
     position: absolute; 
-    margin-top: 5vh;
+    // margin-left: 240px;
+    left: 22vw;
+    right: 10vw;
 }
 
 

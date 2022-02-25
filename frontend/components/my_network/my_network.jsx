@@ -7,8 +7,26 @@ import { BsFillPeopleFill, BsPersonLinesFill,BsCalendarDate } from "react-icons/
 import { HiUserGroup } from "react-icons/hi";
 import { RiContactsBookLine, RiPagesLine } from "react-icons/ri";
 import { BiNews } from "react-icons/bi";
+import { BsThreeDots } from "react-icons/bs";
+import { RiDeleteBin5Fill } from "react-icons/ri";
 
 class MyNetwork extends React.Component {
+    constructor(props){
+        super(props)
+        this.state ={
+            open: false
+        }
+        this.handleOpen = this.handleOpen.bind(this)
+        this.handleClose = this.handleClose.bind(this)
+    }
+    handleOpen(){
+        this.setState({open: true});
+    }
+
+    handleClose(){
+        this.setState({open: false});
+    }
+
     render(){
        const {connectedUsers} = this.props
         return(
@@ -41,8 +59,19 @@ class MyNetwork extends React.Component {
                                     <p className="connected-user-bio">{user.bio}</p>
                                 </Link>
                             </div>
-                            <Link className="mesage-button" >Message</Link>
-                            <button className="disconnect-button"> Disconnect</button>
+                            <Link className="message-button" to='/message' >
+                                Message
+                            </Link>
+
+                            <button className="disconnect-button" onClick={this.handleOpen} onBlur={this.handleClose}> 
+                                <BsThreeDots className="connection-dots"/>
+                                <ul className={this.state.open ? "reveal-connection-dropdown" : "hide-connection-dropdown"}> 
+                                    <div className="remove-connection">
+                                        <RiDeleteBin5Fill className="remove-icon"/>
+                                        <h2> Remove Connection </h2> 
+                                    </div>                               
+                                </ul>
+                            </button>
                         </div>
                     ))}
                 </div>
