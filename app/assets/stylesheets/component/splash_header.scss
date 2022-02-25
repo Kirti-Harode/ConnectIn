@@ -259,24 +259,16 @@ ul {
 }
 
 .reveal-dropdown{
-    // display: flex;
     flex-direction: column;
     position: absolute;
-    // top: 100%;
-    // right: 150px;
     background-color: white;
-    // padding-top: 10px;
     margin-top: 8px;
-    margin-left: -150px;
-    // display: block;
-    // border: 1px solid lightgray;
+    margin-left: -160px;
     border-radius: 10px;
+    border-top-right-radius: 0;
     height: 200px;
     width: 300px;
-    box-shadow: 0.5px 1px 2px #272727;
     box-shadow: 0px 4px 6px #acaaaa;
-
-    // background-color: pink;
     
 }
 
