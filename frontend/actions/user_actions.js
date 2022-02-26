@@ -8,22 +8,30 @@ const receiveUsers = (users) => ({
     users
 });
 
-const receiveUser = (userId) => ({
+const receiveUser = (userId) => {
+    // debugger
+    return {
     type: RECEIVE_USER,
     userId
-});
+}};
 
 export const fetchUsers = () => dispatch => (
     UserApiUtil.fetchUsers()
     .then(users => dispatch(receiveUsers(users)))
 )
 
-export const fetchUser = userId => dispatch => (
-    UserApiUtil.fetchUser(userId)
-    .then(userId => dispatch(receiveUser(userId)))
-)
+export const fetchUser = userId => dispatch => {
+    // debugger
+    return (
+        UserApiUtil.fetchUser(userId)
+        .then(userId => dispatch(receiveUser(userId)))
+    )
+}
+
 
 export const updateUser = user => dispatch => (
-    UserApiUtil.updateUser(user)
-    .then(user => dispatch(receiveUser(user)))
+    
+        UserApiUtil.updateUser(user)
+        .then(user => dispatch(receiveUser(user)))
 )
+    

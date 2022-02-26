@@ -570,28 +570,28 @@ connection28 = Connection.create!(
     connector_id: user22.id,
     accepted: true
 )
-connection29 = Connection.create!(
-    connectee_id: demo_user.id,
-    connector_id: user23.id,
-    accepted: true
-)
-connection30 = Connection.create!(
-    connectee_id: demo_user.id,
-    connector_id: user24.id,
-    accepted: true
-)
-connection31 = Connection.create!(
-    connectee_id: demo_user.id,
-    connector_id: user25.id,
-    accepted: true
-)
-connection32 = Connection.create!(
-    connectee_id: demo_user.id,
-    connector_id: user26.id,
-    accepted: true
-)
-connection33 = Connection.create!(
-    connectee_id: demo_user.id,
-    connector_id: user27.id,
-    accepted: true
-)
+# connection29 = Connection.create!(
+#     connectee_id: demo_user.id,
+#     connector_id: user23.id,
+#     accepted: true
+# )
+# connection30 = Connection.create!(
+#     connectee_id: demo_user.id,
+#     connector_id: user24.id,
+#     accepted: true
+# )
+# connection31 = Connection.create!(
+#     connectee_id: demo_user.id,
+#     connector_id: user25.id,
+#     accepted: true
+# )
+# connection32 = Connection.create!(
+#     connectee_id: demo_user.id,
+#     connector_id: user26.id,
+#     accepted: true
+# )
+# connection33 = Connection.create!(
+#     connectee_id: demo_user.id,
+#     connector_id: user27.id,
+#     accepted: true
+# )
