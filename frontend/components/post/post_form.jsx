@@ -10,6 +10,7 @@ class PostForm extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this)
         this.handleFile = this.handleFile.bind(this)
         this.openFileLoader = this.openFileLoader.bind(this)
+        this.obtainPost = this.obtainPost.bind(this);
     }
 
     updateInput(field){
@@ -20,6 +21,20 @@ class PostForm extends React.Component {
         document.getElementById('post-media').click();
     }
 
+    obtainPost(){
+        this.setState({
+            body: this.props.post.body,
+            author_id: this.props.post.author_id,
+            media: this.props.post.media,
+            mediaUrl: this.props.post.mediaUrl
+        })
+    }
+    componentDidMount(){
+        if(this.props.formType === 'Edit Post'){
+            this.props.fetchPost(this.props.post.id)
+            .then(this.obtainPost)
+        }
+    }
     handleFile(e){
         const fileReader = new FileReader();
         const file = e.target.files[0]

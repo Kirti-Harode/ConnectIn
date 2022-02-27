@@ -5,6 +5,14 @@ import EducationIndexConatiner from './educations/education_index'
 import ExperienceIndexConatiner from './experiences/experience_index'
 class Profile extends React.Component {
 
+    componentDidUpdate(preprops) {
+        console.log(preprops)
+        console.log(this.props)
+        if (preprops.otherUser !== this.props.otherUser) {
+            this.props.fetchUser(this.props.otherUser.id)
+            // .then(this.filterproducts)
+        }
+    }
     render (){
         return(
             <div className="profile-div">

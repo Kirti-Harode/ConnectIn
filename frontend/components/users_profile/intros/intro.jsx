@@ -22,50 +22,29 @@ class Intro extends React.Component {
     //     e.preventDefault();
 
     // }
-    // componentDidUpdate(){
-    //     this.props.fetchUser(this.props.otherUser.id)
-    // }
-    // componentWillUnmount(){
-    //     this.props.fetchUser(this.props.match.params.userId)
-    // }
-    // componentDidUpdate(prevProps) {
-    //     if (this.props.otherUser.id !== prevProps.otherUser.id) {
-    //         this.props.fetchUser(this.props.match.params.userId);
-    //     }
-    // }
+
     componentDidMount(){
-        // debugger
         this.props.fetchUsers();
-        this.props.fetchUser(this.props.otherUser.id)
-        // .then(
-            this.props.fetchConnections(this.props.otherUser.id).then(() => {
-                this.props.connections.map(connection => {
-                    if(connection.connectee_id == this.props.otherUser.id) {
-                        this.setState({connections: this.state.connectons + 1})
-                        if(connection.connector_id == this.props.currentUser.id){
-                            this.setState({connected: true})
-                            this.setState({connectionId: connection.id})
-    
-                        }
+        this.props.fetchUser(this.props.otherUser.id);
+        this.props.fetchConnections(this.props.otherUser.id).then(() => {
+            this.props.connections.map(connection => {
+                if(connection.connectee_id === this.props.otherUser.id) {
+                    this.setState({connections: this.state.connectons + 1})
+                    if(connection.connector_id === this.props.currentUser.id){
+                        this.setState({connected: true})
+                        this.setState({connectionId: connection.id})
+
                     }
-                })
+                }
             })
-        // );
-        
+        })
     }
     render(){
-        // debugger
-        // if(this.props.otherUser === undefined) return null;
-        if(this.props.connections.length === 0) return null;
-
-        const { otherUser, currentUser, connections} = this.props;
-        console.log(connections);
-        console.log(otherUser.id);
-
         let editButton ;
-        if(currentUser && otherUser){
-            if(currentUser.id === otherUser.id){
-                editButton = (<div className="edit-button-div" onClick={() => {return this.props.openModal('editUserIntro', currentUser.id)}}>
+
+        if(this.props.currentUser && this.props.otherUser){
+            if(this.props.currentUser.id === this.props.otherUser.id){
+                editButton = (<div className="edit-button-div" onClick={() => {return this.props.openModal('editUserIntro', this.props.currentUser.id)}}>
                     <MdCreate className="edit-user-info"/>
                 </div>)
             }
@@ -73,45 +52,6 @@ class Intro extends React.Component {
                 editButton = null;
             }
         }
-
-        let options ;
-            if(currentUser.id === otherUser.id){
-                console.log("in my profile")
-                console.log(currentUser.id)
-                options = (
-                <div className="options">
-                    <h2> Add Profile Section</h2>
-                    <h3> More</h3>
-                </div>
-                )
-            }
-            else {
-                connections.map(connection => {
-                    if(connection.connecteeId === otherUser.id  && connection.connectorId === currentUser.id){
-                        console.log("in connected user's profile")
-                        console.log(`currentUser ${currentUser.id}`)
-                        console.log("otherUser " + otherUser.id)
-                        
-                        options = (
-                        <div className="options">
-                            <h2>Message</h2>
-                            <h2>Disconnect</h2>
-                        </div>
-                        )
-                    }else{
-                        console.log("in not connected user's profile")
-                        console.log(`currentUser ${currentUser.id}`)
-                        console.log("otherUser " + otherUser.id)
-                        options = (
-                        <div className="options">
-                            <h2>Connect</h2>
-                        </div>
-                        )
-                    }
-                })
-            
-        }
-       
         return(
             <div className="user-info-div">
                 <div className="background-image-div">
@@ -137,7 +77,6 @@ class Intro extends React.Component {
                     <div className="user-connections">
                         <h2>{this.props.connections.length} connections</h2>
                     </div>
-                    {options}
                 </div>
             </div>
         )

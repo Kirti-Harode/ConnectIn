@@ -31,7 +31,7 @@ demo_user_photo = open("https://connectin-aa-dev.s3.us-west-1.amazonaws.com/mypi
 demo_user.profile_photo.attach(io: demo_user_photo, filename: 'mypic1.png' )
 
 
-user1 = User.create!(email: 'harry@gmail.com', fname: 'Harry', lname: 'potter', password: 'password', bio: "Web developer", pronouns: 'He/His/Him', location: "SF");
+# user1 = User.create!(email: 'harry@gmail.com', fname: 'Harry', lname: 'potter', password: 'password', bio: "Web developer", pronouns: 'He/His/Him', location: "SF");
 user2 = User.create!(email: 'AlexCiminillo@gmail.com', fname: 'Alex ', lname: 'Ciminillo', password: 'password', bio: "Web developer", pronouns: 'He/His/Him', location: "CA");
 user3 = User.create!(email: 'AmandaChen@gmail.com', fname: 'Amanda', lname: 'Chen', password: 'password', bio: "Web developer", pronouns: 'she/her/hers', location: "LA");
 user4 = User.create!(email: 'AnnKim@gmail.com', fname: 'Ann', lname: 'Kim', password: 'password', bio: "Founder of Pupfinder", pronouns: 'she/her/hers', location: "NY");
@@ -58,30 +58,30 @@ user25 = User.create!(email: 'SpencerIascone@gmail.com', fname: 'Spencer', lname
 user26 = User.create!(email: 'DiegoChavez@gmail.com', fname: 'Diego', lname: 'Chavez', password: 'password', bio: "Instructor at App Academy", pronouns: 'he/him/his', location: "CA");
 user27 = User.create!(email: 'YuHuanW@gmail.com', fname: 'YuHuan', lname: 'W', password: 'password', bio: "Instructor at App Academy", pronouns: 'he/him/his', location: "CA");
 
-user1_photo = open('https://connectin-aa-dev.s3.us-west-1.amazonaws.com/harry.jpeg')
-user1.profile_photo.attach(io: user1_photo, filename: 'harry.jpeg' )
+# user1_photo = open('https://connectin-aa-dev.s3.us-west-1.amazonaws.com/harry.jpeg')
+# user1.profile_photo.attach(io: user1_photo, filename: 'harry.jpeg' )
 
 user5_photo = open('https://connectin-aa-dev.s3.us-west-1.amazonaws.com/arleen.png')
 user5.profile_photo.attach(io: user5_photo, filename: 'arleen.png' )
 
-about1 = About.create!(user_id: user1.id, body: "Software Engineer, ability to create magic with coding.");
+# about1 = About.create!(user_id: user1.id, body: "Software Engineer, ability to create magic with coding.");
 about2 = About.create!(user_id: demo_user.id, body: "Hello, I am a software engineer with experience in building full-stack web applications implementing technologies like React, Redux, PostgreSQL, MongoDB, Ruby on Rails, Express.  
     My most recent projects involve making a professional networking clone website of LinkedIn and the development of a 2d game in JavaScript and canvas.
     Additional Skills: Ruby - Javascript - SQL - HTML5 - CSS - Webpack")
 about3 = About.create!(user_id: user2.id, body: "I love programming.");
 
-experience1 = Experience.create!(
-    user_id: user1.id,
-    title: "Software Engineer",
-    employment_type: "Full-time",
-    company: "Google",
-    location: " Montainview, California, United States",
-    start_date: "April 2017",
-    end_date: "August 2024",
-    headline: "Good company",
-    industry: "Computer",
-    description: "some description"
-)
+# experience1 = Experience.create!(
+#     user_id: user1.id,
+#     title: "Software Engineer",
+#     employment_type: "Full-time",
+#     company: "Google",
+#     location: " Montainview, California, United States",
+#     start_date: "April 2017",
+#     end_date: "August 2024",
+#     headline: "Good company",
+#     industry: "Computer",
+#     description: "some description"
+# )
 experience2 = Experience.create!(
     user_id: demo_user.id,
     title: "Intern",
@@ -133,28 +133,28 @@ experience5 = Experience.create!(
     description: "Professional networkin"
 )
 
-education1 = Education.create!(
-    user_id: user1.id,
-    school: "University of California",
-    degree: "Bachelor's",
-    field_of_study: "Computer Engineering",
-    activities: "Many Activities",
-    description: "Good Time",
-    grade: "9.9",
-    start_date: "August 2012",
-    end_date: "December 2017",
-)
-education7 = Education.create!(
-    user_id: user1.id,
-    school: "Hogwarts School of Witchcraft and Wizardry, Scotland",
-    degree: "Bachelor's magic",
-    field_of_study: "Magic",
-    activities: "Many Activities",
-    description: "Good Time",
-    grade: "9.9",
-    start_date: "August 2012",
-    end_date: "December 2017",
-)
+# education1 = Education.create!(
+#     user_id: user1.id,
+#     school: "University of California",
+#     degree: "Bachelor's",
+#     field_of_study: "Computer Engineering",
+#     activities: "Many Activities",
+#     description: "Good Time",
+#     grade: "9.9",
+#     start_date: "August 2012",
+#     end_date: "December 2017",
+# )
+# education7 = Education.create!(
+#     user_id: user1.id,
+#     school: "Hogwarts School of Witchcraft and Wizardry, Scotland",
+#     degree: "Bachelor's magic",
+#     field_of_study: "Magic",
+#     activities: "Many Activities",
+#     description: "Good Time",
+#     grade: "9.9",
+#     start_date: "August 2012",
+#     end_date: "December 2017",
+# )
 education3 = Education.create!(
     user_id: demo_user.id,
     school: "SVM School, India",
@@ -239,7 +239,7 @@ post4.media.attach(io: post4_photo, filename: 'happy.png')
 
 post5 = Post.create!(
     body: ":) ",
-    author_id: user1.id
+    author_id: user11.id
 )
 
 post5_photo = open('https://connectin-aa-dev.s3.us-west-1.amazonaws.com/coding_meme1.png')
@@ -258,11 +258,11 @@ post7 = Post.create!(
     author_id: user20.id
 )
 
-comment1 = Comment.create!(
-    author_id: user1.id,
-    post_id: post2.id,
-    body: "You can do it!"
-)
+# comment1 = Comment.create!(
+#     author_id: user1.id,
+#     post_id: post2.id,
+#     body: "You can do it!"
+# )
 
 comment2 = Comment.create!(
     author_id: user25.id,
@@ -422,11 +422,11 @@ like14 = Like.create(
     likeable_item: "Post",
     likeable_id: post4.id
 )
-connection1 = Connection.create!(
-    connectee_id: demo_user.id,
-    connector_id: user1.id,
-    accepted: true
-)
+# connection1 = Connection.create!(
+#     connectee_id: demo_user.id,
+#     connector_id: user1.id,
+#     accepted: true
+# )
 connection2 = Connection.create!(
     connectee_id: demo_user.id,
     connector_id: user2.id,
