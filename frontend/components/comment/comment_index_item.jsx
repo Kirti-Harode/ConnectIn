@@ -32,7 +32,7 @@ class CommentIndexItem extends React.Component {
         this.setState({editComment: false});
     }
     handleEdit(){
-        console.log(this.state.editComment)
+        // console.log(this.state.editComment)
         this.setState({editComment: true});
     }
 

@@ -15,13 +15,30 @@ class Intro extends React.Component {
             connectons: 0,
             connectionId: null
         }
-        // this.handleConnection = this.handleConnection.bind(this);
+        this.handleConnection = this.handleConnection.bind(this);
+        this.removeConnection = this.removeConnection.bind(this)
     }
 
-    // handleConnection(e){
-    //     e.preventDefault();
+    handleConnection(e){
+        e.preventDefault();
+        this.props.createConnection({
+            connecteeId: this.props.currentUser.id, 
+            connectorId: this.props.otherUser.id, 
+            accepted: true
+        })
+    }
 
-    // }
+    removeConnection(e){
+        e.preventDefault();
+        let connectionId;
+        this.props.connections.map(connection => {
+            if(connection.connecteeId === this.props.otherUser.id  && connection.connectorId === this.props.currentUser.id){
+                connectionId = connection.id
+                this.setState({connections: this.state.connectons - 1})
+            }
+        })
+        this.props.deleteConnection(connectionId)
+    }
 
     componentDidMount(){
         this.props.fetchUsers();
@@ -33,15 +50,53 @@ class Intro extends React.Component {
                     if(connection.connector_id === this.props.currentUser.id){
                         this.setState({connected: true})
                         this.setState({connectionId: connection.id})
-
                     }
                 }
             })
         })
     }
     render(){
-        let editButton ;
+        const {currentUser, otherUser} = this.props;
 
+        let options ;
+            if(currentUser.id === otherUser.id){
+                console.log("in my profile")
+                console.log(currentUser.id)
+                options = (
+                <div className="options">
+                    <h2> Add Profile Section </h2>
+                    <h3> More </h3>
+                </div>
+                )
+            }
+            else {
+                    this.props.connections.map(connection => {
+                    if(connection.connecteeId === otherUser.id  && connection.connectorId === currentUser.id){
+                        console.log("in connected user's profile")
+                        console.log(`currentUser ${currentUser.id}`)
+                        console.log("otherUser " + otherUser.id)
+                        
+                       options = (
+                        <div className="options">
+                            <h2>Message</h2>
+                            <h2 onClick={this.removeConnection}>Disconnect</h2>
+                        </div>
+                        )
+                    }else{
+                        console.log("in not connected user's profile")
+                        console.log(`currentUser ${currentUser.id}`)
+                        console.log("otherUser " + otherUser.id)
+
+                        options = (
+                        <div className="options">
+                            <h2 onClick={this.handleConnection}>Connect</h2>
+                        </div>
+                        )
+                    }
+                })  
+        }
+
+        let editButton ;
         if(this.props.currentUser && this.props.otherUser){
             if(this.props.currentUser.id === this.props.otherUser.id){
                 editButton = (<div className="edit-button-div" onClick={() => {return this.props.openModal('editUserIntro', this.props.currentUser.id)}}>
@@ -77,6 +132,7 @@ class Intro extends React.Component {
                     <div className="user-connections">
                         <h2>{this.props.connections.length} connections</h2>
                     </div>
+                    {options}                  
                 </div>
             </div>
         )

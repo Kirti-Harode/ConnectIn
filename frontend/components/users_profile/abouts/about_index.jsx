@@ -10,17 +10,17 @@ import { RiOpenSourceFill } from "react-icons/ri";
 
 class AboutIndex extends React.Component{
 
-    componentDidUpdate(preprops) {
-        console.log(preprops)
-        console.log(this.props)
-        if (preprops.otherUser !== this.props.otherUser) {
-            this.props.fetchUser(this.props.otherUser.id)
-            // .then(this.filterproducts)
-        }
-    }
+    // componentDidUpdate(preprops) {
+    //     // console.log(preprops)
+    //     // console.log(this.props)
+    //     if (preprops.otherUser !== this.props.otherUser) {
+    //         this.props.fetchUser(this.props.otherUser.id)
+    //         // .then(this.filterproducts)
+    //     }
+    // }
     componentDidMount(){
         this.props.fetchAllAbouts(this.props.otherUser.id)
-        console.log("all abouts" + this.props.fetchAllAbouts(this.props.otherUser.id))
+        // console.log("all abouts" + this.props.fetchAllAbouts(this.props.otherUser.id))
     }
 
     render(){
