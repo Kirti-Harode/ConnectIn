@@ -7,16 +7,41 @@ import {fetchConnections, createConnection, deleteConnection} from '../../../act
 // import profile from '../../../../app/assets/images/profile.png'
 import { MdCreate } from "react-icons/md";
 import { openModal } from "../../../actions/modal_actions";
+import { BsGithub, BsPersonCircle, BsLinkedin } from "react-icons/bs";
+import { FaAngellist } from "react-icons/fa";
+
 class Intro extends React.Component {
     constructor(props){
         super(props)
         this.state = {
             connected: false,
             connectons: 0,
-            connectionId: null
+            connectionId: null,
+            addSecClicked: false,
+            moreClicked: false
         }
         this.handleConnection = this.handleConnection.bind(this);
-        this.removeConnection = this.removeConnection.bind(this)
+        this.removeConnection = this.removeConnection.bind(this);
+        this.handleAddSecOpen = this.handleAddSecOpen.bind(this);
+        this.handleAddSecClose = this.handleAddSecClose.bind(this);
+        this.handleMoreOpen = this.handleMoreOpen.bind(this);
+        this.handleMoreClose = this.handleMoreClose.bind(this);
+    }
+
+    handleAddSecOpen(){
+        this.setState({addSecClicked: true});
+    }
+
+    handleAddSecClose(){
+        this.setState({addSecClicked: false});
+    }
+
+    handleMoreOpen(){
+        this.setState({moreClicked: true});
+    }
+
+    handleMoreClose(){
+        this.setState({moreClicked: false});
     }
 
     handleConnection(e){
@@ -64,8 +89,34 @@ class Intro extends React.Component {
                 console.log(currentUser.id)
                 options = (
                 <div className="options">
-                    <h2> Add Profile Section </h2>
-                    <h3> More </h3>
+                    <button  className="add-to-profile" onClick={this.handleAddSecOpen} onBlur={this.handleAddSecClose}>
+                        <h2 > Add Profile Section</h2>
+                        <ul className={this.state.addSecClicked ? "reveal-profile-dropdown" : "hide-profile-dropdown"}>
+                            <h1>Add to profile</h1>
+                            <li  onClick={()=>this.props.openModal('createEducation')} >Education</li>
+                            <li onClick={(()=>this.props.openModal('createExperience'))} >Experience</li>
+                        </ul>
+                    </button>
+                    <button className="more-button" onFocus={this.handleMoreOpen} onBlur={this.handleMoreClose} >
+                        <h3 > More </h3 >
+                        <ul className={this.state.moreClicked ? "reveal-more-dropdown" : "hide-more-dropdown" }>
+                            <h1> Other Projects </h1>
+                            <a href="https://github.com/Kirti-Harode" target="_blank" > 
+                                <p>Github </p>
+                                <BsGithub className='git-icon'/>
+                            </a>
+
+                            <a href="https://kirti-harode.github.io/SaveTheEarth/" target="_blank" > 
+                                <p>Save The Earth </p>
+                            </a>
+
+                            <a href="https://mevert.herokuapp.com/#/" target="_blank" className='a-tags'> 
+                                <p>MEvert  </p> 
+                            </a>
+                    
+                        </ul>
+                    </button>
+                    
                 </div>
                 )
             }
