@@ -52,22 +52,13 @@ class Feed extends React.Component{
                     
                     <h1>Kirti Harode</h1>
                     <div className="creator-info-links">
-                        <a href="" target="_blank">
-                            <BsPersonCircle className="portfolio"/>
-                            <h3>Portfolio</h3>
-                        </a>
-                        <a href="https://github.com/Kirti-Harode" target="_blank">
+                        
+                        <a href="https://github.com/Kirti-Harode" target="_blank" >
                             <BsGithub className="github"/>
                             <h3>Github</h3>
                         </a>
-                        <a href="https://www.linkedin.com/in/kirti-harode-02b35b1b5/" target="_blank">
-                            <BsLinkedin className="linkedin"/>
-                            <h3>LinkedIn</h3>
-                        </a>
-                        <a href="" target="_blank">
-                            <FaAngellist className="angellist"/>
-                            <h3>AngelList</h3>
-                        </a>
+                        
+                        
                     </div>
                 </div>
                 
