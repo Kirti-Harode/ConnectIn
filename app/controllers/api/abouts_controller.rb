@@ -13,6 +13,7 @@ class Api::AboutsController < ApplicationController
     end
 
     def update 
+        
         @about = About.find(params[:id])
         if @about.update(about_params)
             render :show 

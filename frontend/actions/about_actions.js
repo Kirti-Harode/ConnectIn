@@ -29,10 +29,11 @@ export const createAbout = about => dispatch  => (
     .then(about => dispatch(receiveAbout(about)))
 );
 
-export const updateAbout = about => dispatch  => (
-    AboutApiUtil.updateAbout(about)
+export const updateAbout = about => dispatch  => {
+    // debugger
+    return AboutApiUtil.updateAbout(about)
     .then(about => dispatch(receiveAbout(about)))
-);
+};
 
 export const deleteAbout = aboutId => dispatch  => (
     AboutApiUtil.deleteAbout(aboutId)

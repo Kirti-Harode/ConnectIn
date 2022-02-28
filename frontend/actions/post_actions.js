@@ -9,10 +9,12 @@ export const receivePosts = posts => ({
     posts
 })
 
-export const receivePost = post => ({
+export const receivePost = post => {
+    // debugger
+    return {
     type: RECEIVE_POST, 
     post
-});
+}};
 
 export const removePost = postId => ({
     type: REMOVE_POST, 
@@ -31,9 +33,10 @@ export const createPost = formData => dispatch => (
     PostApiUtil.createPost(formData).then(post => dispatch(receivePost(post)))
 );
 
-export const updatePost = post => dispatch => (
-    PostApiUtil.updatePost(post).then(post => dispatch(receivePost(post)))
-);
+export const updatePost = post => dispatch => {
+    // debugger
+    return PostApiUtil.updatePost(post).then(post => dispatch(receivePost(post)))
+};
 
 export const deletePost = postId => dispatch => {
     return PostApiUtil.deletePost(postId).then(() => dispatch(removePost(postId)))

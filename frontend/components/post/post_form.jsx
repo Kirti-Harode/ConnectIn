@@ -24,7 +24,7 @@ class PostForm extends React.Component {
     obtainPost(){
         this.setState({
             body: this.props.post.body,
-            author_id: this.props.post.author_id,
+            author_id: this.props.post.authorId,
             media: this.props.post.media,
             mediaUrl: this.props.post.mediaUrl
         })
@@ -51,6 +51,7 @@ class PostForm extends React.Component {
     }
 
     handleSubmit(e){
+        // debugger
         e.preventDefault();
         const formData = new FormData();
         if (this.state.media) {
@@ -73,6 +74,7 @@ class PostForm extends React.Component {
     }
 
     render(){
+        // debugger
         const media_preview = this.state.mediaUrl ? <img src={this.state.mediaUrl} /> : null;
 
         return(

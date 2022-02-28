@@ -16,7 +16,10 @@ class AboutForm extends React.Component {
     update(field){
         return e => this.setState({[field]: e.currentTarget.value})
     }
-
+    // componentDidUpdate(preprops){
+        // console.log(preprops)
+        // console.log(this.props)
+    // }
     render(){
         return(
             <div className='about-edit-form'>

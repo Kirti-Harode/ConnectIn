@@ -8,11 +8,11 @@ const receiveUsers = (users) => ({
     users
 });
 
-const receiveUser = (userId) => {
+const receiveUser = (user) => {
     // debugger
     return {
     type: RECEIVE_USER,
-    userId
+    user
 }};
 
 export const fetchUsers = () => dispatch => (
@@ -24,13 +24,12 @@ export const fetchUser = userId => dispatch => {
     // debugger
     return (
         UserApiUtil.fetchUser(userId)
-        .then(userId => dispatch(receiveUser(userId)))
+        .then(user => dispatch(receiveUser(user)))
     )
 }
 
 
 export const updateUser = user => dispatch => (
-    
         UserApiUtil.updateUser(user)
         .then(user => dispatch(receiveUser(user)))
 )

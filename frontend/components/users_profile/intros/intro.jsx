@@ -18,7 +18,8 @@ class Intro extends React.Component {
             connectons: 0,
             connectionId: null,
             addSecClicked: false,
-            moreClicked: false
+            moreClicked: false,
+            counter : 0
         }
         this.handleConnection = this.handleConnection.bind(this);
         this.removeConnection = this.removeConnection.bind(this);
@@ -81,17 +82,21 @@ class Intro extends React.Component {
         })
     }
 
-    componentDidUpdate(preprops) {
-        console.log(preprops)
-        console.log(this.props)
-        if (preprops.otherUser !== this.props.otherUser) {
-            this.props.fetchUser(this.props.otherUser.id)
-            // .then(this.props.fetchConnections(this.props.otherUser.id))
-            // .then(this.props.fetchAllAbouts(this.props.otherUser.id))
-            // .then(this.props.fetchAllEducations(this.props.otherUser.id))
-            // .then(this.props.fetchAllExperiences(this.props.otherUser.id))           
-        }
-    }
+    // componentDidUpdate(preprops) {
+    //     // console.log(preprops)
+    //     // console.log(this.props)
+    //     if(this.state.counter < 2) {
+    //     if (preprops.otherUser !== this.props.otherUser) {
+    //             this.setState({counter: this.state.counter + 1})
+
+    //         this.props.fetchUser(this.props.otherUser.id)
+    //         .then(this.props.fetchConnections(this.props.otherUser.id))
+    //         // .then(this.props.fetchAllAbouts(this.props.otherUser.id))
+    //         // .then(this.props.fetchAllEducations(this.props.otherUser.id))
+    //         // .then(this.props.fetchAllExperiences(this.props.otherUser.id))           
+    //     }
+    // }
+    // }
     render(){
         const {currentUser, otherUser} = this.props;
 

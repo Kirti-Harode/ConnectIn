@@ -3,6 +3,8 @@ import { connect } from "react-redux";
 import { closeModal } from "../../../actions/modal_actions";
 import { updateUser } from "../../../actions/user_actions";
 import { GrFormClose } from "react-icons/gr";
+import { fetchUser } from "../../../actions/user_actions";
+
 class EditUserIntro extends React.Component {
     constructor(props){
         super(props);
@@ -12,6 +14,7 @@ class EditUserIntro extends React.Component {
     }
 
     handleSubmit(e){
+        // debugger
         e.preventDefault();
         this.props.updateUser(
            this.state
@@ -20,10 +23,29 @@ class EditUserIntro extends React.Component {
     }
 
     update(field){
+        // debugger
         return e => this.setState({[field]: e.currentTarget.value})
     }
 
+    componentDidMount(){
+        this.props.fetchUser(this.props.currentUser.id)
+    }
+    // componentDidUpdate(preprops) {
+    //     console.log(preprops)
+    //     console.log(this.props)
+    //     console.log(preprops.currentUser !== this.props.currentUser)
+    //     if (preprops.currentUser !== this.props.currentUser) {
+    //         this.props.fetchUser(this.props.currentUser.id)
+    //         // .then(this.props.fetchConnections(this.props.otherUser.id))
+    //         // .then(this.props.fetchAllAbouts(this.props.otherUser.id))
+    //         // .then(this.props.fetchAllEducations(this.props.otherUser.id))
+    //         // .then(this.props.fetchAllExperiences(this.props.otherUser.id))           
+    //     }
+    // }
     render(){
+        // debugger
+        // console.log(this.props.currentUser)
+        console.log(this.state)
         return(
             <div className="user-intro">
                 <div className="intro-form-heading">
@@ -79,6 +101,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
+    fetchUser: userId => dispatch(fetchUser(userId)),
     updateUser: user => dispatch(updateUser(user)),
     closeModal: () => dispatch(closeModal())
 });
