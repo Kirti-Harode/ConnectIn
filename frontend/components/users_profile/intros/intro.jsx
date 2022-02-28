@@ -102,16 +102,16 @@ class Intro extends React.Component {
                         <ul className={this.state.moreClicked ? "reveal-more-dropdown" : "hide-more-dropdown" }>
                             <h1> Other Projects </h1>
                             <a href="https://github.com/Kirti-Harode" target="_blank" > 
-                                <p>Github </p>
+                                <p> Github </p>
                                 <BsGithub className='git-icon'/>
                             </a>
 
                             <a href="https://kirti-harode.github.io/SaveTheEarth/" target="_blank" > 
-                                <p>Save The Earth </p>
+                                <p> Save The Earth </p>
                             </a>
 
                             <a href="https://mevert.herokuapp.com/#/" target="_blank" className='a-tags'> 
-                                <p>MEvert  </p> 
+                                <p> MEvert  </p> 
                             </a>
                     
                         </ul>

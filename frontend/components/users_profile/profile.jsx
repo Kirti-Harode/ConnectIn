@@ -5,14 +5,21 @@ import EducationIndexConatiner from './educations/education_index'
 import ExperienceIndexConatiner from './experiences/experience_index'
 class Profile extends React.Component {
 
-    // componentDidUpdate(preprops) {
-    //     // console.log(preprops)
-    //     // console.log(this.props)
-    //     if (preprops.otherUser !== this.props.otherUser) {
-    //         this.props.fetchUser(this.props.otherUser.id)
-    //         // .then(this.filterproducts)
-    //     }
-    // }
+    componentDidUpdate(preprops) {
+        console.log(preprops)
+        console.log(this.props)
+        if (preprops.otherUser !== this.props.otherUser) {
+            this.props.fetchUser(this.props.otherUser.id)
+            .then(this.props.fetchConnections(this.props.otherUser.id))
+            .then(this.props.fetchAllAbouts(this.props.otherUser.id))
+            .then(this.props.fetchAllEducations(this.props.otherUser.id))
+            .then(this.props.fetchAllExperiences(this.props.otherUser.id))           
+        }
+    }
+
+    componentDidMount(){
+        this.props.fetchUsers();
+    }
     render (){
         return(
             <div className="profile-div">
