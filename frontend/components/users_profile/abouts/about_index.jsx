@@ -33,7 +33,7 @@ class AboutIndex extends React.Component{
         })
         // console.log(this.props.otherUser.id)
         let createButton;
-        if (this.props.currentUser.id == this.props.match.params.userId) {
+        if (this.props.currentUser.id == this.props.match.params.userId && this.props.abouts.length === 0) {
             createButton = (<div onClick={() => (this.props.openModal('createAbout'))} className="about-create-button-div">
                 <MdAdd className="about-createButton" />
             </div>)
@@ -61,7 +61,7 @@ class AboutIndex extends React.Component{
 const mapStateToProps = (state, ownProps) => ({
     currentUser: state.entities.users[state.session.id],
     otherUser: state.entities.users[ownProps.match.params.userId],
-    abouts: Object.values(state.entities.abouts)
+    abouts: Object.values(state.entities.abouts).reverse()
     
 });
 

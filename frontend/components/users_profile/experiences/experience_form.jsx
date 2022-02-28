@@ -8,6 +8,7 @@ class ExperienceForm extends React.Component {
     }
 
     handleSubmit(e) {
+        // debugger
         e.preventDefault();
         this.props.action(
             this.state
@@ -20,6 +21,7 @@ class ExperienceForm extends React.Component {
     }
 
     render(){
+        // debugger
         return(
             <div className='exp-form-div'>
             <header className='exp-form-header'>
@@ -41,18 +43,18 @@ class ExperienceForm extends React.Component {
                         <input value={this.state.company} type='text' onChange={this.update('company')} className='exp-company-input' placeholder="Ex: Google" />
                     </div>
                     <div className='exp-employment-div'>
-                        <label className='exp-employment-heading'>employment type</label>
-                        <input value={this.state.employment_type} type='text' onChange={this.update('employment_type')} className='exp-employment-input' placeholder="Ex: Full-time, Part-time, Self-emplyoed" />
+                        <label className='exp-employment-heading'>Employment type</label>
+                        <input value={this.state.employmentType} type='text' onChange={this.update('employmentType')} className='exp-employment-input' placeholder="Ex: Full-time, Part-time, Self-emplyoed" />
                     </div>
 
                     <div className='exp-start-date-div'>
                         <label>Start date</label>
-                        <input value={this.state.start_date} type='text' onChange={this.update('start_date')} className='exp-start-input' placeholder="Ex: March 2020"/>
+                        <input value={this.state.startDate} type='text' onChange={this.update('startDate')} className='exp-start-input' placeholder="Ex: March 2020"/>
                     </div>
 
                     <div className='exp-end-date-div'>
                         <label>End date</label>
-                        <input value={this.state.end_date} type='text' onChange={this.update('end_date')} className='exp-end-input' placeholder="Ex: March 2022 or At present"/>
+                        <input value={this.state.endDate} type='text' onChange={this.update('endDate')} className='exp-end-input' placeholder="Ex: March 2022 or At present"/>
                     </div>
                     <div className = 'exp-location-div'>
                         <label>Location</label>

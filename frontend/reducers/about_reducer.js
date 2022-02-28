@@ -11,7 +11,9 @@ const aboutReducer = (state={}, action) => {
             nextState[action.about.id] = action.about;
             return nextState;
         case REMOVE_ABOUT:
+            debugger
             delete nextState[action.aboutId];
+            debugger
             return nextState;    
         default:
            return state;

@@ -14,10 +14,12 @@ const receiveAbout = about =>({
     about
 });
 
-const removeAbout = aboutId =>({
-    type: RECEIVE_ALL_ABOUTS,
+const removeAbout = aboutId =>{
+    debugger
+    return{
+    type: REMOVE_ABOUT,
     aboutId
-});
+}};
 
 export const fetchAllAbouts = userId => dispatch  => (
     AboutApiUtil.fetchAllAbouts(userId)
