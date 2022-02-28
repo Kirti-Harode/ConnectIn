@@ -27,6 +27,9 @@ class MyNetwork extends React.Component {
         this.setState({open: false});
     }
 
+    componentDidMount(){
+        this.props.fetchConnections(this.props.currentUser.id);
+    }
     render(){
        const {connectedUsers} = this.props
         return(
@@ -59,9 +62,9 @@ class MyNetwork extends React.Component {
                                     <p className="connected-user-bio">{user.bio}</p>
                                 </Link>
                             </div>
-                            <Link className="message-button" to='/message' >
+                            {/* <Link className="message-button" to='/message' >
                                 Message
-                            </Link>
+                            </Link> */}
 
                             <button className="disconnect-button" onClick={this.handleOpen} onBlur={this.handleClose}> 
                                 <BsThreeDots className="connection-dots"/>

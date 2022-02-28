@@ -47,9 +47,9 @@ class LoggedIn extends React.Component {
                             </Link>
                         </li>
                         <li className='network-nav'>
-                            <Link to='/mynetwork' className='links'>
+                            <Link to='/allUsers' className='links'>
                                 <FaUserFriends className='network-icon' />
-                                <span className='network-heading'>My Network</span>
+                                <span className='network-heading'> Network</span>
                             </Link>
                         </li>
                         <li className='jobs-nav'>

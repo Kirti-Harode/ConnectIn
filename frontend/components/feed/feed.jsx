@@ -48,17 +48,51 @@ class Feed extends React.Component{
                     </div>
                 </div>
                 <div className="right-side-creator-div">
-                    <img src={window.myPic} className="myPic"/>
-                    
-                    <h1>Kirti Harode</h1>
-                    <div className="creator-info-links">
-                        
-                        <a href="https://github.com/Kirti-Harode" target="_blank" >
-                            <BsGithub className="github"/>
-                            <h3>Github</h3>
-                        </a>
-                        
-                        
+                        <div className="dev-info">
+                            <img src={window.myPic} className="myPic"/>
+                            <h2>Hello, I'm Kirti Harode</h2>
+                        </div>
+                    <div className="project-details">
+                        <h1>Project Description: </h1>
+                        <p> ConnectIn is a Clone of a professional networking site LinkedIn, 
+                            In connectIn users can make their profile, edit their profile information, connect with other users, 
+                            create posts, and comment/Like each other's posts.
+                        </p>
+                        <div className="tech-implemented">
+                            <h2>Technologies Implemented: </h2>
+                            <ul>
+                                <li> Backend: <p> Ruby on Rails </p></li>
+                                <li> Frontend: <p> React, Redux </p></li>
+                                <li> Database: <p> PostgreSQl </p></li>
+                                <li> Storage: <p> AWS </p></li>
+                                <li> Other: <p> jQuery, JBuilder, HTML, CSS </p></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div className="creator-div">
+                        {/* <h1>Developer: </h1>
+                        <div className="dev-info">
+                            <img src={window.myPic} className="myPic"/>
+                            <h2>Kirti Harode</h2>
+                        </div> */}
+                        <div className="creator-info-links">
+                            <a href="https://github.com/Kirti-Harode" target="_blank" >
+                                <BsGithub className="github"/>
+                                <h3>Github</h3>
+                            </a>
+                            <a href="" target="_blank" >
+                                <BsPersonCircle className="portfolio"/>
+                                <h3>Portfolio</h3>
+                            </a>
+                            <a href="https://www.linkedin.com/in/kirti-harode-02b35b1b5/" target="_blank" >
+                                <BsLinkedin className="linkedin"/>
+                                <h3>LinkedIn</h3>
+                            </a>
+                            <a href="https://angel.co/profile/edit/overview" target="_blank" >
+                                <FaAngellist className="angellist"/>
+                                <h3>AngelList</h3>
+                            </a>
+                        </div>
                     </div>
                 </div>
                 

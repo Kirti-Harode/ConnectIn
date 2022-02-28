@@ -8,6 +8,7 @@ class EditUserIntro extends React.Component {
         super(props);
         this.state = this.props.currentUser;
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.update = this.update.bind(this);
     }
 
     handleSubmit(e){

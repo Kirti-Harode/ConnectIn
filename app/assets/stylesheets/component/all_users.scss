@@ -1,0 +1,106 @@
+.each-user-pic{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    // margin-left: 30px; 
+}
+.all-network-outer-div{
+    display: flex;
+    flex-direction: row;
+    padding-top: 100px;
+    min-height: 100vh;
+    background-color: #f3f2ef;
+    justify-content: space-between;
+    padding-left: 15vw;
+    padding-right: 100vw;
+
+    .users-grid-div{
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        /* max-width: 1420px; */
+        min-height: 900px;
+        min-width: 1000px;
+        background-color: white;
+        margin-left: 18vw;
+        /* margin-top: 15px; */
+        border-radius: 10px;
+        border: 1px solid lightgray;
+
+        .connections-heading{
+            padding-top: 20px;
+            font-size: 20px;
+            color: #242424;
+            font-weight: 400;
+            border-bottom: 1px solid lightgray;
+            width: 100%;
+
+            h1{
+                margin-left: 400px;
+                margin-bottom: 10px;
+            }
+        }
+        .all-network-inner-div{
+            grid-gap: 2rem;
+            display: grid;
+            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(12rem, 16rem));
+            justify-content: center;
+            margin-top: 50px;
+            min-width: 60%;
+            padding-bottom: 90px;
+
+            .all-users-div{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: 220px;
+                height: 250px;
+                border-radius: 10px;
+                // box-shadow: 0 2px 5px -1px rgb(50 50 93 / 25%), 0 1px 3px -1px rgb(0 0 0 / 30%);
+                box-shadow: 0px 4px 6px #acaaaa;
+                padding-top: 30px;
+            }
+        }
+    }
+
+    .left-side-bar{
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        // margin-left: 180px;
+        width: 280px;
+        height: 330px;
+        border-radius: 10px;
+        border: 1px solid lightgray;
+        background-color: white;
+        padding-left: 10px;
+    
+        .manage-heading{
+            color: rgb(82, 82, 82);
+            font-size: 15px;
+            font-weight: 700;
+            padding-top: 10px;
+            padding-left: 12px;
+        }
+        .all-headings{
+            // position: absolute;
+            margin-top: 12px;
+            display: flex;
+            flex-direction: column;
+            li{
+                padding-top: 10px;
+                padding-bottom: 10px;
+                color: rgb(82, 82, 82);
+                font-weight: 300;
+            }
+            .icons{
+                padding-right: 8px;
+                font-size: 20px;
+            }
+    
+        }
+    }
+}
+
+

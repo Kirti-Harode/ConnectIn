@@ -10,7 +10,7 @@ import NotFound from "./not_found_error/not_found";
 import ProfileContainer from "./users_profile/profile_container";
 import Modal from "./modal/modal";
 import MyNetwrok from './my_network/my_network';
-
+import ConnectInUsers from './my_network/connectIn_users';
 const App = () => {
     return (
         <div>
@@ -21,6 +21,7 @@ const App = () => {
             <Switch>
                 <ProtectedRoute exact path='/feed' component={FeedContainer} />
                 <ProtectedRoute exact path='/mynetwork' component={MyNetwrok} />
+                <ProtectedRoute exact path='/allUsers' component={ConnectInUsers}/>
                 <AuthRoute exact path='/' component={Welcome} />
                 <AuthRoute exact path="/login" component={SigninFormContainer} />
                 <AuthRoute exact path="/signup" component={SignupFormContainer} />

@@ -14,9 +14,9 @@
         background-color: white;
         border: 1px solid lightgray;
         border-radius: 10px;
-        width: 560px;
+        width: 590px;
         padding: 20px;
-        margin-right: 45px;
+        margin-right: 82px;
     }
     .feed-new-post-form-div{
         display: flex;
@@ -64,7 +64,7 @@
             width: 250px;
             height: 80px;
             border-radius: 10px;
-            margin-top: -26px;
+            margin-top: -27px;
         }
         .user-mini{
             display: flex;
@@ -131,30 +131,30 @@
 
     .right-side-creator-div{
         display: flex;
-        justify-content: center;
         flex-direction: column;
         align-items: center;
         position: fixed;
         border: 1px solid lightgray;
         background-color: white;
-        // right: 13vw;
+        padding-top: 10px;
         margin-left: 925px;
-        height: 400px;
-        width: 250px;
+        padding-left: 10px;
+        height: 460px;
+        width: 330px;
         border-radius: 10px;
     }
-    h1{
-        padding-top: 2px;
-    }
+    // h1{
+    //     padding-top: 2px;
+    // }
     .my-photo{
         border-radius: 50%;
         width: 100px;
     }
     
     .creator-info-links{
-        margin-top: 10px;
+        // margin-top: 10px;
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
 
         a{
             text-decoration: none;
@@ -162,9 +162,10 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            margin: 5px;
+            // margin: 5px;
             color: gray;
-
+            margin-left: 10px;
+            margin-right: 10px;
         }
         h3{
             padding-top: 2px;
@@ -173,12 +174,102 @@
     }
    
 
-    .portfolio, .github, .linkedin, .angellist{
+    .github, .portfolio{
         font-size: 30px;
         color: #0a66c2;
         &:hover{
            font-size: 31px;
            color: #0c5cac ;
+        }
+    }
+
+    .github{
+        padding-bottom: 2px;
+        margin-top: 4px;
+    }
+    .angellist, .linkedin{
+        font-size: 28px;
+        color: #0a66c2;
+        &:hover{
+           font-size: 29px;
+           color: #0c5cac ;
+        }
+    }
+
+    .project-details{
+        display: flex;
+        flex-direction: column;
+        width: inherit;
+    
+        h1{
+            color: #303030;
+            font-size: 16px;
+            // padding-bottom: 4px;
+            font-weight: 600;
+        }
+        p{
+            color: #303030;
+            font-size: 14px;
+            padding-bottom: 4px;
+            line-height: 20px;
+            font-weight: 300;
+            padding-top: 6px;
+        }
+        .tech-implemented{
+            display: flex;
+            flex-direction: column;
+
+            h2{
+                // padding-top: 4px;
+                font-size: 16px;
+                font-weight: 500;
+                color: #242424;
+            }
+            ul{
+                display: flex;
+                flex-direction: column;
+                // margin-top: 5px;
+
+                li{
+                    padding-left: 10px;
+                    margin-bottom: -4px;
+
+                    p{
+                        padding-left: 10px;
+                    }
+                }
+            }
+        }
+    }
+
+    .creator-div{
+        display: flex;
+        flex-direction: row;
+        margin-top: 10px;
+
+        h1{
+            margin-left: -166px;
+            padding-right: 10px;
+            font-weight: 500;
+            color: #202020;
+        }
+    }
+    .dev-info{
+        // margin-top: 25px;
+        // margin-left: -60px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 5px;
+        .myPic{
+            width: 90px;
+        }
+        h2{
+            font-size: 15px;
+            margin-top: 5px;
+            font-weight: 500;
+            color: #202020;
+
         }
     }
     // .feed-user-info{
@@ -217,13 +308,6 @@
     //     align-items: center;
     //     padding-top: 10px;
     // }
-   
-  .myPic{
-      width: 120px;
-    //   height: 100px;
-    //   border-radius: 10%;
-  }
-
     .feed-conections{
         color: #0a66c2;
         cursor: pointer;
