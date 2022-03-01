@@ -15,7 +15,7 @@ class Intro extends React.Component {
         super(props)
         this.state = {
             // connected: false,
-            connections: this.props.connections.length,
+            connections: this.props.connectedUsers.length,
             // connectionId: null,
             addSecClicked: false,
             moreClicked: false,
@@ -141,10 +141,9 @@ class Intro extends React.Component {
             else if(this.props.connections.length) {
                     this.props.connections.map(connection => {
                     if(connection.connectorId === otherUser.id){
-                        console.log("in connected user's profile")
-                        console.log(`currentUser ${currentUser.id}`)
-                        console.log("otherUser " + otherUser.id)
-                        
+                        // console.log("in connected user's profile")
+                        // console.log(`currentUser ${currentUser.id}`)
+                        // console.log("otherUser " + otherUser.id)                        
                        options = (
                         <div className="options">
                             <h2>Message</h2>
@@ -155,10 +154,9 @@ class Intro extends React.Component {
                 })  
             }
             else if(this.props.connections.length === 0){
-                console.log("in not connected user's profile")
-                console.log(`currentUser ${currentUser.id}`)
-                console.log("otherUser " + otherUser.id)
-
+                // console.log("in not connected user's profile")
+                // console.log(`currentUser ${currentUser.id}`)
+                // console.log("otherUser " + otherUser.id)
                 options = (
                 <div className="options">
                     <h2 onClick={this.handleConnection}>Connect</h2>
@@ -200,7 +198,7 @@ class Intro extends React.Component {
                         <h2>{this.props.otherUser.location}</h2>
                     </div>
                     <div className="user-connections">
-                        <h2>{this.state.connections} connections</h2>
+                        <h2>{this.props.connectedUsers.length} connections</h2>
                     </div>
                     {options}                  
                 </div>
@@ -209,12 +207,22 @@ class Intro extends React.Component {
     }
 }
 
-const mapStateToProps = (state, ownProps) => ({
-    currentUser: state.entities.users[state.session.id],
-    otherUser: state.entities.users[ownProps.match.params.userId],
-    connections: Object.values(state.entities.connections)
-    
-});
+const mapStateToProps = (state, ownProps) => {
+    const otherUser = state.entities.users[ownProps.match.params.userId];
+    const connections = Object.values(state.entities.connections);
+
+    let connectedUsers = []
+    connections.map(connection => {
+        if(connection.connecteeId === otherUser.id){
+            connectedUsers.push(connection)
+        }
+    })
+    return{
+        otherUser,
+        connections,
+        connectedUsers,
+        currentUser: state.entities.users[state.session.id],     
+}};
 
 const mapDispatchToProps = dispatch => ({
     fetchUser: userId => dispatch(fetchUser(userId)),
