@@ -7,7 +7,8 @@ const connectionReducer = (state={}, action) => {
         case RECEIVE_CONNECTIONS:
             return action.connections;
         case RECEIVE_CONNECTION:
-            return {...state, ...action.connection}
+            nextState[action.connection.id] = action.connection
+            return nextState;
         case REMOVE_CONNECTION:
             delete nextState[action.connectionId];
             return nextState;    

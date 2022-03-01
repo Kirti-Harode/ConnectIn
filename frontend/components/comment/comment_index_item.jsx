@@ -72,7 +72,7 @@ class CommentIndexItem extends React.Component {
             dropdownComment = (
                 <button className="dropdownComment" onFocus={this.handleReveal} onBlur={this.handleHide}>
                     <BsThreeDots  className="comment-three-dots"/>
-                    <ul className={this.state.open ? 'open-dropdown-comment' : 'hide-dropdown-comment'} onClick={e => e.stopPropagation()}>
+                    <ul className={this.state.open ?  'open-dropdown-comment' : 'hide-dropdown-comment' } onClick={e => e.stopPropagation()}>
                         <div className="comment-edit-delete-div">
                             <div className="comment-edit-button" onClick={()=> {this.handleEdit()}}>
                                 <MdEdit className="comment-edit-icon"/>

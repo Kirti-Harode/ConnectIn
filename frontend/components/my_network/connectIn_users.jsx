@@ -14,9 +14,33 @@ class ConnectInUsers extends React.Component{
 
     constructor(props){
         super(props)
-    
+        this.handleConnection = this.handleConnection.bind(this);
+        this.removeConnection = this.removeConnection.bind(this);
+    }
+    handleConnection(userId){
+       return e => { e.preventDefault()
+            this.props.createConnection({
+                connectee_id: this.props.currentUser.id, 
+                connector_id: userId, 
+                accepted: true
+            })
+        }
     }
 
+    removeConnection(userId){
+       return e => { e.preventDefault()
+        let connectionId;
+        
+        this.props.connections.map(connection => {
+            if(connection.connecteeId === this.props.currentUser.id  && connection.connectorId === userId){
+                connectionId = connection.id
+                // this.setState({connections: this.state.connections - 1})
+            }
+        })
+        // if(this.props.allConnected.includes())
+        this.props.deleteConnection(connectionId)
+       }
+    }
     componentDidMount(){
         this.props.fetchUsers();
         this.props.fetchConnections(this.props.currentUser.id);
@@ -24,14 +48,19 @@ class ConnectInUsers extends React.Component{
 
     render(){
         const {users, connectedUsers} = this.props
-      
+        
         return(
             <div className="all-network-outer-div">
                    <div className="left-side-bar">
                      
                         <h2 className="manage-heading">Manage my network</h2>
                         <ul className="all-headings">
-                             <li> <BsFillPeopleFill className="icons"/> Connections {connectedUsers.length}</li>
+                            <li> 
+                                <Link to='/mynetwork' className="mynetwork-link">
+                                    <BsFillPeopleFill className="icons"/> Connections {connectedUsers.length}
+                                </Link>
+                            </li>
+                             {/* <li> <BsFillPeopleFill className="icons"/> Connections {connectedUsers.length}</li> */}
                              <li> <RiContactsBookLine className="icons"/> Contacts</li>
                              <li><BsPersonLinesFill className="icons"/> People | Follow</li>
                              <li><HiUserGroup className="icons"/> Groups</li>
@@ -63,11 +92,11 @@ class ConnectInUsers extends React.Component{
                                     
                                     {this.props.allConnected.includes(user.id) ? (
                                         <div className="disconnect">
-                                            <h2>Disconnect</h2>
+                                            <h2 onClick={this.removeConnection(user.id)} >Disconnect</h2>
                                         </div> 
                                     ):(
                                         <div className="connect">
-                                                <h2>Connect</h2>
+                                                <h2 onClick={this.handleConnection(user.id)}>Connect</h2>
                                         </div>
                                     )
                                     }

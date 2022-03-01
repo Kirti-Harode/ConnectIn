@@ -58,7 +58,7 @@ class Intro extends React.Component {
         e.preventDefault();
         let connectionId;
         this.props.connections.map(connection => {
-            if(connection.connecteeId === this.props.otherUser.id  && connection.connectorId === this.props.currentUser.id){
+            if(connection.connecteeId === this.props.currentUser.id  && connection.connectorId === this.props.otherUser.id){
                 connectionId = connection.id
                 this.setState({connections: this.state.connections - 1})
             }
@@ -69,7 +69,7 @@ class Intro extends React.Component {
     componentDidMount(){
         this.props.fetchUsers();
         this.props.fetchUser(this.props.otherUser.id);
-        this.props.fetchConnections(this.props.otherUser.id)
+        this.props.fetchConnections(this.props.currentUser.id)
         // .then(() => {
             // this.props.connections.map(connection => {
             //     if(connection.connectee_id === this.props.otherUser.id) {
@@ -100,11 +100,13 @@ class Intro extends React.Component {
     // }
     render(){
         const {currentUser, otherUser} = this.props;
-
+        console.log(this.props.allConnected)
+        console.log(this.props.connections)
+        console.log(this.props.currentUser)
         let options ;
             if(currentUser.id === otherUser.id){
-                console.log("in my profile")
-                console.log(currentUser.id)
+                // console.log("in my profile")
+                // console.log(currentUser.id)
                 options = (
                 <div className="options">
                     <button  className="add-to-profile" onClick={this.handleAddSecOpen} onBlur={this.handleAddSecClose}>
@@ -138,30 +140,29 @@ class Intro extends React.Component {
                 </div>
                 )
             }
-            else if(this.props.connectedUsers.length) {
-                    this.props.connectedUsers.map(connection => {
-                    if(connection.connectorId === otherUser.id){
+            else { 
+                    if(this.props.allConnected.includes(otherUser.id)){
                         // console.log("in connected user's profile")
                         // console.log(`currentUser ${currentUser.id}`)
                         // console.log("otherUser " + otherUser.id)                        
                        options = (
-                        <div className="options">
+                        <div className="options-disconnect">
                             <h2 onClick={this.removeConnection}>Disconnect</h2>
                         </div>
                         )
                     }
-                })  
+                    else {
+                        // console.log("in not connected user's profile")
+                        // console.log(`currentUser ${currentUser.id}`)
+                        // console.log("otherUser " + otherUser.id)
+                        options = (
+                        <div className="options-connect">
+                            <h2 onClick={this.handleConnection}>Connect</h2>
+                        </div>
+                        )
+                    }
             }
-            else if(this.props.connectedUsers.length === 0){
-                // console.log("in not connected user's profile")
-                // console.log(`currentUser ${currentUser.id}`)
-                // console.log("otherUser " + otherUser.id)
-                options = (
-                <div className="options">
-                    <h2 onClick={this.handleConnection}>Connect</h2>
-                </div>
-                )
-            }
+           
 
         let editButton ;
         if(this.props.currentUser && this.props.otherUser){
@@ -209,18 +210,34 @@ class Intro extends React.Component {
 const mapStateToProps = (state, ownProps) => {
     const otherUser = state.entities.users[ownProps.match.params.userId];
     const connections = Object.values(state.entities.connections);
+    const currentUser = state.entities.users[state.session.id];
 
     let connectedUsers = []
     connections.map(connection => {
-        if(connection.connecteeId === otherUser.id){
-            connectedUsers.push(connection)
+        if(currentUser.id === otherUser.id){
+            if(connection.connecteeId === otherUser.id){
+                connectedUsers.push(connection)
+            }
+        }
+        else{
+            if(connection.connectorId === otherUser.id){
+                connectedUsers.push(connection)
+            }
+        }
+        
+    })
+    let allConnected = []
+    connections.map(connection => {
+        if(connection.connecteeId === currentUser.id){
+            allConnected.push(connection.connectorId)
         }
     })
     return{
         otherUser,
         connections,
         connectedUsers,
-        currentUser: state.entities.users[state.session.id],     
+        allConnected,
+        currentUser 
 }};
 
 const mapDispatchToProps = dispatch => ({

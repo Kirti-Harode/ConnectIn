@@ -7,7 +7,7 @@ import { BsThreeDots } from "react-icons/bs";
 import { MdEdit } from "react-icons/md";
 import { RiDeleteBin5Fill } from "react-icons/ri";
 import { FaRegCommentDots } from "react-icons/fa";
-import { BiLike } from "react-icons/bi";
+import { BiLike, BiCommentDetail } from "react-icons/bi";
 import CommentIndexContainer from "../comment/comment-index";
 import CreateCommentContainer from "../comment/comment_form";
 import {createLike, fetchLikes, deleteLike} from '../../actions/like_actions'
@@ -81,11 +81,11 @@ class PostIndexItem extends React.Component{
         if(likes.length > 0){
             likeCount = (
             <div className="post-likes-count">
+                <div className="num-likes">
+                    {likes.length}
+                </div>
                 <div className="like-count">
                     <AiOutlineLike className="num-like-icon"/>
-                </div>
-                <div className="num-likes">
-                    {likes.length} |
                 </div>
             </div>)
         }else{
@@ -98,7 +98,7 @@ class PostIndexItem extends React.Component{
             commentCount = (
                 <div className="comment-counts" onClick={this.revealComments}>
                     {this.props.comments.length}
-                    comments
+                    <h2>comments</h2>
                 </div>
             )
         }else{
@@ -110,15 +110,15 @@ class PostIndexItem extends React.Component{
             dropdown_post = (
                 <button className="dropdown-post-button" onFocus={this.handleOpen} onBlur={this.handleClose}>
                     <BsThreeDots  className="post-three-dots"/>
-                    <ul className={this.state.open ? "reveal-dropdown" : "hide-dropdown"}>
+                    <ul className={this.state.open ? "reveal-dropdown" : "hide-dropdown" }>
                         <div className="post-buttons">
                             <div className="post-edit-button" onClick={() => (openModal('editPost', post.id))}>
                                 <MdEdit className="post-edit-icon"/>
-                                Edit Post
+                                <h2>Edit Post</h2>
                             </div>
                             <div className="post-delete-button" onClick={() => (deletePost(post.id))}>
                                 <RiDeleteBin5Fill className="post-delete-icon"/>
-                                Delete Post
+                                <h2>Delete Post</h2>
                             </div>
                         </div>
                     </ul>
@@ -169,7 +169,7 @@ class PostIndexItem extends React.Component{
                         <h3 className="like-heading">Like</h3>
                     </div>
                     <div className="comment-div" onClick={this.state.comments ? this.hideComments : this.revealComments}>
-                        <FaRegCommentDots className="comment-icon"/>
+                        <BiCommentDetail className="comment-icon"/>
                         <h3 className="comment-heading"> Comment </h3>
                     </div>
                 </div>
