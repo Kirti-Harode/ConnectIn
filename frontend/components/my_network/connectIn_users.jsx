@@ -12,24 +12,19 @@ import { RiDeleteBin5Fill } from "react-icons/ri";
 
 class ConnectInUsers extends React.Component{
 
+    constructor(props){
+        super(props)
+    
+    }
+
     componentDidMount(){
         this.props.fetchUsers();
         this.props.fetchConnections(this.props.currentUser.id);
     }
+
     render(){
         const {users, connectedUsers} = this.props
-
-        let connectButton = (
-            <div className="connect">
-                <h2 >Connect</h2>
-            </div>           
-        )
-        let disconnectButton = (
-            <div className="disconnect">
-                <h2 >Disconnect</h2>
-            </div>
-        )
-        console.log(this.props.connections)
+      
         return(
             <div className="all-network-outer-div">
                    <div className="left-side-bar">
@@ -62,9 +57,17 @@ class ConnectInUsers extends React.Component{
                                             <p className="all-user-bio">{user.bio}</p>
                                         </Link>
                                     </div>
-                                    {this.props.connections.map(connection => {
-                                        (connection.connector_id !== user.id) ? disconnectButton : connectButton 
-                                    })}
+                                    
+                                    {this.props.allConnected.includes(user.id) ? (
+                                        <div className="disconnect">
+                                        <h2>Disconnect</h2>
+                                    </div> 
+                                    ):(
+                                        <div className="connect">
+                                                <h2>Connect</h2>
+                                        </div>
+                                    )
+                                    }
                                 </div>
                             ))}
                         </div>
@@ -80,11 +83,20 @@ const mapStateToProps = ( state ) => {
     let connectedUsers = connections.map(connection => (
         state.entities.users[connection.connectorId]
     ));
+
+    let allConnected = []
+    connections.map(connection => {
+        if(connection.connecteeId === currentUser.id){
+            allConnected.push(connection.connectorId)
+        }
+    })
+    // console.log(allConnected)
     return {
         connections,
         currentUser,
         connections,
         connectedUsers,
+        allConnected,
         users: Object.values(state.entities.users).filter(user => (user.id !== currentUser.id)),
         // otherUser: state.entities.users[ownProps.match.params.userId],
 

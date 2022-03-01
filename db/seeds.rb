@@ -422,11 +422,11 @@ like14 = Like.create(
     likeable_item: "Post",
     likeable_id: post4.id
 )
-# connection1 = Connection.create!(
-#     connectee_id: demo_user.id,
-#     connector_id: user1.id,
-#     accepted: true
-# )
+connection1 = Connection.create!(
+    connectee_id: demo_user.id,
+    connector_id: user1.id,
+    accepted: true
+)
 connection2 = Connection.create!(
     connectee_id: demo_user.id,
     connector_id: user2.id,
@@ -473,6 +473,7 @@ connection10 = Connection.create!(
     accepted: true
 )
 
+# opposite =>
 connection11 = Connection.create!(
     connectee_id: user11.id,
     connector_id: demo_user.id,
@@ -491,64 +492,64 @@ connection13 = Connection.create!(
     accepted: true
 )
 
-connection14 = Connection.create!(
-    connectee_id: user14.id,
-    connector_id: demo_user.id,
-    accepted: true
-)
+# connection14 = Connection.create!(
+#     connectee_id: user14.id,
+#     connector_id: demo_user.id,
+#     accepted: true
+# )
 
-connection15 = Connection.create!(
-    connectee_id: user5.id,
-    connector_id: demo_user.id,
-    accepted: true
-)
+# connection15 = Connection.create!(
+#     connectee_id: user5.id,
+#     connector_id: demo_user.id,
+#     accepted: true
+# )
 
-connection16 = Connection.create!(
-    connectee_id: user19.id,
-    connector_id: demo_user.id,
-    accepted: true
-)
+# connection16 = Connection.create!(
+#     connectee_id: user19.id,
+#     connector_id: demo_user.id,
+#     accepted: true
+# )
 
-connection17 = Connection.create!(
-    connectee_id: demo_user.id,
-    connector_id: user11.id,
-    accepted: true
-)
-connection18 = Connection.create!(
-    connectee_id: demo_user.id,
-    connector_id: user12.id,
-    accepted: true
-)
-connection19 = Connection.create!(
-    connectee_id: demo_user.id,
-    connector_id: user13.id,
-    accepted: true
-)
-connection20 = Connection.create!(
-    connectee_id: demo_user.id,
-    connector_id: user14.id,
-    accepted: true
-)
+# connection17 = Connection.create!(
+#     connectee_id: demo_user.id,
+#     connector_id: user11.id,
+#     accepted: true
+# )
+# connection18 = Connection.create!(
+#     connectee_id: demo_user.id,
+#     connector_id: user12.id,
+#     accepted: true
+# )
+# connection19 = Connection.create!(
+#     connectee_id: demo_user.id,
+#     connector_id: user13.id,
+#     accepted: true
+# )
+# connection20 = Connection.create!(
+#     connectee_id: demo_user.id,
+#     connector_id: user14.id,
+#     accepted: true
+# )
 # connection21 = Connection.create!(
 #     connectee_id: demo_user.id,
 #     connector_id: user1.id,
 #     accepted: true
 # )
-connection22 = Connection.create!(
-    connectee_id: demo_user.id,
-    connector_id: user16.id,
-    accepted: true
-)
-connection23 = Connection.create!(
-    connectee_id: demo_user.id,
-    connector_id: user17.id,
-    accepted: true
-)
-connection24 = Connection.create!(
-    connectee_id: demo_user.id,
-    connector_id: user18.id,
-    accepted: true
-)
+# connection22 = Connection.create!(
+#     connectee_id: demo_user.id,
+#     connector_id: user16.id,
+#     accepted: true
+# )
+# connection23 = Connection.create!(
+#     connectee_id: demo_user.id,
+#     connector_id: user17.id,
+#     accepted: true
+# )
+# connection24 = Connection.create!(
+#     connectee_id: demo_user.id,
+#     connector_id: user18.id,
+#     accepted: true
+# )
 # connection25 = Connection.create!(
 #     connectee_id: demo_user.id,
 #     connector_id: user19.id,
