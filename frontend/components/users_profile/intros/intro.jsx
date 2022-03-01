@@ -138,22 +138,21 @@ class Intro extends React.Component {
                 </div>
                 )
             }
-            else if(this.props.connections.length) {
-                    this.props.connections.map(connection => {
+            else if(this.props.connectedUsers.length) {
+                    this.props.connectedUsers.map(connection => {
                     if(connection.connectorId === otherUser.id){
                         // console.log("in connected user's profile")
                         // console.log(`currentUser ${currentUser.id}`)
                         // console.log("otherUser " + otherUser.id)                        
                        options = (
                         <div className="options">
-                            <h2>Message</h2>
                             <h2 onClick={this.removeConnection}>Disconnect</h2>
                         </div>
                         )
                     }
                 })  
             }
-            else if(this.props.connections.length === 0){
+            else if(this.props.connectedUsers.length === 0){
                 // console.log("in not connected user's profile")
                 // console.log(`currentUser ${currentUser.id}`)
                 // console.log("otherUser " + otherUser.id)

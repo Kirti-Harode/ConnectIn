@@ -50,6 +50,9 @@ class ConnectInUsers extends React.Component{
     
                             {users.map(user => (
                                 <div className="all-users-div" key={user.id}>
+                                    <div className="all-users-back-pic"> 
+                                        <img className="back-img" src={window.backgroundImg}/>
+                                    </div>
                                     <img className="each-user-pic" src={user.profilePhotoUrl || window.defaultProfile}/>
                                     <div className="user-info">
                                         <Link to={`/users/${user.id}`} className="user-link">
@@ -60,8 +63,8 @@ class ConnectInUsers extends React.Component{
                                     
                                     {this.props.allConnected.includes(user.id) ? (
                                         <div className="disconnect">
-                                        <h2>Disconnect</h2>
-                                    </div> 
+                                            <h2>Disconnect</h2>
+                                        </div> 
                                     ):(
                                         <div className="connect">
                                                 <h2>Connect</h2>

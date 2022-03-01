@@ -47,11 +47,24 @@ class Feed extends React.Component{
                         <Link to='/mynetwork' className="feed-conections">Connections {connections.length} </Link> 
                     </div>
                 </div>
+                
+                <div className="left-bottom-div">
+                    <a className="learn-more" href="https://github.com/Kirti-Harode" target="_blank" >
+                        <h2>Learn about my other Projects</h2>
+                    </a>
+                    <a className="pro-link1" href="https://kirti-harode.github.io/SaveTheEarth/" target="_blank" >
+                        <h2>Save The Earth</h2>
+                    </a>
+                        
+                    <a className="pro-link2" href="https://mevert.herokuapp.com/#/" target="_blank" >
+                        <h2>MEvert</h2>
+                    </a>
+                </div>
                 <div className="right-side-creator-div">
-                        <div className="dev-info">
+                        {/* <div className="dev-info">
                             <img src={window.myPic} className="myPic"/>
                             <h2>Hello, I'm Kirti Harode</h2>
-                        </div>
+                        </div> */}
                     <div className="project-details">
                         <h1>Project Description: </h1>
                         <p> ConnectIn is a Clone of a professional networking site LinkedIn, 
@@ -103,13 +116,15 @@ class Feed extends React.Component{
 
 
 
-const mapStateToProps = state => ({
-    currentUser: state.entities.users[state.session.id],
+const mapStateToProps = state => {
+    const currentUser = state.entities.users[state.session.id]
+    return {
+    currentUser,
     posts: state.entities.posts,
     comments: state.entities.comments,
     likes: Object.values(state.entities.likes),
-    connections: Object.values(state.entities.connections)
-});
+    connections: Object.values(state.entities.connections).filter(connection => connection.connecteeId === currentUser.id)
+}};
 
 const mapDispatchToProps = dispatch => ({
     fetchUser: userId => dispatch(fetchUser(userId)),
