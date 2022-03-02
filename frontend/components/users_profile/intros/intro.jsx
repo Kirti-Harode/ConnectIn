@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { withRouter } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import { fetchUsers, fetchUser } from "../../../actions/user_actions";
 import {fetchConnections, createConnection, deleteConnection} from '../../../actions/connection_actions'
 // import backgroundImage from '../../../../app/assets/images/homeOffice.png'
@@ -109,7 +109,7 @@ class Intro extends React.Component {
                         <h2 > Add Profile Section</h2>
                         <ul className={this.state.addSecClicked ? "reveal-profile-dropdown" : "hide-profile-dropdown"}>
                             <h1>Add to profile</h1>
-                            <li  onClick={()=>this.props.openModal('createEducation')} >Education</li>
+                            <li onClick={()=>this.props.openModal('createEducation')} >Education</li>
                             <li onClick={(()=>this.props.openModal('createExperience'))} >Experience</li>
                         </ul>
                     </button>
@@ -191,7 +191,9 @@ class Intro extends React.Component {
                         <h2>{this.props.otherUser.location}</h2>
                     </div>
                     <div className="user-connections">
-                        <h2>{this.props.connectedUsers.length} connections</h2>
+                        <Link to='/mynetwork' className="link-to-connections">
+                            <h2>{this.props.connectedUsers.length} connections</h2>
+                        </Link>
                     </div>
                     {options}                  
                 </div>

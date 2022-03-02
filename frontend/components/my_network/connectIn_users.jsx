@@ -112,9 +112,13 @@ class ConnectInUsers extends React.Component{
 const mapStateToProps = ( state ) => {
     const currentUser = state.entities.users[state.session.id];
     const connections = Object.values(state.entities.connections);
-    let connectedUsers = connections.map(connection => (
-        state.entities.users[connection.connectorId]
-    ));
+    let connectedUsers = []
+    connections.map(connection => {
+        if(connection.connecteeId === currentUser.id){
+            connectedUsers.push( state.entities.users[connection.connectorId])
+
+        }
+    });
 
     let allConnected = []
     connections.map(connection => {

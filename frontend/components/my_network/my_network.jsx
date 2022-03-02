@@ -37,7 +37,8 @@ class MyNetwork extends React.Component {
         }
     }
 
-    handleOpen(){
+    handleOpen(e){
+        e.preventDefault()
         this.setState({open: true});
     }
 
@@ -88,7 +89,7 @@ class MyNetwork extends React.Component {
                                 Message
                             </Link> */}
 
-                            <button className="disconnect-button" onClick={this.handleOpen} onBlur={this.handleClose}> 
+                            {/* <button className="disconnect-button" onClick={this.handleOpen} onBlur={this.handleClose}> 
                                 <BsThreeDots className="connection-dots"/>
                                 <ul className={this.state.open ? "reveal-connection-dropdown" : "hide-connection-dropdown"}> 
                                     <div className="remove-connection">
@@ -96,7 +97,10 @@ class MyNetwork extends React.Component {
                                         <h2 onClick={this.removeConnection(user.id)}> Remove Connection </h2> 
                                     </div>                               
                                 </ul>
-                            </button>
+                            </button> */}
+                            <div className="disconnect">
+                                <h3 onClick={this.removeConnection(user.id)} >Disconnect</h3>
+                             </div> 
                         </div>
                     ))}
                 </div>
@@ -108,11 +112,16 @@ class MyNetwork extends React.Component {
 
 const mapStateToProps = ( state ) => {
     const connections = Object.values(state.entities.connections);
-    let connectedUsers = connections.map(connection => (
-        state.entities.users[connection.connectorId]
-    ));
+    const currentUser = state.entities.users[state.session.id];
+    let connectedUsers = []
+    connections.map(connection => {
+        if(connection.connecteeId === currentUser.id){
+            connectedUsers.push( state.entities.users[connection.connectorId])
+
+        }
+    });
     return {
-    currentUser: state.entities.users[state.session.id],
+    currentUser,
     connections,
     connectedUsers
     }

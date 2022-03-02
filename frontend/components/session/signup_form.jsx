@@ -15,6 +15,7 @@ class SignupForm extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
         this.renderErrors = this.renderErrors.bind(this);
         this.handleDemoSignin = this.handleDemoSignin.bind(this);
+        this.isValidEmail = this.isValidEmail.bind(this)
     }
 
     componentDidMount(){
@@ -29,13 +30,23 @@ class SignupForm extends React.Component {
 
     handleSubmit(e) {
         // debugger
-        e.preventDefault();
         const user = Object.assign({}, this.state);
-        this.props.processForm(user)
-        .fail(() => { 
-            this.setState({errors: this.props.errObj})
-        }) 
-          
+        e.preventDefault();
+        // if(this.state.email.includes("@") && this.state.email.includes(".")){
+            this.props.processForm(user)
+            .fail(() => { 
+                this.setState({errors: this.props.errObj})
+            })
+        // }else{
+        //     this.props.errObj.isValid = "Email is Invalid" 
+        // }
+        
+         
+        
+    }
+
+    isValidEmail(){
+       
     }
 
     update(field) {
@@ -109,6 +120,7 @@ class SignupForm extends React.Component {
                             placeholder='Email'>
                         </input>
                         <p className='login-error-message'>{ this.state.errors.Email }</p>
+                        <p className='login-error-message'>{ this.state.errors.isValid }</p>
                         {/* <br/> */}
                         <input 
                             className={this.state.errors.Fname ? 'signup-error' : 'signup-input'}
