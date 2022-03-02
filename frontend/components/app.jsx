@@ -11,6 +11,7 @@ import ProfileContainer from "./users_profile/profile_container";
 import Modal from "./modal/modal";
 import MyNetwrok from './my_network/my_network';
 import ConnectInUsers from './my_network/connectIn_users';
+import BrowserRouter from 'react-router-dom'
 const App = () => {
     return (
         <div>
@@ -18,16 +19,20 @@ const App = () => {
             <header>
                 <HeaderContainer/>
             </header>
+            {/* <BrowserRouter> */}
+            {/* <React.Fragment>  */}
             <Switch>
                 <ProtectedRoute exact path='/feed' component={FeedContainer} />
                 <ProtectedRoute exact path='/mynetwork' component={MyNetwrok} />
                 <ProtectedRoute exact path='/allUsers' component={ConnectInUsers}/>
+                <ProtectedRoute exact path='/users/:userId' component={ProfileContainer} />
                 <AuthRoute exact path='/' component={Welcome} />
                 <AuthRoute exact path="/login" component={SigninFormContainer} />
                 <AuthRoute exact path="/signup" component={SignupFormContainer} />
-                <ProtectedRoute exact path='/users/:userId' component={ProfileContainer} />
                 <Route component={NotFound} />
             </Switch>
+            {/* </React.Fragment> */}
+            {/* </BrowserRouter> */}
         </div>
     )
 }

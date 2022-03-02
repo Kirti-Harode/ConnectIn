@@ -9,19 +9,19 @@ import { openModal } from "../../../actions/modal_actions";
 class ExperienceIndex extends React.Component {
     
     componentDidMount(){
-        this.props.fetchAllExperiences(this.props.otherUser.id);
+        this.props.fetchAllExperiences(this.props.otherUserId);
     }
 
     render(){
         let expArray = []
         this.props.experiences.map(experience => {
-           if(experience.userId === this.props.otherUser.id){
+           if(experience.userId === this.props.otherUserId){
             expArray.push(experience)
            }
         })
 
         let createButton;
-        if (this.props.currentUser.id == this.props.match.params.userId) {
+        if (this.props.currentUser.id == this.props.otherUserId) {
             createButton = (
             <div className='exp-create-btn' onClick={(()=>this.props.openModal('createExperience'))}>
                 <MdAdd className="experience-createButton"/>
@@ -47,11 +47,14 @@ class ExperienceIndex extends React.Component {
     }
 }
 
-const mapStateToProps = (state, ownProps) => ({
+const mapStateToProps = (state, ownProps) => {
+    const otherUserId = parseInt(ownProps.match.params.userId);
+    return{
     currentUser: state.entities.users[state.session.id],
-    otherUser: state.entities.users[ownProps.match.params.userId],
+    // otherUser: state.entities.users[ownProps.match.params.userId],
+    otherUserId,
     experiences: Object.values(state.entities.experiences).reverse()
-});
+}};
 
 const mapDispatchToProps = dispatch => ({
     fetchAllExperiences: userId => dispatch(fetchAllExperiences(userId)),

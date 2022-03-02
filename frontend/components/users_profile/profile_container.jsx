@@ -5,14 +5,19 @@ import {fetchConnections} from '../../actions/connection_actions'
 import {fetchAllAbouts} from '../../actions/about_actions';
 import {fetchAllEducations} from '../../actions/education_actions';
 import {fetchAllExperiences} from '../../actions/experience_actions';
+import { Link, withRouter } from "react-router-dom";
 
-const mapStateToProps = (state, ownProps) => ({
+const mapStateToProps = (state, ownProps) => {
+   const otherUserId = parseInt(ownProps.match.params.userId);
+
+    return {
     currentUser: state.entities.users[state.session.id],
     otherUser: state.entities.users[ownProps.match.params.userId],
     about: state.entities.abouts,
     experiences: state.entities.experiences,
-    educations: state.entities.educations
-});
+    educations: state.entities.educations,
+    otherUserId
+}};
 
 const mapDispatchToProps = dispatch => ({
     fetchUser: userId => dispatch(fetchUser(userId)),
@@ -24,4 +29,4 @@ const mapDispatchToProps = dispatch => ({
 
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Profile);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Profile));

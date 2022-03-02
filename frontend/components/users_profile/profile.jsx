@@ -17,23 +17,24 @@ class Profile extends React.Component {
         if(this.state.counter < 2) {
             if (preprops.otherUser !== this.props.otherUser) {
                 this.setState({counter: this.state.counter + 1})
-                this.props.fetchUser(this.props.otherUser.id)
-                // .then(this.props.fetchConnections(this.props.otherUser.id))
-                .then(this.props.fetchAllAbouts(this.props.otherUser.id))
-                .then(this.props.fetchAllEducations(this.props.otherUser.id))
-                .then(this.props.fetchAllExperiences(this.props.otherUser.id))           
+                this.props.fetchUser(this.props.otherUserId)
+                .then(this.props.fetchConnections(this.props.otherUserId))
+                .then(this.props.fetchAllAbouts(this.props.otherUserId))
+                .then(this.props.fetchAllEducations(this.props.otherUserId))
+                .then(this.props.fetchAllExperiences(this.props.otherUserId))           
             }
         }
     }
 
     componentDidMount(){
         this.props.fetchUsers();
+        this.props.fetchUser(this.props.otherUserId);
     }
     render (){
         return(
             <div className="profile-div">
                 <section className="user-intro">
-                    <IntroContainer />
+                    <IntroContainer otherUser={this.props.otherUser}/>
                 </section>
                 <section className="about-index-conatiner">
                     <AboutIndexContainer />

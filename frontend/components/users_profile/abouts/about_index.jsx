@@ -19,7 +19,7 @@ class AboutIndex extends React.Component{
     //     }
     // }
     componentDidMount(){
-        this.props.fetchAllAbouts(this.props.otherUser.id)
+        this.props.fetchAllAbouts(this.props.otherUserId)
         // console.log("all abouts" + this.props.fetchAllAbouts(this.props.otherUser.id))
     }
 
@@ -27,13 +27,13 @@ class AboutIndex extends React.Component{
         // this.props.abouts.filter(about => about.userId === this.props.otherUser.id)
         let aboutArray = []
         this.props.abouts.map(about => {
-           if(about.userId === this.props.otherUser.id){
+           if(about.userId === this.props.otherUserId){
             aboutArray.push(about)
            }
         })
         // console.log(this.props.otherUser.id)
         let createButton;
-        if (this.props.currentUser.id == this.props.match.params.userId && this.props.abouts.length === 0) {
+        if (this.props.currentUser.id == this.props.otherUserId && this.props.abouts.length === 0) {
             createButton = (<div onClick={() => (this.props.openModal('createAbout'))} className="about-create-button-div">
                 <MdAdd className="about-createButton" />
             </div>)
@@ -58,12 +58,16 @@ class AboutIndex extends React.Component{
     }
 }
 
-const mapStateToProps = (state, ownProps) => ({
+const mapStateToProps = (state, ownProps) => {
+    const otherUserId = parseInt(ownProps.match.params.userId);
+
+    return {
     currentUser: state.entities.users[state.session.id],
-    otherUser: state.entities.users[ownProps.match.params.userId],
-    abouts: Object.values(state.entities.abouts).reverse()
+    // otherUser: state.entities.users[ownProps.match.params.userId],
+    abouts: Object.values(state.entities.abouts).reverse(),
+    otherUserId
     
-});
+}};
 
 const mapDispatchToProps = dispatch => ({
     fetchAllAbouts: userId => dispatch(fetchAllAbouts(userId)),

@@ -8,7 +8,7 @@ import { openModal } from "../../../actions/modal_actions";
 class EducationIndexItem extends React.Component {
     render(){
         let editButton;
-        if (this.props.currentUser.id == this.props.match.params.userId) {
+        if (this.props.currentUser.id == this.props.otherUserId) {
             editButton = (<div className='edit-button-edu' onClick={() => (this.props.openModal('editEducation', this.props.education.id))} >
                 <MdCreate className="edit-button"/>
            </div>)
@@ -46,10 +46,13 @@ class EducationIndexItem extends React.Component {
     }
 }
 
-const mapStateToProps = (state, ownProps) => ({
+const mapStateToProps = (state, ownProps) => {
+    const otherUserId = parseInt(ownProps.match.params.userId);
+    return {
     currentUser: state.entities.users[state.session.id],
-    otherUser: state.entities.users[ownProps.match.params.userId]
-});
+    // otherUser: state.entities.users[ownProps.match.params.userId]
+    otherUserId
+}};
 
 const mapDispatchToProps = dispatch => ({
     openModal: (modal, id) => dispatch(openModal(modal, id))
