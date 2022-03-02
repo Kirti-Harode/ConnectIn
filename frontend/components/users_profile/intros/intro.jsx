@@ -100,13 +100,9 @@ class Intro extends React.Component {
     // }
     render(){
         const {currentUser, otherUser} = this.props;
-        console.log(this.props.allConnected)
-        console.log(this.props.connections)
-        console.log(this.props.currentUser)
+
         let options ;
             if(currentUser.id === otherUser.id){
-                // console.log("in my profile")
-                // console.log(currentUser.id)
                 options = (
                 <div className="options">
                     <button  className="add-to-profile" onClick={this.handleAddSecOpen} onBlur={this.handleAddSecClose}>
@@ -142,9 +138,7 @@ class Intro extends React.Component {
             }
             else { 
                     if(this.props.allConnected.includes(otherUser.id)){
-                        // console.log("in connected user's profile")
-                        // console.log(`currentUser ${currentUser.id}`)
-                        // console.log("otherUser " + otherUser.id)                        
+   
                        options = (
                         <div className="options-disconnect">
                             <h2 onClick={this.removeConnection}>Disconnect</h2>
@@ -152,9 +146,7 @@ class Intro extends React.Component {
                         )
                     }
                     else {
-                        // console.log("in not connected user's profile")
-                        // console.log(`currentUser ${currentUser.id}`)
-                        // console.log("otherUser " + otherUser.id)
+
                         options = (
                         <div className="options-connect">
                             <h2 onClick={this.handleConnection}>Connect</h2>
@@ -175,13 +167,14 @@ class Intro extends React.Component {
                 editButton = null;
             }
         }
+
         return(
             <div className="user-info-div">
                 <div className="background-image-div">
                     <img className="back-img" src={ window.backgroundImg}/>
                 </div>
                 <div className="profile-photo-div">
-                <img className="profile-img" src={ this.props.otherUser.profilePhotoUrl || window.defaultProfile}/>
+                    <img className="profile-img" src={ this.props.otherUser.profilePhotoUrl || window.defaultProfile}/>
                 </div>
                 <div className="user-details">
                     <header className="user-info-header">

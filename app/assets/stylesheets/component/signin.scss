@@ -17,6 +17,16 @@
     padding-right: 100px;
 }
 
+.signin-error{
+    font-size: 18px;
+    width: 340px;
+    height: 40px;
+    // border: 1px;
+    // border-radius: 2px;
+    border-radius: 8px;
+    border: 1px solid red;
+    padding-left: 5px;
+}
 
 .signin-form-box{
     display: flex;

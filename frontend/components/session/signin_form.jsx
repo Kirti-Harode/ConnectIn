@@ -61,12 +61,12 @@ class SigninForm extends React.Component{
         this.setState({
             email: 'kirti@gmail.com',
             password: 'password',
-            erorrs: []
+            errors: []
         })
         this.props.processForm({
             email: 'kirti@gmail.com',
             password: 'password',
-            erorrs: []
+            errors: []
         })
        
        
@@ -94,7 +94,7 @@ class SigninForm extends React.Component{
                         <p className='signin-msg'>Stay updated on your professional world</p>
                     </div>
                     <input 
-                        className='signin-email'
+                        className={this.state.errors.length ? 'signin-error': 'signin-email'}
                         type="text" 
                         value={this.state.email} 
                         onChange={this.update('email')} 
@@ -102,7 +102,7 @@ class SigninForm extends React.Component{
                     </input>
                     <br/>
                     <input 
-                        className='signin-password'
+                        className={this.state.errors.length ? 'signin-error' : 'signin-password'}
                         type="password" 
                         value={this.state.password} 
                         onChange={this.update('password')} 
