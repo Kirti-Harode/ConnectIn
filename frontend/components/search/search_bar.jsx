@@ -25,7 +25,7 @@ class Search extends React.Component{
         }
         else{
             let filtered = []
-            this.props.allUsers.filter(user => {
+            this.props.allUsers.map(user => {
                 if (user.fname.toLowerCase().includes(searchLetter.toLowerCase())){
                     filtered.push(user)
                 }
@@ -35,7 +35,6 @@ class Search extends React.Component{
     }
 
     handleClick(){
-        
         this.setState({ 
             searchInput: '',
             searchResult: []

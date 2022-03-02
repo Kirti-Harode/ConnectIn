@@ -42,7 +42,7 @@
         border-radius: 50%;
         width: 130px;
         height: 132px;
-        border: 3px solid white;
+        border: 4px solid white;
     }
     .user-info-header {
         display: flex;
@@ -56,34 +56,41 @@
         padding-top: 5px;
     }
     .user-name {
-        font-size: 1.3rem;
-        font-weight: 400;
+        font-size: 1.5rem;
+        font-weight: 500;
     }
     .user-pronouns {
         padding-left: 5px;
         font-size: 0.8rem;
-        color: gray;
+        color: #363636;
+        padding-top: 3px;
     }
     .user-bio {
-        font-size: 0.9rem;
+        font-size: 1rem;
         padding: 3px 0px;
+        font-weight: 300;
+        color: #222222;
     }
     .user-location {
-        font-size: 0.8rem;
-        color: gray;
+        font-size: 0.9rem;
+        color: #1c1c1c;
+        font-weight: 300;
     }
     .user-connections {
-        color: #0a66c2;
-        font-size: 0.8rem;
-        font-weight: 400;
-        margin-top: 5px;
+        
+        margin-top: 8px;
         margin-bottom: 10px;
+        
+        .link-to-connections{
+            color: #0a66c2;
+            font-size: 1rem;
+            font-weight: 500;
+        }
     }
     .edit-user-info {
         cursor: pointer;
         margin-right: 25px;
-        font-size: 18px;
-
+        font-size: 20px;
     }
     .user-details {
         position: relative;
@@ -96,36 +103,191 @@
         display: flex;
         flex-direction: row;
 
+        .add-to-profile, .more-button {
+            text-decoration: none;
+            border: none;
+            background-color: white;
+            margin-left: -6px;
+        }
         h2{
-            padding-right: 8px;
-            padding-top: 5px;
-            width: 140px;
+            padding-top: 3px;
+            padding-bottom: 1px;
+            width: 150px;
             height: 20px;
             border: 1px solid #06c;
             border-radius: 15px;
             color: #06c;
-            padding-left: 8px;
-            font-size: 16px;
-            margin-right: 10px;
+            // padding-left: 10px;
+            font-size: 15px;
             cursor: pointer;
             &:hover{
-                background-color: #06c;
-                color: white;
+                background-color: rgba(135, 186, 236, 0.479);
+                border: 1px solid rgb(1, 93, 185);
+                box-shadow: 0px 4px 6px #acaaaa;
             }
         }
-
         h3{
-            width: 50px;
+            width: 60px;
             height: 20px;
             border: 1px solid gray;
             border-radius: 15px;
-            padding-top: 5px;
-            padding-left: 10px;
+            padding-top: 3px;
+            padding-bottom: 1px;
             cursor: pointer;
             color: #5a5a5a;
+            font-size: 15px;
             &:hover{
-                background-color: rgba(63, 63, 63, 0.726);
-                color: white;
+                background-color: rgba(153, 152, 152, 0.473);
+                border: 1px solid rgb(71, 71, 71);
+                box-shadow: 0px 4px 6px #acaaaa;
+            }
+        }
+
+    }
+
+    .options-disconnect{
+        h2{
+            // padding-top: 3px;
+            padding-bottom: 1px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 120px;
+            height: 22px;
+            border: 1px solid #06c;
+            border-radius: 15px;
+            color: #06c;
+            // padding-left: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            &:hover{
+                background-color: rgba(135, 186, 236, 0.479);
+                border: 2px solid rgb(1, 93, 185);
+                box-shadow: 0px 4px 6px #acaaaa;
+            }
+        }
+    }
+
+    .options-connect{
+        h2{
+            // padding-top: 3px;
+            padding-bottom: 1px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 120px;
+            height: 22px;
+            border: 1px solid #06c;
+            border-radius: 17px;
+            color: white;
+            background-color: #06c;
+            // padding-left: 10px;
+            font-size: 15px;
+            cursor: pointer;
+            &:hover{
+                background-color: rgb(4, 84, 165);
+                border: 2px solid rgb(1, 93, 185);
+                box-shadow: 0px 4px 6px #acaaaa;
+            }
+        }
+    }
+
+    .hide-profile-dropdown, .hide-more-dropdown {
+        display: none;
+    }
+
+    .reveal-profile-dropdown{
+        display: flex;
+        flex-direction: column;
+        width: 220px;
+        height: 100px;
+        margin-left: 20px;
+        padding-bottom: 2px;
+        position: absolute;
+        border: 1px solid #e6e6e6;
+        border-radius: 10px;
+        border-top-left-radius: 0;
+        box-shadow: 0px 4px 6px #acaaaa;
+        background-color: white;
+        /* right: 0px; */
+        margin-top: 5px;
+        left: 0px;
+
+        h1{
+            font-size: 17px;
+            margin-top: 8px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid lightgray;
+            /* margin-bottom: 5px; */
+            font-weight: 500;
+            color: #1d1d1d;
+        }
+
+        li{
+            // padding-left: 10px;
+            font-size: 15px;
+            width: 215px;
+            height: 20px;
+            border-radius: 5px;
+            padding-top: 2px;
+            padding-bottom: 2px;
+            margin-top: 5px;
+            color: #242424;
+            cursor: pointer;
+            display: flex;
+             padding-left: 5px;
+            &:hover{
+                background-color: #c3c2c2ba;
+            }
+        }
+    }
+
+    .reveal-more-dropdown{
+        display: flex;
+        flex-direction: column;
+        width: 220px;
+        height: 120px;
+        margin-left: 20px;
+        padding-bottom: 2px;
+        position: absolute;
+        border: 1px solid #e6e6e6;
+        border-radius: 10px;
+        border-top-left-radius: 0;
+        box-shadow: 0px 4px 6px #acaaaa;
+        background-color: white;
+        /* right: 0px; */
+        margin-top: 5px;
+        left: 175px;
+
+        h1{
+            font-size: 17px;
+            margin-top: 8px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid lightgray;
+            /* margin-bottom: 5px; */
+            font-weight: 500;
+            color: #1d1d1d;
+        }
+
+        a{
+            display: flex;
+            padding-left: 10px;
+            font-size: 15px;
+            width: 210px;
+            height: 20px;
+            border-radius: 5px;
+            padding-top: 2px;
+            padding-bottom: 2px;
+            margin-top: 5px;
+            color: #242424;
+            cursor: pointer;
+            
+            &:hover{
+                background-color: #c3c2c2ba;
+            }
+
+            .git-icon{
+                margin-left: 10px;
             }
         }
     }
@@ -137,9 +299,10 @@
     padding-left: 8px;
 
     .about-createButton{
-        font-size: 25px;
+        font-size: 29px;
         cursor: pointer;
         margin-right: 10px;
+        margin-left: 590px
     }
 
     .about-header {
@@ -150,6 +313,9 @@
         margin-top: 10px;
         padding: 15px;
         padding-right: 0px;
+        font-size: 22px;
+        color: #202020;
+        font-weight: 500;
     }
 
     .about-body-index {
@@ -174,14 +340,14 @@
     .about-body-div {
         display: flex;
         align-items: center;
-        width: 608px;
+        width: 615px;
         font-size: 1rem;
         font-weight: 400;
         padding-bottom: 10px;
     }
-
+    
     .about-body-p {
-        font-weight: 100;
+        font-weight: 400;
         font-size: 0.9rem;
         line-height: 1.4;
         color: rgb(20, 20, 20);
@@ -189,7 +355,7 @@
     .edit-button {
         margin-left: 55px;
         cursor: pointer;
-        font-size: 18px;
+        font-size: 20px;
     }
 }
 
@@ -206,6 +372,9 @@
         margin-top: 10px;
         padding: 15px;
         padding-right: 0px;
+        font-size: 22px;
+        color: #202020;
+        font-weight: 500;
     }
 
     .experience-index-div {
@@ -214,8 +383,9 @@
     }
     .experience-createButton{
         cursor: pointer;
-        font-size: 25px;
+        font-size: 29px;
         margin-right: 10px;
+        margin-left: 536px;
     }
     .exp-h2 {
         // font-weight: 900;
@@ -276,7 +446,7 @@
     }
     .edit-button {
         cursor: pointer;
-        font-size: 18px;
+        font-size: 20px;
     }
 
    
@@ -295,11 +465,15 @@
         padding: 15px;
         margin-top: 10px;
         padding-right: 10px;
+        font-size: 22px;
+        color: #202020;
+        font-weight: 500;
     }
     .education-createButton {
         cursor: pointer;
-        font-size: 25px;
+        font-size: 29px;
         margin-right: 20px;
+        margin-left: 536px;
     }
     .education-index-div {
         padding-top: 15px;
@@ -329,7 +503,7 @@
 .edit-button-edu {
     margin-right: 10px;
     cursor: pointer;
-    font-size: 18px;
+    font-size: 20px;
 }
 .education-body-div {
     display: flex;

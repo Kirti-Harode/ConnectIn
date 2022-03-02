@@ -13,6 +13,13 @@ class EducationIndex extends React.Component {
     }
 
     render(){
+        let eduArray = []
+        this.props.educations.map(education => {
+           if(education.userId === this.props.otherUser.id){
+                eduArray.push(education)
+           }
+        })
+
         let createButton;
         if (this.props.currentUser.id == this.props.match.params.userId) {
             createButton = (<div className='create-btn' onClick={()=>this.props.openModal('createEducation')}>
@@ -28,7 +35,7 @@ class EducationIndex extends React.Component {
                     {createButton}
                 </header>
                 <div className="education-index-div">
-                    {this.props.educations.map(education => {
+                    {eduArray.map(education => {
                             
                         return <EducationIndexItem education={education} key={education.id}/>
                     

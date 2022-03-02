@@ -42,17 +42,17 @@ class EducationForm extends React.Component {
                     </div>
                     <div className='edu-field-div'>
                         <label className='edu-field-heading'>Field of study</label>
-                        <input value={this.state.field_of_study} type='text' onChange={this.update('field')} className='edu-field-input' placeholder="Ex: Computer Enginnering" />
+                        <input value={this.state.fieldOfStudy} type='text' onChange={this.update('fieldOfStudy')} className='edu-field-input' placeholder="Ex: Computer Enginnering" />
                     </div>
 
                     <div className='edu-start-date-div'>
                         <label>Start date</label>
-                        <input value={this.state.start_date} type='text' onChange={this.update('start_date')} className='edu-start-input' placeholder="Ex: March 2020"/>
+                        <input value={this.state.startDate} type='text' onChange={this.update('startDate')} className='edu-start-input' placeholder="Ex: March 2020"/>
                     </div>
 
                     <div className='edu-end-date-div'>
                         <label>End date</label>
-                        <input value={this.state.end_date} type='text' onChange={this.update('end_date')} className='edu-end-input' placeholder="Ex: March 2022 or At present"/>
+                        <input value={this.state.endDate} type='text' onChange={this.update('endDate')} className='edu-end-input' placeholder="Ex: March 2022 or At present"/>
                     </div>
                     <div className = 'edu-description-div'>
                         <label>Description</label>

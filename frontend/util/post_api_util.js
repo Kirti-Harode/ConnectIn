@@ -23,15 +23,17 @@ export const createPost = (formData) => (
 );
 
 
-export const updatePost = formData => (
-    $.ajax({
+export const updatePost = formData => {
+    // console.log(formData.get('post[id]'))
+    // debugger
+    return $.ajax({
         method: 'PATCH',
         url: `/api/posts/${formData.get('post[id]')}`,
         data: formData, 
         contentType: false,
         processData: false
     })
-);
+};
 
 export const deletePost = postId => (
     $.ajax({

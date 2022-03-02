@@ -15,7 +15,9 @@
 #  location        :string
 #
 class User < ApplicationRecord
-    validates :email,:fname, :lname, :password_digest, :session_token, presence: true 
+    validates :fname, :lname, :password_digest, :session_token, presence: true 
+    # validates :email, format: { with: URI::MailTo::EMAIL_REGEXP } 
+    validates :email, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, on: :create }
     validates :email, uniqueness: true 
     validates :password, length: {minimum: 6, allow_nil: true}
 

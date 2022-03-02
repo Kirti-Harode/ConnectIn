@@ -14,13 +14,14 @@ export const createAbout = about => (
     })
 )
 
-export const updateAbout = about => (
-    $.ajax({
+export const updateAbout = about => {
+    // debugger
+    return $.ajax({
         url: `api/abouts/${about.id}`,
         method: 'PATCH',
         data: {about}
     })
-)
+}
 
 export const deleteAbout = aboutId => (
     $.ajax({

@@ -46,7 +46,7 @@ user12 = User.create!(email: 'JackTomasik@gmail.com', fname: 'Jack', lname: 'Tom
 user13 = User.create!(email: 'JerryPhan@gmail.com', fname: 'Jerry', lname: 'Phan', password: 'password', bio: "Web developer", pronouns: 'he/him/his', location: "CA");
 user14 = User.create!(email: 'PerryXie@gmail.com', fname: 'Perry', lname: 'Xie', password: 'password', bio: "Web developer", pronouns: 'he/him/his', location: "CA");
 user16 = User.create!(email: 'PresleyReedIii@gmail.com', fname: 'Presley', lname: 'Reed Iii', password: 'password', bio: "Web developer", pronouns: 'he/him/his', location: "CA");
-user17 = User.create!(email: 'ThiagoMiglioranziMoura@gmail.com', fname: 'Thiago', lname: 'Miglioranzi Moura', password: 'password', bio: "Web developer", pronouns: 'he/him/his', location: "CA");
+user17 = User.create!(email: 'ThiagoMiglioranziMoura@gmail.com', fname: 'Thiago', lname: 'M. Moura', password: 'password', bio: "Web developer", pronouns: 'he/him/his', location: "CA");
 user18 = User.create!(email: 'ZackAlsiday@gmail.com', fname: 'Zack', lname: 'Alsiday', password: 'password', bio: "Web developer", pronouns: 'he/him/his', location: "CA");
 user19 = User.create!(email: 'HelenEdwards@gmail.com', fname: 'Helen', lname: 'Edwards', password: 'password', bio: "Web developer", pronouns: 'she/her/hers', location: "SF");
 user20 = User.create!(email: 'JJZhang@gmail.com', fname: 'JJ', lname: 'Zhang', password: 'password', bio: "Founder of MaMazon", pronouns: 'she/her/hers', location: "SF");
@@ -239,7 +239,7 @@ post4.media.attach(io: post4_photo, filename: 'happy.png')
 
 post5 = Post.create!(
     body: ":) ",
-    author_id: user1.id
+    author_id: user11.id
 )
 
 post5_photo = open('https://connectin-aa-dev.s3.us-west-1.amazonaws.com/coding_meme1.png')
@@ -258,11 +258,11 @@ post7 = Post.create!(
     author_id: user20.id
 )
 
-comment1 = Comment.create!(
-    author_id: user1.id,
-    post_id: post2.id,
-    body: "You can do it!"
-)
+# comment1 = Comment.create!(
+#     author_id: user1.id,
+#     post_id: post2.id,
+#     body: "You can do it!"
+# )
 
 comment2 = Comment.create!(
     author_id: user25.id,
@@ -473,6 +473,7 @@ connection10 = Connection.create!(
     accepted: true
 )
 
+# opposite =>
 connection11 = Connection.create!(
     connectee_id: user11.id,
     connector_id: demo_user.id,
@@ -491,85 +492,85 @@ connection13 = Connection.create!(
     accepted: true
 )
 
-connection14 = Connection.create!(
-    connectee_id: user14.id,
-    connector_id: demo_user.id,
-    accepted: true
-)
+# connection14 = Connection.create!(
+#     connectee_id: user14.id,
+#     connector_id: demo_user.id,
+#     accepted: true
+# )
 
-connection15 = Connection.create!(
-    connectee_id: user5.id,
-    connector_id: demo_user.id,
-    accepted: true
-)
+# connection15 = Connection.create!(
+#     connectee_id: user5.id,
+#     connector_id: demo_user.id,
+#     accepted: true
+# )
 
-connection16 = Connection.create!(
-    connectee_id: user19.id,
-    connector_id: demo_user.id,
-    accepted: true
-)
+# connection16 = Connection.create!(
+#     connectee_id: user19.id,
+#     connector_id: demo_user.id,
+#     accepted: true
+# )
 
-connection17 = Connection.create!(
-    connectee_id: demo_user.id,
-    connector_id: user11.id,
-    accepted: true
-)
-connection18 = Connection.create!(
-    connectee_id: demo_user.id,
-    connector_id: user12.id,
-    accepted: true
-)
-connection19 = Connection.create!(
-    connectee_id: demo_user.id,
-    connector_id: user13.id,
-    accepted: true
-)
-connection20 = Connection.create!(
-    connectee_id: demo_user.id,
-    connector_id: user14.id,
-    accepted: true
-)
+# connection17 = Connection.create!(
+#     connectee_id: demo_user.id,
+#     connector_id: user11.id,
+#     accepted: true
+# )
+# connection18 = Connection.create!(
+#     connectee_id: demo_user.id,
+#     connector_id: user12.id,
+#     accepted: true
+# )
+# connection19 = Connection.create!(
+#     connectee_id: demo_user.id,
+#     connector_id: user13.id,
+#     accepted: true
+# )
+# connection20 = Connection.create!(
+#     connectee_id: demo_user.id,
+#     connector_id: user14.id,
+#     accepted: true
+# )
 # connection21 = Connection.create!(
 #     connectee_id: demo_user.id,
 #     connector_id: user1.id,
 #     accepted: true
 # )
-connection22 = Connection.create!(
-    connectee_id: demo_user.id,
-    connector_id: user16.id,
-    accepted: true
-)
-connection23 = Connection.create!(
-    connectee_id: demo_user.id,
-    connector_id: user17.id,
-    accepted: true
-)
-connection24 = Connection.create!(
-    connectee_id: demo_user.id,
-    connector_id: user18.id,
-    accepted: true
-)
-connection25 = Connection.create!(
-    connectee_id: demo_user.id,
-    connector_id: user19.id,
-    accepted: true
-)
-connection26 = Connection.create!(
-    connectee_id: demo_user.id,
-    connector_id: user20.id,
-    accepted: true
-)
+# connection22 = Connection.create!(
+#     connectee_id: demo_user.id,
+#     connector_id: user16.id,
+#     accepted: true
+# )
+# connection23 = Connection.create!(
+#     connectee_id: demo_user.id,
+#     connector_id: user17.id,
+#     accepted: true
+# )
+# connection24 = Connection.create!(
+#     connectee_id: demo_user.id,
+#     connector_id: user18.id,
+#     accepted: true
+# )
+# connection25 = Connection.create!(
+#     connectee_id: demo_user.id,
+#     connector_id: user19.id,
+#     accepted: true
+# )
+# connection26 = Connection.create!(
+#     connectee_id: demo_user.id,
+#     connector_id: user20.id,
+#     accepted: true
+# )
 
-connection27 = Connection.create!(
-    connectee_id: demo_user.id,
-    connector_id: user21.id,
-    accepted: true
-)
-connection28 = Connection.create!(
-    connectee_id: demo_user.id,
-    connector_id: user22.id,
-    accepted: true
-)
+# connection27 = Connection.create!(
+#     connectee_id: demo_user.id,
+#     connector_id: user21.id,
+#     accepted: true
+# )
+# connection28 = Connection.create!(
+#     connectee_id: demo_user.id,
+#     connector_id: user22.id,
+#     accepted: true
+# )
 # connection29 = Connection.create!(
 #     connectee_id: demo_user.id,
 #     connector_id: user23.id,

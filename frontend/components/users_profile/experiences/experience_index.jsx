@@ -13,6 +13,13 @@ class ExperienceIndex extends React.Component {
     }
 
     render(){
+        let expArray = []
+        this.props.experiences.map(experience => {
+           if(experience.userId === this.props.otherUser.id){
+            expArray.push(experience)
+           }
+        })
+
         let createButton;
         if (this.props.currentUser.id == this.props.match.params.userId) {
             createButton = (
@@ -29,7 +36,7 @@ class ExperienceIndex extends React.Component {
                     {createButton}
                 </header>
                 <div className="experience-index-div">
-                    {this.props.experiences.map(experience => {
+                    {expArray.map(experience => {
                             
                         return <ExperienceIndexItem experience={experience} key={experience.id}/>
                     

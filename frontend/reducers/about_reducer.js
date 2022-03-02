@@ -6,11 +6,14 @@ const aboutReducer = (state={}, action) => {
     switch (action.type) {
         case RECEIVE_ALL_ABOUTS:
            return {...state, ...action.abouts};
-        case RECEIVE_ABOUT:   
+        case RECEIVE_ABOUT:  
+            // debugger 
             nextState[action.about.id] = action.about;
             return nextState;
         case REMOVE_ABOUT:
+            debugger
             delete nextState[action.aboutId];
+            debugger
             return nextState;    
         default:
            return state;

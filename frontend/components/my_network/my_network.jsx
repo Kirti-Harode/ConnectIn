@@ -18,8 +18,27 @@ class MyNetwork extends React.Component {
         }
         this.handleOpen = this.handleOpen.bind(this)
         this.handleClose = this.handleClose.bind(this)
+        this.removeConnection = this.removeConnection.bind(this);
+
     }
-    handleOpen(){
+
+    removeConnection(userId){
+        return e => { e.preventDefault()
+         let connectionId;
+         
+         this.props.connections.map(connection => {
+             if(connection.connecteeId === this.props.currentUser.id  && connection.connectorId === userId){
+                 connectionId = connection.id
+                 // this.setState({connections: this.state.connections - 1})
+             }
+         })
+         // if(this.props.allConnected.includes())
+         this.props.deleteConnection(connectionId)
+        }
+    }
+
+    handleOpen(e){
+        e.preventDefault()
         this.setState({open: true});
     }
 
@@ -27,6 +46,9 @@ class MyNetwork extends React.Component {
         this.setState({open: false});
     }
 
+    componentDidMount(){
+        this.props.fetchConnections(this.props.currentUser.id);
+    }
     render(){
        const {connectedUsers} = this.props
         return(
@@ -35,7 +57,11 @@ class MyNetwork extends React.Component {
                     
                         <h2 className="manage-heading">Manage my network</h2>
                         <ul className="all-headings">
-                            <li> <BsFillPeopleFill className="icons"/> Connections {connectedUsers.length}</li>
+                            <li> 
+                                <Link to='/allUsers' className="allusers-link">
+                                    <BsFillPeopleFill className="icons"/> All Users 
+                                </Link>
+                            </li>
                             <li> <RiContactsBookLine className="icons"/> Contacts</li>
                             <li><BsPersonLinesFill className="icons"/> People | Follow</li>
                             <li><HiUserGroup className="icons"/> Groups</li>
@@ -50,8 +76,8 @@ class MyNetwork extends React.Component {
                         <h1>My Connections </h1>
                     </header>
 
-                    {connectedUsers.map(user => (
-                        <div className="each-connected-user" key={user.id}>
+                    {connectedUsers.map((user, idx) => (
+                        <div className="each-connected-user" key={idx}>
                             <img className="connector-pic" src={user.profilePhotoUrl || window.defaultProfile}/>
                             <div className="connector-info">
                                 <Link to={`/users/${user.id}`} className="connected-users-link">
@@ -59,19 +85,22 @@ class MyNetwork extends React.Component {
                                     <p className="connected-user-bio">{user.bio}</p>
                                 </Link>
                             </div>
-                            <Link className="message-button" to='/message' >
+                            {/* <Link className="message-button" to='/message' >
                                 Message
-                            </Link>
+                            </Link> */}
 
-                            <button className="disconnect-button" onClick={this.handleOpen} onBlur={this.handleClose}> 
+                            {/* <button className="disconnect-button" onClick={this.handleOpen} onBlur={this.handleClose}> 
                                 <BsThreeDots className="connection-dots"/>
                                 <ul className={this.state.open ? "reveal-connection-dropdown" : "hide-connection-dropdown"}> 
                                     <div className="remove-connection">
                                         <RiDeleteBin5Fill className="remove-icon"/>
-                                        <h2> Remove Connection </h2> 
+                                        <h2 onClick={this.removeConnection(user.id)}> Remove Connection </h2> 
                                     </div>                               
                                 </ul>
-                            </button>
+                            </button> */}
+                            <div className="disconnect">
+                                <h3 onClick={this.removeConnection(user.id)} >Disconnect</h3>
+                             </div> 
                         </div>
                     ))}
                 </div>
@@ -83,11 +112,16 @@ class MyNetwork extends React.Component {
 
 const mapStateToProps = ( state ) => {
     const connections = Object.values(state.entities.connections);
-    let connectedUsers = connections.map(connection => (
-        state.entities.users[connection.connectorId]
-    ));
+    const currentUser = state.entities.users[state.session.id];
+    let connectedUsers = []
+    connections.map(connection => {
+        if(connection.connecteeId === currentUser.id){
+            connectedUsers.push( state.entities.users[connection.connectorId])
+
+        }
+    });
     return {
-    currentUser: state.entities.users[state.session.id],
+    currentUser,
     connections,
     connectedUsers
     }

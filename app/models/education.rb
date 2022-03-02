@@ -16,7 +16,7 @@
 #  updated_at     :datetime         not null
 #
 class Education < ApplicationRecord
-    validates :user_id, :school, :start_date, :end_date, presence: true
+    validates :user_id, presence: true
 
     belongs_to :user
 end

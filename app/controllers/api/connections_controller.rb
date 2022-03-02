@@ -1,6 +1,8 @@
 class Api::ConnectionsController < ApplicationController
     def index
-        @connections = Connection.where(connectee_id: params[:userId])
+        # @connections = Connection.where(connectee_id: params[:userId])
+        @connections = Connection.where(["connectee_id = ? or connector_id = ?", params[:userId], params[:userId]])
+        
         render :index
     end
    

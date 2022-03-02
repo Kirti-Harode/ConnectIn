@@ -4,10 +4,11 @@ import {Link} from 'react-router-dom';
 import { withRouter } from 'react-router-dom';
 import { logout } from '../../actions/session_actions';
 import smallLogo from '../../../app/assets/images/in_alpha.png'
-import { FaHome, FaUserFriends, FaUserGraduate, FaSearch, FaBell} from "react-icons/fa";
-import {IoIosBriefcase } from "react-icons/io";
-import { IoChatboxEllipses } from "react-icons/io5";
+import { FaHome, FaUserFriends, FaUserGraduate} from "react-icons/fa";
 import Search from '../search/search_bar';
+import { BsGithub, BsPersonCircle, BsLinkedin } from "react-icons/bs";
+import { FaAngellist } from "react-icons/fa";
+import { MdOutlineArrowDropDown } from "react-icons/md";
 class LoggedIn extends React.Component {
     constructor(props){
         super(props)
@@ -35,12 +36,6 @@ class LoggedIn extends React.Component {
                         </Link>
                     </span>
                     <div>
-                        {/* <div className='search-container'>
-                            <div className='search-input-div'>
-                                <input className='search-input' type="text" placeholder='Search' ></input>
-                            </div>
-                            <FaSearch className='search-icon'/>
-                        </div> */}
                         <Search />
                     </div>
                 <nav className='right-nav'>
@@ -52,61 +47,66 @@ class LoggedIn extends React.Component {
                             </Link>
                         </li>
                         <li className='network-nav'>
-                            <Link to='/mynetwork' className='links'>
+                            <Link to='/allUsers' className='links'>
                                 <FaUserFriends className='network-icon' />
-                                <span className='network-heading'>My Network</span>
+                                <span className='network-heading'> Network</span>
                             </Link>
                         </li>
                         <li className='jobs-nav'>
-                            <Link to='/jobs' className='links'>
-                                <IoIosBriefcase className='jobs-icon'/>
-                                <span className='jobs-heading'>Jobs</span>
-                            </Link>
+                            <a href="" target="_blank" className='links'>
+                                <BsPersonCircle className="portfolio"/>
+                                <span>Portfolio</span>
+                            </a>
                         </li>
                         <li className='message-nav'>
-                            <Link to='/message' className='links'>
-                                <IoChatboxEllipses className='message-icon'/>
-                                <span className='message-heading'>Messaging</span>
-                            </Link>
+                            <a href="https://www.linkedin.com/in/kirti-harode-02b35b1b5/" target="_blank" className='links'>
+                                <BsLinkedin className="linkedin"/>
+                                <span>LinkedIn</span>
+                            </a>                            
                         </li>
                         <li className='notification-nav'>
-                            <Link to='/notification' className='links'>
-                                <FaBell className='notification-icon'/>
-                                <span className='notification-heading'>Notifications</span>
-                            </Link>
+                             <a href="https://angel.co/profile/edit/overview" target="_blank" className='links'>
+                                <FaAngellist className="angellist"/>
+                                <span>AngelList</span>
+                            </a>
                         </li>
-                    <li>
-                    <div className='me-dropdown'>
-                        <button className='dropdown-button' onFocus={this.hiddenFalse} onBlur={this.hiddenTrue}>
-                            <div className='profile-icon-div'>
-                                <FaUserGraduate className='profile-icon'/>
-                                <span className='me-heading'>Me</span>
-                            </div>
-                            <ul className={this.state.hidden ? 'hidden-dropdown' : 'reveal-dropdown'} onClick={e => e.stopPropagation()} >
-                                <div className='dropdown-top'>
-                                    <div className='user-profile-div'>
-                                        <img src={ this.props.currentUser.profilePhotoUrl || window.defaultProfile } className='me-user-pic'/>
-                                        <div className='user-details'>
-                                            <h2 className='fname-lname'>{this.props.currentUser.fname} {this.props.currentUser.lname}</h2>
-                                            <h3 className='user-bio'>{this.props.currentUser.bio}</h3>
+            
+                        <li>
+                        <div className='me-dropdown'>
+                            <button className='dropdown-button' onFocus={this.hiddenFalse} onBlur={this.hiddenTrue}>
+                                <div className='profile-icon-div'>
+                                    {/* <FaUserGraduate className='profile-icon'/> */}
+                                    <img src={ this.props.currentUser.profilePhotoUrl || window.defaultProfile } className='me-user-pic'/>
+                                    <div className='me-dropdown'>
+                                        <span className='me-heading'>Me</span>
+                                        <MdOutlineArrowDropDown className='dropdown-arrow'/>
+                                    </div>
+                                </div>
+                                <ul className={this.state.hidden ? 'hidden-dropdown' : 'reveal-dropdown'} onClick={e => e.stopPropagation()} >
+                                    <div className='dropdown-top'>
+                                        <div className='user-profile-div'>
+                                            <img src={ this.props.currentUser.profilePhotoUrl || window.defaultProfile } className='current-user-pic'/>
+                                            <div className='user-details'>
+                                                <h2 className='fname-lname'>{this.props.currentUser.fname} {this.props.currentUser.lname}</h2>
+                                                <h3 className='user-bio'>{this.props.currentUser.bio}</h3>
+                                            </div>
+                                        </div>
+                                        <div className='view-profile-button' >
+                                        
+                                            <p onClick={
+                                                ()=>{this.props.history.push(`/users/${this.props.currentUser.id}`); 
+                                                this.hiddenTrue()
+                                            }} 
+                                            className='view-profile'>View Profile</p>
                                         </div>
                                     </div>
-                                    <div className='view-profile-button' >
-                                    
-                                        <p onClick={
-                                            ()=>{this.props.history.push(`/users/${this.props.currentUser.id}`); 
-                                            this.hiddenTrue()
-                                        }} 
-                                        className='view-profile'>View Profile</p>
+                                    <div className='logout-button' onClick={this.props.logout}>
+                                        <p>Logout</p>
                                     </div>
-                                </div>
-                                <div className='logout-button' onClick={this.props.logout}>
-                                    <p>Logout</p>
-                                </div>
-                            </ul>
-                        </button>
-                    </div>
-                    </li>
+                                </ul>
+                            </button>
+                        </div>
+                        </li>
                     </ul>
                 </nav>
                 </div>
