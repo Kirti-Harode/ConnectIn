@@ -76,7 +76,7 @@ class Feed extends React.Component{
                             <ul>
                                 <li> Backend: <p> Ruby on Rails </p></li>
                                 <li> Frontend: <p> React, Redux </p></li>
-                                <li> Database: <p> PostgreSQl </p></li>
+                                <li> Database: <p> PostgreSQL </p></li>
                                 <li> Storage: <p> AWS </p></li>
                                 <li> Other: <p> jQuery, JBuilder, HTML, CSS </p></li>
                             </ul>
