@@ -1,4 +1,4 @@
-# <p align="center"><img src="https://github.com/Kirti-Harode/ConnectIn/blob/main/app/assets/images/logo_alpha.png" width="300" height="100" /></p>
+# <p><img src="https://github.com/Kirti-Harode/ConnectIn/blob/main/app/assets/images/logo_alpha.png" width="300" height="100" /></p>
 
 
 ## About
