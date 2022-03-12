@@ -7,6 +7,8 @@ ConnectIn is a Clone of a professional networking site LinkedIn,In connectIn us
 
 #### Live Site: [ConnectIn](https://connectedin.herokuapp.com/#/)
 
+![Demo](app/assets/images/ConnectIn-Demo.gif)
+
 ## Technologies Used
 * Frontend: React/Redux
 * Backend: Rails
