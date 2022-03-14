@@ -93,7 +93,7 @@ class Feed extends React.Component{
                                 <BsGithub className="github"/>
                                 <h3>Github</h3>
                             </a>
-                            <a href="" target="_blank" >
+                            <a href="https://kirtibala-harode.netlify.app/" target="_blank" >
                                 <BsPersonCircle className="portfolio"/>
                                 <h3>Portfolio</h3>
                             </a>

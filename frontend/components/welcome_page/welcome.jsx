@@ -32,7 +32,7 @@ class Welcome extends React.Component {
                                 </a>
                             </div>
                             <div className='highlight3'>
-                                <a href="" target="_blank" className='a-tags'> 
+                                <a href="https://kirtibala-harode.netlify.app/" target="_blank" className='a-tags'> 
                                     Check out my portfolio 
                                     <BsPersonCircle className='icon'/>
                                 </a>                                

@@ -53,7 +53,7 @@ class LoggedIn extends React.Component {
                             </Link>
                         </li>
                         <li className='jobs-nav'>
-                            <a href="" target="_blank" className='links'>
+                            <a href="https://kirtibala-harode.netlify.app/" target="_blank" className='links'>
                                 <BsPersonCircle className="portfolio"/>
                                 <span>Portfolio</span>
                             </a>
