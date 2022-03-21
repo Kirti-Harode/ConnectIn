@@ -25,4 +25,11 @@ export const deleteLike = (likeId) => (
         method: 'DELETE', 
         url: `/api/likes/${likeId}`
     })
-)
+);
+
+export const fetchPostLikes = (likeable_id) => (
+    $.ajax({
+        method: 'GET', 
+        url: `/api/likes/postlikes/${likeable_id}`
+    })
+);

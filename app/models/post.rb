@@ -21,5 +21,5 @@ class Post < ApplicationRecord
     # has_many :likes, as: :likeable_item, dependent: :destroy    
     has_many :likes,
         foreign_key: :likeable_id,
-        class_name: :like 
+        class_name: :Like 
 end

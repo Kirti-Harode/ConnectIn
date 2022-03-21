@@ -13,6 +13,8 @@ Rails.application.routes.draw do
     resources :posts, only: [:index, :create, :show, :update, :destroy]
     resources :likes, only: [:index, :create, :show, :destroy]
     resources :comments, only: [:index, :create, :show, :update, :destroy]
+    get 'likes/postlikes/:id' => 'likes#postlikes'
+
   end
 
 end

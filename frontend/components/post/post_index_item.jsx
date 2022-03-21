@@ -10,7 +10,8 @@ import { FaRegCommentDots } from "react-icons/fa";
 import { BiLike, BiCommentDetail } from "react-icons/bi";
 import CommentIndexContainer from "../comment/comment-index";
 import CreateCommentContainer from "../comment/comment_form";
-import {createLike, fetchLikes, deleteLike} from '../../actions/like_actions'
+import {createLike, fetchLikes, deleteLike, fetchPostLikes} from '../../actions/like_actions';
+
 import { AiOutlineLike } from "react-icons/ai";
 
 class PostIndexItem extends React.Component{
@@ -55,6 +56,24 @@ class PostIndexItem extends React.Component{
             this.props.fetchLikes();
         } 
     }
+
+    // componentDidUpdate(prevProps){
+    //     // debugger
+    //     if (this.props.likes.length !== prevProps.likes.length) {
+    //         // debugger
+    //         this.props.fetchLikes();
+    //         // this.props.fetchPostLikes(this.props.post.id);
+    //         this.setState({likes: this.props.likes})
+           
+    //     } 
+    //     // if(this.state.counter < 2){
+    //     //     if (this.props.likes.length !== prevProps.likes.length) {
+    //     //             this.props.fetchPostLikes(this.props.post.id);
+    //     //     } 
+    //     //     this.setState({counter: this.state.counter+1})
+    //     // }
+    // }
+
 
     handleLikes(e){
         e.preventDefault()
@@ -193,7 +212,9 @@ const mapDispatchToProps = dispatch => ({
     openModal: (modal, id) => dispatch(openModal(modal, id)),
     createLike: like => dispatch(createLike(like)),
     deleteLike: likeId => dispatch(deleteLike(likeId)),
-    fetchLikes: () => dispatch(fetchLikes())
+    fetchLikes: () => dispatch(fetchLikes()),
+    fetchPostLikes: (likeable_id) => dispatch(fetchPostLikes(likeable_id)),
+
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(PostIndexItem);

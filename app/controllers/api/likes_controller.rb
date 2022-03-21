@@ -14,6 +14,12 @@ class Api::LikesController < ApplicationController
         end
     end
 
+    def postlikes
+        @likes = Post.find_by(id: params[:id]).likes
+        # debugger
+        render :postlikes
+    end
+    
     def show 
         @like = Like.find(params[:id])
         render :show

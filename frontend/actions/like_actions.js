@@ -3,6 +3,8 @@ import * as LikeAPIUtil from '../util/like_api_util';
 export const RECEIVE_LIKES = 'RECEIVE_LIKES';
 export const RECEIVE_LIKE = 'RECEIVE_LIKE';
 export const REMOVE_LIKE = 'REMOVE_LIKE';
+export const RECEIVE_POST_LIKES = 'RECEIVE_POST_LIKES';
+
 
 const receiveLikes = likes => ({
     type: RECEIVE_LIKES,
@@ -19,8 +21,16 @@ const removeLike = likeId => ({
     likeId
 });
 
+const receivePostLikes = likes => ({
+    type: RECEIVE_POST_LIKES,
+    likes
+});
+
 export const fetchLikes = () => dispatch => (
-    LikeAPIUtil.fetchLikes().then(likes => dispatch(receiveLikes(likes)))
+    LikeAPIUtil.fetchLikes().then(likes => {
+        let likesLen = Object.keys(likes).length;
+        // console.log(likesLen)
+        return dispatch(receiveLikes(likesLen))})
 )
 
 export const fetchLike = (likeId) => dispatch => (
@@ -35,4 +45,8 @@ export const createLike = like => dispatch => (
 export const deleteLike = likeId => dispatch => (
     LikeAPIUtil.deleteLike(likeId).then(() => dispatch(removeLike(likeId))
   )
+);
+
+export const fetchPostLikes = (likeable_id) => dispatch => (
+    LikeAPIUtil.fetchPostLikes(likeable_id).then(likes => dispatch(receivePostLikes(likes)))
 );
