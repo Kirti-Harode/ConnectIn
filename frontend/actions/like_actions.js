@@ -28,9 +28,9 @@ const receivePostLikes = likes => ({
 
 export const fetchLikes = () => dispatch => (
     LikeAPIUtil.fetchLikes().then(likes => {
-        let likesLen = Object.keys(likes).length;
+        // let likesLen = Object.keys(likes).length;
         // console.log(likesLen)
-        return dispatch(receiveLikes(likesLen))})
+        return dispatch(receiveLikes(likes))})
 )
 
 export const fetchLike = (likeId) => dispatch => (
@@ -48,5 +48,11 @@ export const deleteLike = likeId => dispatch => (
 );
 
 export const fetchPostLikes = (likeable_id) => dispatch => (
-    LikeAPIUtil.fetchPostLikes(likeable_id).then(likes => dispatch(receivePostLikes(likes)))
+    LikeAPIUtil.fetchPostLikes(likeable_id).then(likes =>{
+        
+        let likesLen = Object.keys(likes).length;
+        console.log(likesLen)
+       return dispatch(receivePostLikes(likesLen))
+    } )
+    
 );

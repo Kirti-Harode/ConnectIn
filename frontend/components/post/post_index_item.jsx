@@ -11,7 +11,7 @@ import { BiLike, BiCommentDetail } from "react-icons/bi";
 import CommentIndexContainer from "../comment/comment-index";
 import CreateCommentContainer from "../comment/comment_form";
 import {createLike, fetchLikes, deleteLike, fetchPostLikes} from '../../actions/like_actions';
-
+import Likes from '../like/likes';
 import { AiOutlineLike } from "react-icons/ai";
 
 class PostIndexItem extends React.Component{
@@ -21,13 +21,13 @@ class PostIndexItem extends React.Component{
         this.state = {
             open: false,
             comments: false,
-            like: []
+            like: [],
+            isLiked: false
         }
         this.handleOpen = this.handleOpen.bind(this)
         this.handleClose = this.handleClose.bind(this)
         this.hideComments = this.hideComments.bind(this)
         this.revealComments = this.revealComments.bind(this)
-        this.handleLikes = this.handleLikes.bind(this)
     }
    
     handleOpen(){
@@ -46,50 +46,6 @@ class PostIndexItem extends React.Component{
         this.setState({comments: true});
     }
 
-    UNSAFE_componentWillReceiveProps(){
-        this.setState({
-            like: this.props.liked,
-        })
-    }
-    componentDidUpdate(prevProps){
-        if (this.props.likes.length !== prevProps.likes.length) {
-            this.props.fetchLikes();
-        } 
-    }
-
-    // componentDidUpdate(prevProps){
-    //     // debugger
-    //     if (this.props.likes.length !== prevProps.likes.length) {
-    //         // debugger
-    //         this.props.fetchLikes();
-    //         // this.props.fetchPostLikes(this.props.post.id);
-    //         this.setState({likes: this.props.likes})
-           
-    //     } 
-    //     // if(this.state.counter < 2){
-    //     //     if (this.props.likes.length !== prevProps.likes.length) {
-    //     //             this.props.fetchPostLikes(this.props.post.id);
-    //     //     } 
-    //     //     this.setState({counter: this.state.counter+1})
-    //     // }
-    // }
-
-
-    handleLikes(e){
-        e.preventDefault()
-        if(this.state.like.length === 0){
-            this.props.createLike({
-                likeable_id: this.props.post.id,
-                likeable_item: 'post'
-            })
-        }else{
-            this.props.deleteLike(this.props.liked[0].id)
-        }
-    }
-    componentDidMount(){
-        // this.props.fetchPosts();
-        this.props.fetchLikes()
-    }
 
     render(){
         const { currentUser, post, openModal, deletePost, author } = this.props;
@@ -111,7 +67,6 @@ class PostIndexItem extends React.Component{
             likeCount = null;
         };
         
-            // console.log(this.props.comments)
         let commentCount;
         if(this.props.comments.length > 0){
             commentCount = (
@@ -159,6 +114,12 @@ class PostIndexItem extends React.Component{
         }else{
             showComments = null;
         }
+
+        let showLikes = (
+            <div>
+                <Likes likes={this.props.likes} postId={post.id}/>
+            </div>
+        )
       
         return(
             <div className="post-index-item-div">
@@ -183,10 +144,11 @@ class PostIndexItem extends React.Component{
                     {commentCount}
                 </div>
                 <div className="like-comment-div">
-                    <div className={this.state.like.length != 0 ? "post-like-div liked" : 'post-like-div not-liked'} onClick={this.handleLikes}>
+                    {/* <div className={this.state.like.length != 0 ? "post-like-div liked" : 'post-like-div not-liked'} onClick={this.handleLikes}>
                         <BiLike className="post-like-icon"/>
                         <h3 className="like-heading">Like</h3>
-                    </div>
+                    </div> */}
+                    {showLikes}
                     <div className="comment-div" onClick={this.state.comments ? this.hideComments : this.revealComments}>
                         <BiCommentDetail className="comment-icon"/>
                         <h3 className="comment-heading"> Comment </h3>
@@ -202,10 +164,7 @@ class PostIndexItem extends React.Component{
 const mapStateToProps =  (state, ownProps) =>({
     currentUser: state.entities.users[state.session.id],
     comments: Object.values(state.entities.comments).filter(comment => comment.postId === ownProps.post.id),
-    liker: state.session.id,
     likes: Object.values(state.entities.likes),//.filter(like => like.likeable_id === ownProps.post.id),
-    liked: Object.values(state.entities.likes).filter(like => like.likerId === state.session.id && like.likeableId === ownProps.post.id),
-   
 });
 
 const mapDispatchToProps = dispatch => ({

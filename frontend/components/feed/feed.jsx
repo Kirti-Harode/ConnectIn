@@ -14,7 +14,7 @@ import { Link } from "react-router-dom";
 class Feed extends React.Component{
     componentDidMount(){
         this.props.fetchPosts()
-        this.props.fetchLikes()
+        // this.props.fetchLikes()
         this.props.fetchUsers()
         this.props.fetchConnections(this.props.currentUser.id)
     }
