@@ -11,7 +11,7 @@ class Likes extends React.Component{
         this.handleLikes = this.handleLikes.bind(this)
     }
     componentDidMount(){
-        this.props.fetchLikes()
+        // this.props.fetchLikes()
     }
 
     handleLikes(e){

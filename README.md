@@ -164,5 +164,4 @@ Well organized file structure:
 
 ```
 ## Future Implementations
-* Request/accept connections
-* Search Bar
+* Messaging utilizing Action Cables
