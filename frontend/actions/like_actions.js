@@ -51,7 +51,7 @@ export const fetchPostLikes = (likeable_id) => dispatch => (
     LikeAPIUtil.fetchPostLikes(likeable_id).then(likes =>{
         
         let likesLen = Object.keys(likes).length;
-        console.log(likesLen)
+        // console.log(likesLen)
        return dispatch(receivePostLikes(likesLen))
     } )
     

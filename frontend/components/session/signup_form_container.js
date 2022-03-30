@@ -21,7 +21,7 @@ const mapStateToProps = (state, ownProps) => {
             errObj.Password = error
         }
     })
-    console.log(errObj)
+    // console.log(errObj)
     // debugger
     return {
         errObj,

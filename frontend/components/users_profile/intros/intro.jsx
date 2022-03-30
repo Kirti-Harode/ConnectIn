@@ -94,7 +94,7 @@ class Intro extends React.Component {
     }
 
     componentDidUpdate(preprops) {
-        console.log("didUpdate", preprops)
+        // console.log("didUpdate", preprops)
         // console.log(this.props)
         if(this.state.counter < 2) {
             // debugger
@@ -238,7 +238,7 @@ class Intro extends React.Component {
 
 const mapStateToProps = (state, ownProps) => {
     // debugger
-    console.log(ownProps)
+    // console.log(ownProps)
    const otherUserId = parseInt(ownProps.match.params.userId);
     const otherUser = state.entities.users[ownProps.match.params.userId];
     const connections = Object.values(state.entities.connections);

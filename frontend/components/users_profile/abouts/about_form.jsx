@@ -17,8 +17,8 @@ class AboutForm extends React.Component {
         return e => this.setState({[field]: e.currentTarget.value})
     }
     componentDidUpdate(preprops){
-        console.log(preprops)
-        console.log(this.props)
+        // console.log(preprops)
+        // console.log(this.props)
         
     }
     render(){

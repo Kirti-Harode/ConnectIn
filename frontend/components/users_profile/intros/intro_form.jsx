@@ -45,7 +45,7 @@ class EditUserIntro extends React.Component {
     render(){
         // debugger
         // console.log(this.props.currentUser)
-        console.log(this.state)
+        // console.log(this.state)
         return(
             <div className="user-intro">
                 <div className="intro-form-heading">
